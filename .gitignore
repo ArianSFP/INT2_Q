@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Qwen source weights are fetched locally and must not be committed.
+plte/qwen_weight_cache/**/*.bf16.bin
+plte/qwen_weight_cache/**/*.safetensors
+
+# Local logs and scratch outputs.
+*.stdout
+*.log
+tmp/

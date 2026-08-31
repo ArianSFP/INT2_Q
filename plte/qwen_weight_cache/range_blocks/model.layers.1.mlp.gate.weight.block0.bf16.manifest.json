@@ -1,0 +1,20 @@
+{
+  "repo": "Qwen/Qwen3-30B-A3B",
+  "revision": "ad44e777bcd18fa416d9da3bd8f70d33ebb85d39",
+  "tensor": "model.layers.1.mlp.gate.weight",
+  "shape": [
+    128,
+    2048
+  ],
+  "dtype": "BF16",
+  "block_index": 0,
+  "block_values": 262144,
+  "shard": "model-00001-of-00016.safetensors",
+  "absolute_byte_range_in_shard": [
+    3076665504,
+    3077189791
+  ],
+  "output": "qwen_weight_cache/range_blocks/model.layers.1.mlp.gate.weight.block0.bf16.bin",
+  "bytes": 524288,
+  "sha256": "622e84a19589d793e1f022313af7a1b52d53c7682eeac953dea40d6c251f0b37"
+}

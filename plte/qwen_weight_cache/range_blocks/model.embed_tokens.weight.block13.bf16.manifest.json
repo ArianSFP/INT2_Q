@@ -1,0 +1,20 @@
+{
+  "repo": "Qwen/Qwen3-30B-A3B",
+  "revision": "ad44e777bcd18fa416d9da3bd8f70d33ebb85d39",
+  "tensor": "model.embed_tokens.weight",
+  "shape": [
+    151936,
+    2048
+  ],
+  "dtype": "BF16",
+  "block_index": 13,
+  "block_values": 262144,
+  "shard": "model-00001-of-00016.safetensors",
+  "absolute_byte_range_in_shard": [
+    6946464,
+    7470751
+  ],
+  "output": "/root/int2/qwen_weight_cache/range_blocks/model.embed_tokens.weight.block13.bf16.bin",
+  "bytes": 524288,
+  "sha256": "15c88b3137b05dc98a3ab494a74502174b81872a085a0ea5f22d8e264f1e7332"
+}

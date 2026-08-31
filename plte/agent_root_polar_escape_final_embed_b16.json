@@ -1,0 +1,134 @@
+{
+  "architecture": "entropy-coded polar-lattice PTQ with rate-neutral sparse BF16 tail escapes",
+  "claim_boundary": "literal entropy-coded two-set realization of the authors' MAP SC simulation; distinct from the paper's fixed-length F/I/S construction",
+  "strict_ptq": true,
+  "source_training_or_retraining": false,
+  "implementation_sha256": "4d76ba53c88710778085917108b7940517ed14565815fc8437ea4919d7df4bf8",
+  "parameters": {
+    "block_length": 262144,
+    "trials": 1,
+    "sigma_source": 3.0,
+    "test_channel_distortion": 0.29,
+    "eta": 0.5989929996555583,
+    "alphabet_size": 64,
+    "decision": "map",
+    "tilde_sigma": 0.5297693418418581,
+    "capacity_schedule": [
+      0.0006403541494273135,
+      0.2226280511277603,
+      0.906837113158238,
+      0.9999736826737476,
+      1.0,
+      1.0
+    ],
+    "seed": 20260831,
+    "container_cap_bytes": 81242
+  },
+  "aggregate": {
+    "mean_relative_mse": 0.03273918941235044,
+    "mean_screen_bpw": 2.47930908203125,
+    "gaussian_limit_mse": 0.03215934506113326,
+    "threshold_mse_0p10db": 0.03290843243739634,
+    "gap_db": 0.07760726964777384,
+    "passes_rate_lt_2p5": true,
+    "passes_gap_lt_0p10db": true
+  },
+  "trials": [
+    {
+      "trial": 0,
+      "source": {
+        "kind": "frozen_bf16_weight_block",
+        "path": "qwen_weight_cache/range_blocks/model.embed_tokens.weight.block16.bf16.bin",
+        "block_index": 0,
+        "values": 262144,
+        "block_bf16_sha256": "bc38765e144aec08d898d06de6edb6846631cb1916ab235d9e82682081bf8f46",
+        "block_rms_fp64": 0.019730696099615516,
+        "decoder_scale_fp32": 0.006576898507773876
+      },
+      "absolute_mse": 0.29516767981960956,
+      "literal_decoded_absolute_mse": 1.2745378505087301e-05,
+      "normalized_relative_mse_before_fp32_scale": 0.03279640886884551,
+      "base_literal_relative_mse_before_escapes": 0.03279640885396144,
+      "literal_decoded_relative_mse": 0.03273918941235044,
+      "fp32_decoder_scale_in_mse_audit": true,
+      "relative_mse": 0.03273918941235044,
+      "ideal_entropy_bits": 649561.5447611463,
+      "arithmetic_logical_bits": 649557,
+      "arithmetic_payload_bytes": 81195,
+      "arithmetic_payload_sha256": "ef657c1cc708ecb13c099f984123262a6a1966ef971c459a39d93fe0174403d6",
+      "arithmetic_roundtrip_bits_match": true,
+      "online_causal_arithmetic_bits_match": true,
+      "causal_decoder_frequencies_match": true,
+      "causal_decoder_frozen_bits_match": true,
+      "reconstruction_indices_match": true,
+      "tail_escape_count": 9,
+      "tail_escape_record_bits": 34,
+      "tail_escape_payload_bytes": 39,
+      "tail_escape_payload_sha256": "79d66b05ef257d4c727da8a2c59c4eaa59fee07db1865e93a704c52af166de3f",
+      "tail_escape_records_roundtrip": true,
+      "tail_escape_padding_is_zero": true,
+      "container_header_roundtrip": true,
+      "base_literal_container_bytes": 81203,
+      "container_cap_bytes": 81242,
+      "passes_container_cap": true,
+      "literal_container_bytes": 81242,
+      "literal_container_sha256": "459915a4f257ce4545ee4142f278eb52e4b3da41b5cf5a8f8fe79ed9273f5514",
+      "framing_bits": 64,
+      "total_screen_bits": 649936,
+      "screen_bpw": 2.47930908203125,
+      "gaussian_limit_mse_at_screen_rate": 0.03215934506113326,
+      "threshold_mse_0p10db": 0.03290843243739634,
+      "gap_db": 0.07760726964777384,
+      "passes_rate_lt_2p5": true,
+      "passes_gap_lt_0p10db": true,
+      "selected_polar_bits": 1082683,
+      "levels": [
+        {
+          "level": 1,
+          "capacity_schedule": 0.0006403541494273135,
+          "selected_fraction": 0.000640869140625,
+          "selected_nll_bits": 167.99999998503745,
+          "selected_nll_bpw": 0.0006408691405679224
+        },
+        {
+          "level": 2,
+          "capacity_schedule": 0.2226280511277603,
+          "selected_fraction": 0.22262954711914062,
+          "selected_nll_bits": 58361.00000004789,
+          "selected_nll_bpw": 0.2226295471193233
+        },
+        {
+          "level": 3,
+          "capacity_schedule": 0.906837113158238,
+          "selected_fraction": 0.9068374633789062,
+          "selected_nll_bits": 237718.10120352427,
+          "selected_nll_bpw": 0.9068225906506511
+        },
+        {
+          "level": 4,
+          "capacity_schedule": 0.9999736826737476,
+          "selected_fraction": 1.0,
+          "selected_nll_bits": 247506.44222373475,
+          "selected_nll_bpw": 0.944162148375453
+        },
+        {
+          "level": 5,
+          "capacity_schedule": 1.0,
+          "selected_fraction": 1.0,
+          "selected_nll_bits": 100681.23656351404,
+          "selected_nll_bpw": 0.3840684378185808
+        },
+        {
+          "level": 6,
+          "capacity_schedule": 1.0,
+          "selected_fraction": 1.0,
+          "selected_nll_bits": 5126.764770340341,
+          "selected_nll_bpw": 0.01955705555091988
+        }
+      ]
+    }
+  ],
+  "cupy_version": "14.2.0",
+  "gpu": "NVIDIA RTX A6000",
+  "seconds": 97.72894227411598
+}

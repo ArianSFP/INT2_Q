@@ -1,0 +1,61 @@
+{
+  "format": "six concatenated N-bit masks, level 1 through 6, MSB-first within each byte",
+  "semantics": "one means frozen; zero means transmitted/causally entropy-coded",
+  "block_length": 262144,
+  "levels": 6,
+  "bytes": 196608,
+  "bits": 1572864,
+  "sha256": "11efea4247aadfb8d30369483a9753921f46f93f8cc2c0e94325538b159b29a6",
+  "parameters": {
+    "sigma_source": 3.0,
+    "test_channel_distortion": 0.29,
+    "eta": 0.5989929996555583,
+    "tilde_sigma": 0.5297693418418581,
+    "capacity_schedule": [
+      0.0006403541494273135,
+      0.2226280511277603,
+      0.906837113158238,
+      0.9999736826737476,
+      1.0,
+      1.0
+    ]
+  },
+  "per_level": [
+    {
+      "level": 1,
+      "frozen": 261976,
+      "open": 168,
+      "sha256": "b7e9566a769747f63c46c59967ebc073399a2a8a01769520659d4ca9e9d7f21e"
+    },
+    {
+      "level": 2,
+      "frozen": 203783,
+      "open": 58361,
+      "sha256": "7f3a79301855005aac839708a6eab54ab5e680cd5763b1287f97a175d92241e6"
+    },
+    {
+      "level": 3,
+      "frozen": 24422,
+      "open": 237722,
+      "sha256": "f0ae1a231f4ea9ffb4d1484992916f4586e6a9bc031027f87bc8bea2f7e473da"
+    },
+    {
+      "level": 4,
+      "frozen": 0,
+      "open": 262144,
+      "sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479"
+    },
+    {
+      "level": 5,
+      "frozen": 0,
+      "open": 262144,
+      "sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479"
+    },
+    {
+      "level": 6,
+      "frozen": 0,
+      "open": 262144,
+      "sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479"
+    }
+  ]
+}

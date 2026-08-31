@@ -1,0 +1,21 @@
+name: Verify published evidence
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify hashes, manifests, and audit flags
+        run: python tools/verify_repository.py
+      - name: Compile Python sources
+        run: python -m py_compile plte/*.py tools/*.py

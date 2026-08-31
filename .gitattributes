@@ -1,0 +1,14 @@
+# Keep authored repository text consistently LF-terminated.
+*.md text eol=lf
+*.py text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.txt text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+requirements.txt text eol=lf
+
+# Preserve the evidence bundle byte-for-byte on every platform. Its JSON and
+# Python implementation hashes are part of the published provenance. This rule
+# must remain after the general source-file rules above.
+plte/** -text

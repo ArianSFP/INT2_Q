@@ -1,0 +1,1924 @@
+{
+  "architecture": "adaptive per-row Lloyd Q2 -> Q3 -> Q4 -> lossless BF16 router exception",
+  "strict_ptq": true,
+  "model_training_or_retraining": false,
+  "repo": "Qwen/Qwen3-30B-A3B",
+  "revision": "ad44e777bcd18fa416d9da3bd8f70d33ebb85d39",
+  "shape_each": [
+    128,
+    2048
+  ],
+  "router_count": 48,
+  "router_values": 12582912,
+  "promotion_threshold_relative_sse": 0.045,
+  "iterations": 30,
+  "format": {
+    "global_format": "<8sHHHHdHH20s",
+    "global_bytes": 48,
+    "record_format": "<HBBII",
+    "record_header_bytes": 12,
+    "quantized_payload": "absolute row-major FP16 centroids, then dense little-endian q-bit labels",
+    "bf16_tag": 16
+  },
+  "selected_tag_counts": {
+    "2": 0,
+    "3": 0,
+    "4": 48,
+    "16": 0
+  },
+  "aggregate": {
+    "source_energy": 13293.430905292904,
+    "sse": 441.59381763269454,
+    "relative_mse": 0.03321895007983754,
+    "container_bytes": 6488688,
+    "container_bits": 51909504,
+    "router_bpw": 4.125396728515625,
+    "container_sha256": "31de0cc8f7a7a97b12c72440f680a22bdd0494f8fe474254257e7f9ea1c9dab6"
+  },
+  "independent_literal_decode": {
+    "bytes_consumed": 6488688,
+    "exact_file_length": true,
+    "source_energy": 13293.430905292904,
+    "sse": 441.59381763269454,
+    "relative_mse": 0.03321895007983754,
+    "aggregate_energy_match": true,
+    "aggregate_sse_match": true
+  },
+  "routers": [
+    {
+      "layer": 0,
+      "tensor": "model.layers.0.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.0.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "5a165372095204aaa0343a67d2d2afde1086b730a825998b59264fb9c49a216d",
+      "energy": 988.4165776236997,
+      "rms": 0.06140447879397355,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 233.97087849666224,
+          "relative_mse": 0.2367128231086158,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 72.60745159087759,
+          "relative_mse": 0.07345835069403296,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 26.038358578513083,
+          "relative_mse": 0.026343506541657936,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 26.038358578513083,
+      "selected_relative_mse": 0.026343506541657936,
+      "payload_crc32": "746c978f",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 1,
+      "tensor": "model.layers.1.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.1.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "622e84a19589d793e1f022313af7a1b52d53c7682eeac953dea40d6c251f0b37",
+      "energy": 688.1102923383289,
+      "rms": 0.051234094611220006,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 174.48696986413438,
+          "relative_mse": 0.25357413165728804,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 55.36953581707003,
+          "relative_mse": 0.08046607707161867,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 19.774048754596617,
+          "relative_mse": 0.028736743186038766,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 19.774048754596617,
+      "selected_relative_mse": 0.028736743186038766,
+      "payload_crc32": "a2fec597",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 2,
+      "tensor": "model.layers.2.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.2.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "d89d0e2da80fdc4ac35c3ae8850ae8772b031063c26d22d8e7c416b6ea27384d",
+      "energy": 530.5270589108707,
+      "rms": 0.044986666035252844,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 145.93136124912309,
+          "relative_mse": 0.2750686488050363,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 44.57202702623489,
+          "relative_mse": 0.0840146158006298,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 17.206729722093833,
+          "relative_mse": 0.03243327448258316,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 17.206729722093833,
+      "selected_relative_mse": 0.03243327448258316,
+      "payload_crc32": "d4caca57",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 3,
+      "tensor": "model.layers.3.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.3.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "dc4f558c07513e45629e33936f7b01aa02cbed9fb45f5abec488d1948bdb31e3",
+      "energy": 527.6530256208378,
+      "rms": 0.04486464704012022,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 142.3797418397417,
+          "relative_mse": 0.2698359242273223,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 42.755191649865054,
+          "relative_mse": 0.08102898983580961,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 16.963051444018827,
+          "relative_mse": 0.03214811745665641,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 16.963051444018827,
+      "selected_relative_mse": 0.03214811745665641,
+      "payload_crc32": "4e54b92f",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 4,
+      "tensor": "model.layers.4.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.4.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "faade63057fe99398c4d1a39b99fa49ebf2266737623396ef818562f6b6bfff6",
+      "energy": 456.02194855136895,
+      "rms": 0.041708340655124264,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 128.23234090395044,
+          "relative_mse": 0.2811977390809855,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 38.96465132277208,
+          "relative_mse": 0.08544468406959337,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 14.369067588964192,
+          "relative_mse": 0.03150959648896281,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 14.369067588964192,
+      "selected_relative_mse": 0.03150959648896281,
+      "payload_crc32": "0637d206",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 5,
+      "tensor": "model.layers.5.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.5.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "2169e53fddaaae1c68a5e9c533f16b1566286367098a6b9b68e8055a2ef8751f",
+      "energy": 433.06644099374205,
+      "rms": 0.0406450165246956,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 122.57316944843883,
+          "relative_mse": 0.2830354833479467,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 37.23529549456505,
+          "relative_mse": 0.0859805608791172,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 14.02695508735519,
+          "relative_mse": 0.03238984543611377,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 14.02695508735519,
+      "selected_relative_mse": 0.03238984543611377,
+      "payload_crc32": "912b9125",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 6,
+      "tensor": "model.layers.6.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.6.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "7d2a1b7b4cdb8d4b18742690a527fbd0827e6140f41bae8abc21f50528234ae7",
+      "energy": 416.97576675330913,
+      "rms": 0.039882782215709775,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 117.25099627427592,
+          "relative_mse": 0.2811937901984694,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 36.070904594692,
+          "relative_mse": 0.08650599740016125,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 13.3186199407532,
+          "relative_mse": 0.031940992745107775,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 13.3186199407532,
+      "selected_relative_mse": 0.031940992745107775,
+      "payload_crc32": "bc7ae46c",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 7,
+      "tensor": "model.layers.7.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.7.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "18608ba78b3256b0bc16b0e37d7ab33e453a1789998fd186b6a46ae69aa63b55",
+      "energy": 400.52796607124833,
+      "rms": 0.03908827109221299,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 115.24526154338724,
+          "relative_mse": 0.2877333702158683,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 35.33069492089011,
+          "relative_mse": 0.08821030717891312,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 12.906560900459242,
+          "relative_mse": 0.032223869476727986,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 12.906560900459242,
+      "selected_relative_mse": 0.032223869476727986,
+      "payload_crc32": "9ec10b58",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 8,
+      "tensor": "model.layers.8.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.8.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "110df0757fe20a616953b165f84721d10f02b7fff450aac9167728b741a3a6b5",
+      "energy": 413.5562676120942,
+      "rms": 0.03971891190908855,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 120.7718191452917,
+          "relative_mse": 0.29203237528628817,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 35.468665298176774,
+          "relative_mse": 0.08576502903214497,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 13.706998251059758,
+          "relative_mse": 0.033144215973814214,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 13.706998251059758,
+      "selected_relative_mse": 0.033144215973814214,
+      "payload_crc32": "a8c16e02",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 9,
+      "tensor": "model.layers.9.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.9.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "02a59ef2b169055344af38d801d484c9aea7bc215059cef93464fac1f0eeb98d",
+      "energy": 420.72063699332256,
+      "rms": 0.040061476052817076,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 118.8377906898243,
+          "relative_mse": 0.282462470914424,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 36.01384266782609,
+          "relative_mse": 0.08560037112797413,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 13.986131608000111,
+          "relative_mse": 0.033243274463434724,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 13.986131608000111,
+      "selected_relative_mse": 0.033243274463434724,
+      "payload_crc32": "90726e8c",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 10,
+      "tensor": "model.layers.10.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.10.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "c23d8151a7859b526f181730584c86d8f4a2b8358216f67fc9a8f4d05d423be4",
+      "energy": 410.24737488038784,
+      "rms": 0.039559695893498094,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 116.78979786700437,
+          "relative_mse": 0.28468140204688874,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 34.951946134256595,
+          "relative_mse": 0.08519724506329193,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 13.16610077433922,
+          "relative_mse": 0.03209307744669407,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 13.16610077433922,
+      "selected_relative_mse": 0.03209307744669407,
+      "payload_crc32": "edd2a3a0",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 11,
+      "tensor": "model.layers.11.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.11.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "80a517bd484ce86f2ecfaab14b9b939a89e4451146efb7eb0f68c1d579a49ff6",
+      "energy": 386.2298948505312,
+      "rms": 0.03838424317071984,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 109.96353822803171,
+          "relative_mse": 0.28471006437911023,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 32.64507170634391,
+          "relative_mse": 0.08452238457351255,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 12.439212937556906,
+          "relative_mse": 0.0322067584705498,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 12.439212937556906,
+      "selected_relative_mse": 0.0322067584705498,
+      "payload_crc32": "6d1e5100",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 12,
+      "tensor": "model.layers.12.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.12.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "5a8b6debb42f8816244b4dacd3665497ae0fa360117fa0dae2484525d27594dc",
+      "energy": 394.2111390322565,
+      "rms": 0.03877881063345375,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 110.85458505440505,
+          "relative_mse": 0.28120612047275084,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 33.24197829495536,
+          "relative_mse": 0.08432531454225427,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 13.52054976178262,
+          "relative_mse": 0.03429773647435238,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 13.52054976178262,
+      "selected_relative_mse": 0.03429773647435238,
+      "payload_crc32": "403f3907",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 13,
+      "tensor": "model.layers.13.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.13.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "5cd8f7f6227960d630c5914c0c910ab41be479795ff434dcf8d36472e1e6ce4c",
+      "energy": 321.86426326653225,
+      "rms": 0.03504018728524786,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 94.1504635741047,
+          "relative_mse": 0.2925160520108433,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 26.813788061862297,
+          "relative_mse": 0.08330775150286907,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 10.369513991911262,
+          "relative_mse": 0.03221704045883585,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 10.369513991911262,
+      "selected_relative_mse": 0.03221704045883585,
+      "payload_crc32": "6989bb6f",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 14,
+      "tensor": "model.layers.14.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.14.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "b4ebe13369dead4d120bb2341f72ec1458b8d86872c905bc27f08f1f38178437",
+      "energy": 341.16802807431793,
+      "rms": 0.036075653061500824,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 96.08537579270312,
+          "relative_mse": 0.2816365189172195,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 28.377222018513137,
+          "relative_mse": 0.08317667449287369,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 11.387265730231238,
+          "relative_mse": 0.03337729445078806,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 11.387265730231238,
+      "selected_relative_mse": 0.03337729445078806,
+      "payload_crc32": "c075619b",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 15,
+      "tensor": "model.layers.15.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.15.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "4914642c42b59c0379932e6fd8337e271983332c4036d591b6d26705eb2f1d22",
+      "energy": 339.0196235884478,
+      "rms": 0.0359618858111761,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 96.93187955326917,
+          "relative_mse": 0.2859181970862531,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 28.61313787768968,
+          "relative_mse": 0.08439965089579753,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 11.892158296014642,
+          "relative_mse": 0.0350780824134567,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 11.892158296014642,
+      "selected_relative_mse": 0.0350780824134567,
+      "payload_crc32": "8a1b30dc",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 16,
+      "tensor": "model.layers.16.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.16.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "92c17c922c0064fe11ade91f3c4a430b5c456e538ab8cdba59a5f595860d15f9",
+      "energy": 314.1359644346293,
+      "rms": 0.034616955449075136,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 88.7969169882845,
+          "relative_mse": 0.2826703308170971,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 26.862946895582603,
+          "relative_mse": 0.08551375817133698,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 10.687122161007416,
+          "relative_mse": 0.03402068967251718,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 10.687122161007416,
+      "selected_relative_mse": 0.03402068967251718,
+      "payload_crc32": "551fcda1",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 17,
+      "tensor": "model.layers.17.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.17.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "b6836c59aa7d13b7159bd9039d9b7bd71a9f8063d1e682f770e89083f5d7181c",
+      "energy": 301.93556276234744,
+      "rms": 0.033938072509564716,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 88.14144448118722,
+          "relative_mse": 0.2919213744641372,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 26.1006733631378,
+          "relative_mse": 0.0864445152612962,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 9.930403912493263,
+          "relative_mse": 0.032889149663729585,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 9.930403912493263,
+      "selected_relative_mse": 0.032889149663729585,
+      "payload_crc32": "9fdcb2fd",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 18,
+      "tensor": "model.layers.18.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.18.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "502d131682b5d6fb146309899a57629d550f4fa74eb6acbb314c80162611aa65",
+      "energy": 253.16755547302745,
+      "rms": 0.031076640449185032,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 71.31350481870152,
+          "relative_mse": 0.28168500772327154,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 21.10315019054835,
+          "relative_mse": 0.08335645596892721,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 8.536042563056489,
+          "relative_mse": 0.033716968776300885,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 8.536042563056489,
+      "selected_relative_mse": 0.033716968776300885,
+      "payload_crc32": "57972dae",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 19,
+      "tensor": "model.layers.19.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.19.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "29c28f809e9293c29f03e293f311c14420204024521579ece0186175cb73560c",
+      "energy": 256.95989587882895,
+      "rms": 0.031308532577945164,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 74.38796789316658,
+          "relative_mse": 0.28949252037463735,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 22.625407290820547,
+          "relative_mse": 0.08805034425095541,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 9.351673315507734,
+          "relative_mse": 0.03639351301697902,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 9.351673315507734,
+      "selected_relative_mse": 0.03639351301697902,
+      "payload_crc32": "8532a1b6",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 20,
+      "tensor": "model.layers.20.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.20.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "a02f583caab9f45394cc637505606b351f3554461a72914c2f3ac90be363fd26",
+      "energy": 287.5910503234605,
+      "rms": 0.033122089204745624,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 83.81283617213846,
+          "relative_mse": 0.29143061328880776,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 24.9286831532137,
+          "relative_mse": 0.0866810115446076,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 9.890915784998398,
+          "relative_mse": 0.034392293410639346,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 9.890915784998398,
+      "selected_relative_mse": 0.034392293410639346,
+      "payload_crc32": "4a338ef6",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 21,
+      "tensor": "model.layers.21.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.21.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "348336f96d1b6bc3c0782964fb7edf648a2e244f8b4c1313acaa16b7681edb4e",
+      "energy": 314.8048443350726,
+      "rms": 0.03465379025287862,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 89.4708405691525,
+          "relative_mse": 0.28421049478489396,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 26.545222619216972,
+          "relative_mse": 0.08432278948974088,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 11.106037578046326,
+          "relative_mse": 0.0352791190412091,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 11.106037578046326,
+      "selected_relative_mse": 0.0352791190412091,
+      "payload_crc32": "019d50f1",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 22,
+      "tensor": "model.layers.22.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.22.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "c1a7e90a5c534f0d39229ec1fe643a232242ffd420bdd1333520e54f241f38a2",
+      "energy": 298.4317346935924,
+      "rms": 0.03374057975659832,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 85.34786548986085,
+          "relative_mse": 0.2859879013118016,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 25.37885573073075,
+          "relative_mse": 0.08504074057937532,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 10.145984790772719,
+          "relative_mse": 0.03399767387737723,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 10.145984790772719,
+      "selected_relative_mse": 0.03399767387737723,
+      "payload_crc32": "4713e28d",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 23,
+      "tensor": "model.layers.23.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.23.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "80adcc6058652bb6371ba9cbc9aa5323b1d19b1eb0c42d47708aa90bc25a9558",
+      "energy": 281.39766902678036,
+      "rms": 0.032763499791531855,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 80.43019191675927,
+          "relative_mse": 0.28582394514826204,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 24.414790250701778,
+          "relative_mse": 0.0867625888129807,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 9.460360679247152,
+          "relative_mse": 0.03361918637054104,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 9.460360679247152,
+      "selected_relative_mse": 0.03361918637054104,
+      "payload_crc32": "8f246cf2",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 24,
+      "tensor": "model.layers.24.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.24.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "b975a10adab8b183b7d66a8b9b8be17a11547bc91919010877faa968c75cd169",
+      "energy": 283.9701723470172,
+      "rms": 0.03291291904361001,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 80.11106305410772,
+          "relative_mse": 0.2821108371769779,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 25.123697083224492,
+          "relative_mse": 0.0884730141746114,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 9.991361855737901,
+          "relative_mse": 0.0351845469302609,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 9.991361855737901,
+      "selected_relative_mse": 0.0351845469302609,
+      "payload_crc32": "d0f4bde6",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 25,
+      "tensor": "model.layers.25.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.25.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "1a7159edc216f2f0e53f0fb4f8f5a9840456bea167fbc69996d9a376ee645a45",
+      "energy": 234.54637838624924,
+      "rms": 0.02991192785983999,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 68.42694953033717,
+          "relative_mse": 0.2917416589466676,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 20.778422346608146,
+          "relative_mse": 0.08858982385304792,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 8.096545934435404,
+          "relative_mse": 0.03452002111540632,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 8.096545934435404,
+      "selected_relative_mse": 0.03452002111540632,
+      "payload_crc32": "668a417a",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 26,
+      "tensor": "model.layers.26.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.26.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "be10501a22484a68fe0ce9bfc8cccda8147551b198d2a58a0b7410dd27c0e721",
+      "energy": 236.2970180961042,
+      "rms": 0.03002335072583588,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 68.03207562398755,
+          "relative_mse": 0.287909158448704,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 20.709358231339984,
+          "relative_mse": 0.08764121696583278,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 8.347515434774747,
+          "relative_mse": 0.03532636806859634,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 8.347515434774747,
+      "selected_relative_mse": 0.03532636806859634,
+      "payload_crc32": "c110c7f7",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 27,
+      "tensor": "model.layers.27.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.27.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "a37ac22bf3c84eb066ac71f95096918c843b7c3c0580d02bdcb65a78212ecbe9",
+      "energy": 230.39016829687745,
+      "rms": 0.029645720517959787,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 66.53706877930756,
+          "relative_mse": 0.28880168485995833,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 20.236972342763238,
+          "relative_mse": 0.08783782959299793,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 8.547943341906155,
+          "relative_mse": 0.03710203176244656,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 8.547943341906155,
+      "selected_relative_mse": 0.03710203176244656,
+      "payload_crc32": "870b6485",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 28,
+      "tensor": "model.layers.28.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.28.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "65c0ae6328fcd8ac791dd981e3716ede89d0dc8ba33ae7728ee7579b791cfc07",
+      "energy": 194.38193359158467,
+      "rms": 0.027230648735546467,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 55.9787622317116,
+          "relative_mse": 0.2879833593451561,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 16.772071817148543,
+          "relative_mse": 0.086284108338938,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 7.195535490396097,
+          "relative_mse": 0.03701751164547327,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 7.195535490396097,
+      "selected_relative_mse": 0.03701751164547327,
+      "payload_crc32": "759f033f",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 29,
+      "tensor": "model.layers.29.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.29.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "132e7aadba3f3e74e0f30c7c96c33e444e05fe35eb165474f52619dcbb845397",
+      "energy": 186.73613965519417,
+      "rms": 0.02668973288244072,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 54.85846098922034,
+          "relative_mse": 0.2937752761223177,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 16.860952838142296,
+          "relative_mse": 0.09029292813525987,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 7.2930516182784,
+          "relative_mse": 0.03905538387879778,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 7.2930516182784,
+      "selected_relative_mse": 0.03905538387879778,
+      "payload_crc32": "794a6f70",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 30,
+      "tensor": "model.layers.30.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.30.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "c5131c71e0bd9344cfe401671b0eb1735dee38095eae1db28fc9d659c2328ce5",
+      "energy": 157.5055073704243,
+      "rms": 0.024511952763638312,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 44.5658946307084,
+          "relative_mse": 0.28294816717676746,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 13.617247201321884,
+          "relative_mse": 0.08645568925597373,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 5.760022927512139,
+          "relative_mse": 0.03657029537364438,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 5.760022927512139,
+      "selected_relative_mse": 0.03657029537364438,
+      "payload_crc32": "9a8a142a",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 31,
+      "tensor": "model.layers.31.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.31.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "65e5cd42f697647609c7bc01e92ae62593ee0053cdb071ab6e07f39f9d2bf234",
+      "energy": 162.10605519247554,
+      "rms": 0.024867358635045897,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 46.941065419197855,
+          "relative_mse": 0.2895700926375804,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 14.84498485935285,
+          "relative_mse": 0.09157575786867898,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 5.932444694669894,
+          "relative_mse": 0.0365960709340934,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 5.932444694669894,
+      "selected_relative_mse": 0.0365960709340934,
+      "payload_crc32": "d896bdc0",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 32,
+      "tensor": "model.layers.32.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.32.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "a66ee8acff896c5576d0de555e9ac2338a06543a189d2d9cdb27cb319a0fc3f0",
+      "energy": 193.85674452849287,
+      "rms": 0.027193837413572324,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 55.35820870499907,
+          "relative_mse": 0.2855624592254647,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 17.09729596094838,
+          "relative_mse": 0.08819551779089861,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 6.998530132550934,
+          "relative_mse": 0.036101556072104045,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 6.998530132550934,
+      "selected_relative_mse": 0.036101556072104045,
+      "payload_crc32": "201426ac",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 33,
+      "tensor": "model.layers.33.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.33.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "bf32735416f04af2f935c5569d20bc653bd996ba3577463ea7c45ad0e5a14c4f",
+      "energy": 204.13449379133107,
+      "rms": 0.0279053990346946,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 57.55203635954486,
+          "relative_mse": 0.28193195226660367,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 17.907737449237253,
+          "relative_mse": 0.08772519095936218,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 7.307442151938876,
+          "relative_mse": 0.0357971943703382,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 7.307442151938876,
+      "selected_relative_mse": 0.0357971943703382,
+      "payload_crc32": "b2fd62e2",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 34,
+      "tensor": "model.layers.34.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.34.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "042fa0cd2b9330a4459e6db37cea16692a8df44d407bfdbd48d47d8ddfa0741a",
+      "energy": 187.42900933837464,
+      "rms": 0.026739202108924272,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 53.37102929477486,
+          "relative_mse": 0.2847533019737706,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 17.080544961176383,
+          "relative_mse": 0.09113074342904971,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 6.818920488116248,
+          "relative_mse": 0.03638135052939282,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 6.818920488116248,
+      "selected_relative_mse": 0.03638135052939282,
+      "payload_crc32": "82b70a9d",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 35,
+      "tensor": "model.layers.35.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.35.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "68bb7a65e9195508084ecae20b3ed7613ccbdcca1a9272cf5842bbd1e5fd8a46",
+      "energy": 178.39783290270535,
+      "rms": 0.026087041330273078,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 50.65522342820578,
+          "relative_mse": 0.2839452845586535,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 15.986971712699795,
+          "relative_mse": 0.08961415871805334,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 6.668454461732415,
+          "relative_mse": 0.037379683111785654,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 6.668454461732415,
+      "selected_relative_mse": 0.037379683111785654,
+      "payload_crc32": "72cb77d5",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 36,
+      "tensor": "model.layers.36.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.36.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "1b66d06f605030ab2601493272f74875f90fa54e3a97a35806ff03362e6c93aa",
+      "energy": 176.16847317547428,
+      "rms": 0.025923529715527027,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 50.12892455800723,
+          "relative_mse": 0.28455105305973694,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 16.279432937829633,
+          "relative_mse": 0.09240832167293832,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 6.738508008328212,
+          "relative_mse": 0.03825036277413983,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 6.738508008328212,
+      "selected_relative_mse": 0.03825036277413983,
+      "payload_crc32": "b848ef7d",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 37,
+      "tensor": "model.layers.37.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.37.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "3b41c0e131886958fd1e9aea6ae84e58ea07c0e2e3e04217c7f8454e06a994dd",
+      "energy": 130.12466475253814,
+      "rms": 0.022279726273495306,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 37.03074844158256,
+          "relative_mse": 0.2845790113043135,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 11.74320937972103,
+          "relative_mse": 0.09024583772840786,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 4.832729284798804,
+          "relative_mse": 0.03713922563404368,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 4.832729284798804,
+      "selected_relative_mse": 0.03713922563404368,
+      "payload_crc32": "0f390d0b",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 38,
+      "tensor": "model.layers.38.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.38.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "ddf27ff083f2165b5faf693f73a01e3b8a9e4bb54a758e8d32396df396b3a060",
+      "energy": 125.09061557599209,
+      "rms": 0.021844514853690045,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 35.33560984766985,
+          "relative_mse": 0.2824801020041635,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 11.198976331059384,
+          "relative_mse": 0.08952691038806222,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 4.636401637035032,
+          "relative_mse": 0.03706434424106287,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 4.636401637035032,
+      "selected_relative_mse": 0.03706434424106287,
+      "payload_crc32": "9a87217e",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 39,
+      "tensor": "model.layers.39.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.39.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "e777b0ca7f151a487c6543f9789c05066077527cab0781d8801042c279d3980d",
+      "energy": 113.60207765471506,
+      "rms": 0.02081724129174566,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 32.02064542791281,
+          "relative_mse": 0.2818667236459983,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 10.300868484898917,
+          "relative_mse": 0.09067500082355562,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 4.198088753040633,
+          "relative_mse": 0.036954330763213736,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 4.198088753040633,
+      "selected_relative_mse": 0.036954330763213736,
+      "payload_crc32": "2783ebae",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 40,
+      "tensor": "model.layers.40.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.40.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "bcca6960a780bb5b5916da486d8ae658832a1e472c9b0c974779d7d409f38d02",
+      "energy": 91.45410265309249,
+      "rms": 0.018678054377288335,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 25.279276718830886,
+          "relative_mse": 0.27641490086804843,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 8.074165295965221,
+          "relative_mse": 0.08828652910840404,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 3.333819934014242,
+          "relative_mse": 0.03645347597647124,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 3.333819934014242,
+      "selected_relative_mse": 0.03645347597647124,
+      "payload_crc32": "559c0d8a",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 41,
+      "tensor": "model.layers.41.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.41.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "6020c4cc90a87e256f6af8060c695b3844439f78e7eec735015aa1b423597f73",
+      "energy": 78.22719280389082,
+      "rms": 0.017274636276533348,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 22.163350593016652,
+          "relative_mse": 0.28332028542272203,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 6.917907838548291,
+          "relative_mse": 0.08843354325510466,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 2.821558404486392,
+          "relative_mse": 0.03606876718125126,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 2.821558404486392,
+      "selected_relative_mse": 0.03606876718125126,
+      "payload_crc32": "69379769",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 42,
+      "tensor": "model.layers.42.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.42.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "b8f74560c557d402a2cf79bd9ffcdd892cf1618215b12dd6f1589708390df1e9",
+      "energy": 72.59365913454783,
+      "rms": 0.01664099855784721,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 20.490412814708947,
+          "relative_mse": 0.28226174378028307,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 6.606609437258052,
+          "relative_mse": 0.09100807861211559,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 2.5238514697435264,
+          "relative_mse": 0.034766830875210805,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 2.5238514697435264,
+      "selected_relative_mse": 0.034766830875210805,
+      "payload_crc32": "e3539d19",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 43,
+      "tensor": "model.layers.43.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.43.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "5e23d4b713cf5b19d4e681c36b465c494d589a2d1dd5f5e5e9d9f3fde8648d33",
+      "energy": 68.11578497016214,
+      "rms": 0.01611958742249869,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 18.795425404723346,
+          "relative_mse": 0.2759334772836665,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 5.949509182174751,
+          "relative_mse": 0.08734405960058907,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 2.325325965676482,
+          "relative_mse": 0.03413784289052945,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 2.325325965676482,
+      "selected_relative_mse": 0.03413784289052945,
+      "payload_crc32": "f5905235",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 44,
+      "tensor": "model.layers.44.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.44.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "6f9fd1b4ed953b27bb38595e6f0537805425acc80ec0ac1b4ed49d42f5e682e1",
+      "energy": 61.91585448690847,
+      "rms": 0.015368482059398225,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 17.151140681958886,
+          "relative_mse": 0.27700725160120876,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 5.480834567755824,
+          "relative_mse": 0.08852069656754387,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 2.2659739356637925,
+          "relative_mse": 0.03659763649297469,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 2.2659739356637925,
+      "selected_relative_mse": 0.03659763649297469,
+      "payload_crc32": "2c2887e0",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 45,
+      "tensor": "model.layers.45.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.45.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "89f8b3b974f6cab02e663a1c40fce9c1b589142a8111e5477b6cd3c2e55bca25",
+      "energy": 53.62176277786806,
+      "rms": 0.014302125431093299,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 14.90100484746047,
+          "relative_mse": 0.2778909919315584,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 4.742766166411992,
+          "relative_mse": 0.08844853135580857,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 2.012741123791306,
+          "relative_mse": 0.03753589996899633,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 2.012741123791306,
+      "selected_relative_mse": 0.03753589996899633,
+      "payload_crc32": "6e571197",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 46,
+      "tensor": "model.layers.46.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.46.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "9cdf08eeec6e05f9b54822b96df09af1c5a42b3b615d88a500a307dc7d4d5ac7",
+      "energy": 44.16585848139509,
+      "rms": 0.012979960692658455,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 11.852334733609464,
+          "relative_mse": 0.2683596592739677,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 3.8364963188688943,
+          "relative_mse": 0.08686565711125081,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 1.5075182190176428,
+          "relative_mse": 0.03413311256369411,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 1.5075182190176428,
+      "selected_relative_mse": 0.03413311256369411,
+      "payload_crc32": "4253b9ea",
+      "inverse_decode_exact": true
+    },
+    {
+      "layer": 47,
+      "tensor": "model.layers.47.mlp.gate.weight",
+      "input": "qwen_weight_cache/range_blocks/model.layers.47.mlp.gate.weight.block0.bf16.bin",
+      "input_bytes": 524288,
+      "input_sha256": "2c27d3683e9a93ada552cdb5f342480310984582d1d5202204d1bd5116188274",
+      "energy": 51.858823240455074,
+      "rms": 0.01406505283366878,
+      "attempts": [
+        {
+          "q": 2,
+          "payload_bytes": 66560,
+          "sse": 11.638069219474914,
+          "relative_mse": 0.224418305165013,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 3,
+          "payload_bytes": 100352,
+          "sse": 3.511847198315329,
+          "relative_mse": 0.06771937693286754,
+          "labels_roundtrip": true
+        },
+        {
+          "q": 4,
+          "payload_bytes": 135168,
+          "sse": 1.259668212269826,
+          "relative_mse": 0.02429033544454126,
+          "labels_roundtrip": true
+        }
+      ],
+      "selected_tag": 4,
+      "selected_payload_bytes": 135168,
+      "selected_record_bytes": 135180,
+      "selected_sse": 1.259668212269826,
+      "selected_relative_mse": 0.02429033544454126,
+      "payload_crc32": "754fe541",
+      "inverse_decode_exact": true
+    }
+  ],
+  "cupy_version": "14.2.0",
+  "gpu": "NVIDIA RTX A6000",
+  "seconds": 10.183904208242893
+}

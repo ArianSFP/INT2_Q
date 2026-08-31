@@ -1,0 +1,108 @@
+{
+  "architecture": "all-Q4 router exception for the entropy-coded polar-lattice PTQ candidate",
+  "status": "literal all-48-router artifact with inverse-decode audit; whole-model distortion remains an extrapolation",
+  "strict_ptq": true,
+  "model_training_or_retraining": false,
+  "checkpoint": {
+    "repo": "Qwen/Qwen3-30B-A3B",
+    "revision": "ad44e777bcd18fa416d9da3bd8f70d33ebb85d39",
+    "parameters": 30532122624,
+    "rank2_parameters": 30531911680,
+    "rank1_parameters": 210944,
+    "rank2_tensors": 18674,
+    "rank1_tensors": 193,
+    "router_tensors": 48,
+    "router_shape_each": [128, 2048],
+    "router_parameters_each": 262144,
+    "router_parameters_total": 12582912,
+    "nonrouter_rank2_blocks": 116422,
+    "rank2_padding_parameters": 0
+  },
+  "literal_router_codec": {
+    "selection": "Q2 then Q3 then Q4; threshold 0.045 selected Q4 for all 48 routers",
+    "codebooks": "16 absolute FP16 centroids per row",
+    "labels": "dense little-endian 4-bit row-major labels",
+    "global_header_bytes": 48,
+    "record_header_bytes_each": 12,
+    "centroid_bits_each": 32768,
+    "label_bits_each": 1048576,
+    "record_bytes_each": 135180,
+    "container_bytes": 6488688,
+    "container_bits": 51909504,
+    "router_bpw": 4.125396728515625,
+    "source_energy": 13293.430905292904,
+    "sse": 441.59381763269454,
+    "relative_mse": 0.03321895007983754,
+    "tag_counts": {"2": 0, "3": 0, "4": 48, "16": 0},
+    "inverse_decode": {
+      "bytes_consumed": 6488688,
+      "exact_file_length": true,
+      "source_energy_match": true,
+      "sse_match": true,
+      "per_record_crc32": true
+    }
+  },
+  "router_rate_distortion_screen": {
+    "all_q2": {
+      "container_bytes": 3195504,
+      "router_bpw": 2.031646728515625,
+      "relative_mse": 0.278734086451177
+    },
+    "all_q3": {
+      "container_bytes": 4817520,
+      "router_bpw": 3.062896728515625,
+      "relative_mse": 0.08490283824802006
+    },
+    "all_q4": {
+      "container_bytes": 6488688,
+      "router_bpw": 4.125396728515625,
+      "relative_mse": 0.03321895007983754
+    }
+  },
+  "conservative_whole_checkpoint_rate": {
+    "assumption": "every nonrouter rank2 block is charged the maximum 81242-byte literal polar container observed in the six-block final confirmation",
+    "nonrouter_polar_bits": 75666848992,
+    "router_container_bits": 51909504,
+    "rank1_bf16_bits": 3375104,
+    "rank2_matrix_headers_64b_each": 1195136,
+    "rank1_headers_64b_each": 12352,
+    "six_level_frozen_profile_bits": 1572864,
+    "global_format_header_bits": 4096,
+    "total_bits": 75724918048,
+    "total_bytes": 9465614756,
+    "global_bpw": 2.480172079109753,
+    "headroom_to_2p5_bpw": 0.01982792089024724,
+    "headroom_bits": 605388512,
+    "gaussian_limit_relative_mse": 0.0321208936559302,
+    "threshold_relative_mse_at_0p10db": 0.0328690853839087
+  },
+  "sample_based_mixed_distortion": {
+    "polar_evidence": "six final PLTE blocks of model.layers.27.mlp.experts.57.down_proj.weight",
+    "polar_source_energy": 936.9313635504307,
+    "polar_sse": 30.67438389462925,
+    "polar_energy_weighted_relative_mse": 0.032739200637270795,
+    "extrapolation": "repeat the six-block mean energy and distortion over 116422 nonrouter blocks; use exact all-router energy/SSE; omit lossless rank1 energy, which is conservative",
+    "mixed_relative_mse": 0.03273955118126599,
+    "gap_db_at_conservative_global_rate": 0.08285101917462104,
+    "passes_0p10db_on_this_extrapolation": true
+  },
+  "artifacts": {
+    "encoder_local": "agent_router_adaptive_q234.py",
+    "encoder_remote": "/root/int2/agent_router_adaptive_q234.py",
+    "encoder_sha256": "632bdde7c74b90820a0b3905ee39223d60eb320a0936c399afa3bd78740a3a97",
+    "result_local": "agent_router_adaptive_q4_t0045_all48.json",
+    "result_remote": "/root/int2/agent_router_adaptive_q4_t0045_all48.json",
+    "result_bytes": 60948,
+    "result_sha256": "efa7e3c0c4f12ae9dfa82b4e0e1dbae450f5881fe63a3e7a29a1d4f75f77c998",
+    "container_local": "agent_router_adaptive_q4_t0045_all48.bin",
+    "container_remote": "/root/int2/agent_router_adaptive_q4_t0045_all48.bin",
+    "container_bytes": 6488688,
+    "container_sha256": "31de0cc8f7a7a97b12c72440f680a22bdd0494f8fe474254257e7f9ea1c9dab6"
+  },
+  "claim_limits": [
+    "81242 bytes is an observed maximum over six adjacent down-projection blocks, not a measured maximum over all 116422 nonrouter blocks.",
+    "The 0.082851 dB whole-model figure extrapolates six final PLTE blocks; it is not a whole-checkpoint distortion measurement.",
+    "The polar arithmetic decoder still needs a normative fixed-point probability implementation or an exactly pinned runtime to be portable.",
+    "The global header must pin the model revision, canonical tensor order, polar profile hash, arithmetic-coder version, and section lengths."
+  ]
+}

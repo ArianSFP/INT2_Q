@@ -1,0 +1,20 @@
+{
+  "repo": "Qwen/Qwen3-30B-A3B",
+  "revision": "ad44e777bcd18fa416d9da3bd8f70d33ebb85d39",
+  "tensor": "model.layers.22.self_attn.o_proj.weight",
+  "shape": [
+    2048,
+    4096
+  ],
+  "dtype": "BF16",
+  "block_index": 2,
+  "block_values": 262144,
+  "shard": "model-00008-of-00016.safetensors",
+  "absolute_byte_range_in_shard": [
+    1255841936,
+    1256366223
+  ],
+  "output": "qwen_weight_cache/range_blocks/model.layers.22.self_attn.o_proj.weight.block2.bf16.bin",
+  "bytes": 524288,
+  "sha256": "f65ae6628eb8d3532bd1728cc0980049ac59512bc50aeb1ee938a9d869e18e67"
+}
