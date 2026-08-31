@@ -18,6 +18,20 @@ PLTE combines a six-level polar-lattice source code, causal arithmetic coding, f
 | **Conditional rate** | Fixed-inventory arithmetic gives **2.480172079 bpw**, provided every non-router block fits an 81,242-byte slot. |
 | **Not established** | Full-checkpoint distortion, full-checkpoint slot feasibility, a realized packed checkpoint, perplexity, downstream accuracy, or superiority over published methods under a common harness. |
 
+## Preregistered broad-coverage extension
+
+A metadata-only selection of **400 new, previously untested blocks** is frozen in
+[`evaluation/qwen3_stratified_v1/manifest.json`](evaluation/qwen3_stratified_v1/manifest.json).
+It covers all 48 layers across each of the seven non-router matrix roles, plus
+32 embedding and 32 LM-head strata. The existing router artifact is a census of
+all 48 routers, and the extension separately audits all 193 rank-one tensors as
+lossless BF16 exceptions. The design, failure rules, metrics, and claim boundary
+are specified in [`docs/STRATIFIED_EVALUATION.md`](docs/STRATIFIED_EVALUATION.md).
+
+The manifest was committed before the selected weight payloads were fetched.
+Until result artifacts are published, it is a test protocol rather than new
+performance evidence.
+
 The shaping gap used here is
 
 ```text
