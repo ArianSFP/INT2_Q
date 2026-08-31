@@ -7,6 +7,8 @@
 .gitignore text eol=lf
 .gitattributes text eol=lf
 requirements.txt text eol=lf
+evaluation/**/*.json text eol=lf
+evaluation/**/*.bin binary
 
 # Preserve the evidence bundle byte-for-byte on every platform. Its JSON and
 # Python implementation hashes are part of the published provenance. This rule
