@@ -1,0 +1,1965 @@
+{
+  "format": "PLTE Qwen3 stratified evaluation summary v1",
+  "checkpoint": {
+    "repo": "Qwen/Qwen3-30B-A3B",
+    "revision": "ad44e777bcd18fa416d9da3bd8f70d33ebb85d39"
+  },
+  "strict_ptq": true,
+  "selection_manifest_sha256": "fe1577391d6d61e5b22c4e6c2fcbfd384881594b09177405f90f16cc304bb9a1",
+  "selection_was_held_out_from_previous_evidence": true,
+  "post_hoc_engineering_amendment": true,
+  "reservoir_plan_sha256": "c3ed0cc41d722d81d623febedd6d28e2cd767be918cc906dfecad087e907c50d",
+  "coverage": {
+    "new_plte_blocks": 400,
+    "layer_role_cells": 336,
+    "layers": 48,
+    "plte_layer_roles": 7,
+    "embedding_blocks": 32,
+    "lm_head_blocks": 32,
+    "router_census_blocks": 48,
+    "rank1_census_tensors": 193,
+    "prior_plus_new_unique_plte_blocks": 447
+  },
+  "integrity": {
+    "runner_sha256": "e1113e1ddf01f65e4e6d59c3ccea48d1208c68406e8948b4fd80bc6e1921b851",
+    "encoder_sha256": "4d76ba53c88710778085917108b7940517ed14565815fc8437ea4919d7df4bf8",
+    "independent_decoder_sha256": "7589f4be6e784d8e5a0067303da389b6d982430eb84fda52f668808f322c25d9",
+    "frozen_profile_sha256": "11efea4247aadfb8d30369483a9753921f46f93f8cc2c0e94325538b159b29a6",
+    "all_encoder_internal_decodes_passed": true,
+    "independent_clean_decodes": 400,
+    "all_independent_clean_decodes_passed": true,
+    "all_decode_receipts_bound": true,
+    "container_bundle_bytes": 32497123,
+    "container_bundle_sha256": "f69097dbaceb6c80577297a82bd32fad7d0bd702578dd5fd603643dae53055ab",
+    "tier_map_bytes": 200,
+    "tier_map_sha256": "4498660239da2a19fd4d3aa3cad6de6c7a6e2b4e3d5eb81101d5c311dcbfc20a",
+    "tiered_slots_bytes": 32497760,
+    "tiered_slots_sha256": "fadc1e7735a8386dc0babb57870c58ac9886c86405e738078122560855ba14db",
+    "all_tier_padding_zero": true,
+    "packed_artifact_readback": {
+      "format": "PLTE Qwen3 tiered-slot readback audit v1",
+      "blocks": 400,
+      "order": "results sorted by id; low nibble first",
+      "tier_map_bytes": 200,
+      "tier_map_sha256": "4498660239da2a19fd4d3aa3cad6de6c7a6e2b4e3d5eb81101d5c311dcbfc20a",
+      "container_bundle_bytes": 32497123,
+      "container_bundle_sha256": "f69097dbaceb6c80577297a82bd32fad7d0bd702578dd5fd603643dae53055ab",
+      "tiered_slots_bytes": 32497760,
+      "tiered_slots_sha256": "fadc1e7735a8386dc0babb57870c58ac9886c86405e738078122560855ba14db",
+      "all_header_derived_prefixes_exact": true,
+      "all_prefixes_match_independently_decoded_container_hashes": true,
+      "all_arithmetic_and_tail_padding_bits_zero": true,
+      "all_slot_padding_bytes_zero": true,
+      "bundle_and_slot_eof_exact": true
+    }
+  },
+  "plte_panel": {
+    "blocks": 400,
+    "source_energy": 65382.85877511849,
+    "sse": 2139.0262374733575,
+    "energy_weighted_relative_mse": 0.03271539785114697,
+    "actual_container_bits": 259976984,
+    "mean_actual_bpw": 2.479333724975586,
+    "aggregate_gap_at_mean_actual_rate_db": 0.07459847068912355,
+    "charged_tier_slot_bits_including_4bit_map": 259983680,
+    "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793975830078123,
+    "aggregate_gap_at_charged_tier_slot_rate_db": 0.07498293435240821,
+    "pointwise_actual_gap_db": {
+      "min": -0.047863567616581455,
+      "p50": 0.07736294274177315,
+      "p95": 0.08234026881475025,
+      "p99": 0.08440888278729097,
+      "max": 0.08603677401404669
+    },
+    "pointwise_charged_tier_slot_gap_db": {
+      "min": -0.047587966424261906,
+      "p50": 0.07777598594660602,
+      "p95": 0.08279060024787634,
+      "p99": 0.08458994756368801,
+      "max": 0.08667984346279214
+    },
+    "charged_tier_slot_failures_ge_0p10db": 0
+  },
+  "quality_endpoint": {
+    "definition": "every new block has all-in charged reservoir-tier slot gap including its four-bit map charge < 0.10 dB",
+    "passes": true,
+    "failures": []
+  },
+  "original_tier0_endpoint": {
+    "format": "PLTE Qwen3 original Tier-0 outcome v1",
+    "selection_manifest_sha256": "fe1577391d6d61e5b22c4e6c2fcbfd384881594b09177405f90f16cc304bb9a1",
+    "reservoir_plan_sha256": "c3ed0cc41d722d81d623febedd6d28e2cd767be918cc906dfecad087e907c50d",
+    "endpoint": "every selected block fits the original 81,242-byte cap",
+    "passes": false,
+    "attempted_blocks": 400,
+    "tier0_successes": 385,
+    "recognized_cap_failures": 15,
+    "other_failures": 0,
+    "maximum_base_container_bytes": 81278,
+    "maximum_overflow_bytes": 36,
+    "maximum_valid_tier0_gap_db": 0.084769140765806,
+    "failures": [
+      {
+        "id": "embed-s10-b370",
+        "tensor": "model.embed_tokens.weight",
+        "block_index": 370,
+        "layer": null,
+        "role": "model.embed_tokens.weight",
+        "failure": "recognized_base_container_overflow",
+        "tier0_cap_bytes": 81242,
+        "base_container_bytes": 81252,
+        "overflow_bytes": 10,
+        "first_pass_log_sha256": "34a3a7cc4e5b23b903c4f67467057577baf310f74a98f1d3c6003c37a1dc6305",
+        "published_log": "original_tier0_failure_logs/embed-s10-b370.txt",
+        "published_log_sha256": "34a3a7cc4e5b23b903c4f67467057577baf310f74a98f1d3c6003c37a1dc6305"
+      },
+      {
+        "id": "embed-s15-b589",
+        "tensor": "model.embed_tokens.weight",
+        "block_index": 589,
+        "layer": null,
+        "role": "model.embed_tokens.weight",
+        "failure": "recognized_base_container_overflow",
+        "tier0_cap_bytes": 81242,
+        "base_container_bytes": 81247,
+        "overflow_bytes": 5,
+        "first_pass_log_sha256": "a1301d160fc749c77738db03953f6b57c2d0ea1855f236e4ff109c9659852dbd",
+        "published_log": "original_tier0_failure_logs/embed-s15-b589.txt",
+        "published_log_sha256": "a1301d160fc749c77738db03953f6b57c2d0ea1855f236e4ff109c9659852dbd"
+      },
+      {
+        "id": "embed-s24-b912",
+        "tensor": "model.embed_tokens.weight",
+        "block_index": 912,
+        "layer": null,
+        "role": "model.embed_tokens.weight",
+        "failure": "recognized_base_container_overflow",
+        "tier0_cap_bytes": 81242,
+        "base_container_bytes": 81250,
+        "overflow_bytes": 8,
+        "first_pass_log_sha256": "35d11d43a1b3a00c558bf6b17764dafb5eecebd7933a11a810e8a2d97fa22342",
+        "published_log": "original_tier0_failure_logs/embed-s24-b912.txt",
+        "published_log_sha256": "35d11d43a1b3a00c558bf6b17764dafb5eecebd7933a11a810e8a2d97fa22342"
+      },
+      {
+        "id": "l10-expert111-experts.down_proj-b1",
+        "tensor": "model.layers.10.mlp.experts.111.down_proj.weight",
+        "block_index": 1,
+        "layer": 10,
+        "role": "mlp.experts.{expert}.down_proj.weight",
+        "failure": "recognized_base_container_overflow",
+        "tier0_cap_bytes": 81242,
+        "base_container_bytes": 81263,
+        "overflow_bytes": 21,
+        "first_pass_log_sha256": "bbce567b3a39afe9700fcd7ac2ca363bff1895887ddcc8461add75bc0cc545e7",
+        "published_log": "original_tier0_failure_logs/l10-expert111-experts.down_proj-b1.txt",
+        "published_log_sha256": "bbce567b3a39afe9700fcd7ac2ca363bff1895887ddcc8461add75bc0cc545e7"
+      },
+      {
+        "id": "l13-attn-v_proj-b1",
+        "tensor": "model.layers.13.self_attn.v_proj.weight",
+        "block_index": 1,
+        "layer": 13,
+        "role": "self_attn.v_proj.weight",
+        "failure": "recognized_base_container_overflow",
+        "tier0_cap_bytes": 81242,
+        "base_container_bytes": 81248,
+        "overflow_bytes": 6,
+        "first_pass_log_sha256": "da7ed7bdeb052f33faa521a0b7e62da2f273c9f44a12b42c287d3a3b683cb305",
+        "published_log": "original_tier0_failure_logs/l13-attn-v_proj-b1.txt",
+        "published_log_sha256": "da7ed7bdeb052f33faa521a0b7e62da2f273c9f44a12b42c287d3a3b683cb305"
+      },
+      {
+        "id": "l14-expert092-experts.up_proj-b3",
+        "tensor": "model.layers.14.mlp.experts.92.up_proj.weight",
+        "block_index": 3,
+        "layer": 14,
+        "role": "mlp.experts.{expert}.up_proj.weight",
+        "failure": "recognized_base_container_overflow",
+        "tier0_cap_bytes": 81242,
+        "base_container_bytes": 81254,
+        "overflow_bytes": 12,
+        "first_pass_log_sha256": "9e5028034bb62358679feb947c54f83d904092748523638aa4a8657586aa1b7c",
+        "published_log": "original_tier0_failure_logs/l14-expert092-experts.up_proj-b3.txt",
+        "published_log_sha256": "9e5028034bb62358679feb947c54f83d904092748523638aa4a8657586aa1b7c"
+      },
+      {
+        "id": "l15-expert058-experts.gate_proj-b4",
+        "tensor": "model.layers.15.mlp.experts.58.gate_proj.weight",
+        "block_index": 4,
+        "layer": 15,
+        "role": "mlp.experts.{expert}.gate_proj.weight",
+        "failure": "recognized_base_container_overflow",
+        "tier0_cap_bytes": 81242,
+        "base_container_bytes": 81244,
+        "overflow_bytes": 2,
+        "first_pass_log_sha256": "d63d7c8be862ec28cebd9c15ba612fe607bb78d61e9dfb1e85810114308c25b3",
+        "published_log": "original_tier0_failure_logs/l15-expert058-experts.gate_proj-b4.txt",
+        "published_log_sha256": "d63d7c8be862ec28cebd9c15ba612fe607bb78d61e9dfb1e85810114308c25b3"
+      },
+      {
+        "id": "l24-expert051-experts.gate_proj-b1",
+        "tensor": "model.layers.24.mlp.experts.51.gate_proj.weight",
+        "block_index": 1,
+        "layer": 24,
+        "role": "mlp.experts.{expert}.gate_proj.weight",
+        "failure": "recognized_base_container_overflow",
+        "tier0_cap_bytes": 81242,
+        "base_container_bytes": 81278,
+        "overflow_bytes": 36,
+        "first_pass_log_sha256": "d03d2d087bcd37debefe6ed03288b07a70f74ed50a592a652a21ecfc6993e8cb",
+        "published_log": "original_tier0_failure_logs/l24-expert051-experts.gate_proj-b1.txt",
+        "published_log_sha256": "d03d2d087bcd37debefe6ed03288b07a70f74ed50a592a652a21ecfc6993e8cb"
+      },
+      {
+        "id": "l26-expert071-experts.up_proj-b3",
+        "tensor": "model.layers.26.mlp.experts.71.up_proj.weight",
+        "block_index": 3,
+        "layer": 26,
+        "role": "mlp.experts.{expert}.up_proj.weight",
+        "failure": "recognized_base_container_overflow",
+        "tier0_cap_bytes": 81242,
+        "base_container_bytes": 81251,
+        "overflow_bytes": 9,
+        "first_pass_log_sha256": "36e7d4d4c5d8455437c859d440dba7605c7eb1519ab0a6f67c9ecef631c3daee",
+        "published_log": "original_tier0_failure_logs/l26-expert071-experts.up_proj-b3.txt",
+        "published_log_sha256": "36e7d4d4c5d8455437c859d440dba7605c7eb1519ab0a6f67c9ecef631c3daee"
+      },
+      {
+        "id": "l32-expert109-experts.down_proj-b1",
+        "tensor": "model.layers.32.mlp.experts.109.down_proj.weight",
+        "block_index": 1,
+        "layer": 32,
+        "role": "mlp.experts.{expert}.down_proj.weight",
+        "failure": "recognized_base_container_overflow",
+        "tier0_cap_bytes": 81242,
+        "base_container_bytes": 81252,
+        "overflow_bytes": 10,
+        "first_pass_log_sha256": "34a3a7cc4e5b23b903c4f67467057577baf310f74a98f1d3c6003c37a1dc6305",
+        "published_log": "original_tier0_failure_logs/l32-expert109-experts.down_proj-b1.txt",
+        "published_log_sha256": "34a3a7cc4e5b23b903c4f67467057577baf310f74a98f1d3c6003c37a1dc6305"
+      },
+      {
+        "id": "l34-expert081-experts.down_proj-b3",
+        "tensor": "model.layers.34.mlp.experts.81.down_proj.weight",
+        "block_index": 3,
+        "layer": 34,
+        "role": "mlp.experts.{expert}.down_proj.weight",
+        "failure": "recognized_base_container_overflow",
+        "tier0_cap_bytes": 81242,
+        "base_container_bytes": 81248,
+        "overflow_bytes": 6,
+        "first_pass_log_sha256": "da7ed7bdeb052f33faa521a0b7e62da2f273c9f44a12b42c287d3a3b683cb305",
+        "published_log": "original_tier0_failure_logs/l34-expert081-experts.down_proj-b3.txt",
+        "published_log_sha256": "da7ed7bdeb052f33faa521a0b7e62da2f273c9f44a12b42c287d3a3b683cb305"
+      },
+      {
+        "id": "l36-expert113-experts.gate_proj-b2",
+        "tensor": "model.layers.36.mlp.experts.113.gate_proj.weight",
+        "block_index": 2,
+        "layer": 36,
+        "role": "mlp.experts.{expert}.gate_proj.weight",
+        "failure": "recognized_base_container_overflow",
+        "tier0_cap_bytes": 81242,
+        "base_container_bytes": 81261,
+        "overflow_bytes": 19,
+        "first_pass_log_sha256": "5dd10924dc83f03b48f72cf7f05f63144ce0693d9c76cb2429366241a3d529ff",
+        "published_log": "original_tier0_failure_logs/l36-expert113-experts.gate_proj-b2.txt",
+        "published_log_sha256": "5dd10924dc83f03b48f72cf7f05f63144ce0693d9c76cb2429366241a3d529ff"
+      },
+      {
+        "id": "l40-attn-v_proj-b2",
+        "tensor": "model.layers.40.self_attn.v_proj.weight",
+        "block_index": 2,
+        "layer": 40,
+        "role": "self_attn.v_proj.weight",
+        "failure": "recognized_base_container_overflow",
+        "tier0_cap_bytes": 81242,
+        "base_container_bytes": 81258,
+        "overflow_bytes": 16,
+        "first_pass_log_sha256": "b0839b5b40859d0d6f2bd119cf698d5ec096bf29be959040af3ce8534132ff3a",
+        "published_log": "original_tier0_failure_logs/l40-attn-v_proj-b2.txt",
+        "published_log_sha256": "b0839b5b40859d0d6f2bd119cf698d5ec096bf29be959040af3ce8534132ff3a"
+      },
+      {
+        "id": "l47-attn-v_proj-b1",
+        "tensor": "model.layers.47.self_attn.v_proj.weight",
+        "block_index": 1,
+        "layer": 47,
+        "role": "self_attn.v_proj.weight",
+        "failure": "recognized_base_container_overflow",
+        "tier0_cap_bytes": 81242,
+        "base_container_bytes": 81251,
+        "overflow_bytes": 9,
+        "first_pass_log_sha256": "36e7d4d4c5d8455437c859d440dba7605c7eb1519ab0a6f67c9ecef631c3daee",
+        "published_log": "original_tier0_failure_logs/l47-attn-v_proj-b1.txt",
+        "published_log_sha256": "36e7d4d4c5d8455437c859d440dba7605c7eb1519ab0a6f67c9ecef631c3daee"
+      },
+      {
+        "id": "lmhead-s12-b478",
+        "tensor": "lm_head.weight",
+        "block_index": 478,
+        "layer": null,
+        "role": "lm_head.weight",
+        "failure": "recognized_base_container_overflow",
+        "tier0_cap_bytes": 81242,
+        "base_container_bytes": 81255,
+        "overflow_bytes": 13,
+        "first_pass_log_sha256": "0741e0ffa9be4524d16581b9497d4c24dd96a34068eb067834a4fc64a222963a",
+        "published_log": "original_tier0_failure_logs/lmhead-s12-b478.txt",
+        "published_log_sha256": "0741e0ffa9be4524d16581b9497d4c24dd96a34068eb067834a4fc64a222963a"
+      }
+    ],
+    "claim_boundary": "This is the immutable outcome of the original fixed-cap endpoint. Later reservoir retries do not reclassify these failures.",
+    "artifact": "original_tier0_outcome.json",
+    "artifact_sha256": "d4efaec5824c496a9561f5786050ccb10150ea947406300b533981fbaab096e3"
+  },
+  "by_role": {
+    "lm_head.weight": {
+      "blocks": 32,
+      "source_energy": 5858.232297746289,
+      "sse": 191.82833178014414,
+      "energy_weighted_relative_mse": 0.03274508794298616,
+      "actual_container_bits": 20798080,
+      "mean_actual_bpw": 2.4793243408203125,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07848152277974722,
+      "charged_tier_slot_bits_including_4bit_map": 20798592,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793853759765625,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07884899103617413,
+      "pointwise_actual_gap_db": {
+        "min": 0.07309874979511674,
+        "p50": 0.07836537873437027,
+        "p95": 0.08186384290609754,
+        "p99": 0.0840131792143125,
+        "max": 0.084769140765806
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.0731906168592227,
+        "p50": 0.07882471405490184,
+        "p95": 0.08212107068559471,
+        "p99": 0.08434573798637807,
+        "max": 0.08504474195812607
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "mlp.experts.{expert}.down_proj.weight": {
+      "blocks": 48,
+      "source_energy": 7344.938468006614,
+      "sse": 240.47878921975854,
+      "energy_weighted_relative_mse": 0.03274074932924843,
+      "actual_container_bits": 31197800,
+      "mean_actual_bpw": 2.4793783823649087,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07823142162977666,
+      "charged_tier_slot_bits_including_4bit_map": 31198656,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4794464111328125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07864099562391884,
+      "pointwise_actual_gap_db": {
+        "min": 0.07265560177744314,
+        "p50": 0.07836299526274013,
+        "p95": 0.08154712552489299,
+        "p99": 0.08475906527067426,
+        "max": 0.08515751245478145
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.07329867122618867,
+        "p50": 0.07881821707960675,
+        "p95": 0.08212746590180048,
+        "p99": 0.08522942463889972,
+        "max": 0.08580058190352688
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "mlp.experts.{expert}.gate_proj.weight": {
+      "blocks": 48,
+      "source_energy": 6911.452696096184,
+      "sse": 226.29474460107397,
+      "energy_weighted_relative_mse": 0.032741994274068126,
+      "actual_container_bits": 31197848,
+      "mean_actual_bpw": 2.4793821970621743,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07841952279176263,
+      "charged_tier_slot_bits_including_4bit_map": 31198656,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4794464111328125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07880613001987781,
+      "pointwise_actual_gap_db": {
+        "min": 0.06310608710992525,
+        "p50": 0.07820764535073096,
+        "p95": 0.08299396267604074,
+        "p99": 0.08450568810619173,
+        "max": 0.08459318522135204
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.06374915655867075,
+        "p50": 0.07875884773536906,
+        "p95": 0.08342101095520732,
+        "p99": 0.08479231334620313,
+        "max": 0.08505252054188331
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "mlp.experts.{expert}.up_proj.weight": {
+      "blocks": 48,
+      "source_energy": 7126.617850162894,
+      "sse": 233.33265296826738,
+      "energy_weighted_relative_mse": 0.032741008129534274,
+      "actual_container_bits": 31197384,
+      "mean_actual_bpw": 2.4793453216552734,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07806670513285334,
+      "charged_tier_slot_bits_including_4bit_map": 31198144,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.479405721028646,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07843034559494236,
+      "pointwise_actual_gap_db": {
+        "min": 0.07356772789197079,
+        "p50": 0.07819899978510063,
+        "p95": 0.08282699558941747,
+        "p99": 0.08373688964503405,
+        "max": 0.08390224420947698
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.0738433290842903,
+        "p50": 0.07871448845463425,
+        "p95": 0.08316797598374481,
+        "p99": 0.08406349055821649,
+        "max": 0.08412501558421231
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "model.embed_tokens.weight": {
+      "blocks": 32,
+      "source_energy": 3551.6969056925373,
+      "sse": 116.27924892343516,
+      "energy_weighted_relative_mse": 0.032739068679274626,
+      "actual_container_bits": 20799136,
+      "mean_actual_bpw": 2.479450225830078,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07844102438187175,
+      "charged_tier_slot_bits_including_4bit_map": 20799616,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4795074462890625,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07878552587226992,
+      "pointwise_actual_gap_db": {
+        "min": 0.06988251019182824,
+        "p50": 0.07778878990630533,
+        "p95": 0.08303603414813088,
+        "p99": 0.08523456741992655,
+        "max": 0.08603677401404669
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.07034184551235993,
+        "p50": 0.07806016757419229,
+        "p95": 0.08312790121223687,
+        "p99": 0.08570676412943379,
+        "max": 0.08667984346279214
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "self_attn.k_proj.weight": {
+      "blocks": 48,
+      "source_energy": 7653.8229337484045,
+      "sse": 250.32044689587863,
+      "energy_weighted_relative_mse": 0.03270528323723397,
+      "actual_container_bits": 31196232,
+      "mean_actual_bpw": 2.4792537689208984,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07277417216718174,
+      "charged_tier_slot_bits_including_4bit_map": 31197120,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07319905733867389,
+      "pointwise_actual_gap_db": {
+        "min": 0.002052033041984877,
+        "p50": 0.07562419440847423,
+        "p95": 0.08098188833813733,
+        "p99": 0.0819487976210565,
+        "max": 0.08217532358893823
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.0023276342343037685,
+        "p50": 0.07587565020669508,
+        "p95": 0.08136269167085648,
+        "p99": 0.08240813294158829,
+        "max": 0.08263465890947029
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "self_attn.o_proj.weight": {
+      "blocks": 48,
+      "source_energy": 8246.3851539405,
+      "sse": 269.13155419896384,
+      "energy_weighted_relative_mse": 0.032636306596759,
+      "actual_container_bits": 31196400,
+      "mean_actual_bpw": 2.479267120361328,
+      "aggregate_gap_at_mean_actual_rate_db": 0.06368545373676604,
+      "charged_tier_slot_bits_including_4bit_map": 31197120,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.06402995522716523,
+      "pointwise_actual_gap_db": {
+        "min": -0.047863567616581455,
+        "p50": 0.07492394515570772,
+        "p95": 0.0811989620903342,
+        "p99": 0.08315184180902163,
+        "max": 0.08387905348291386
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": -0.047587966424261906,
+        "p50": 0.07510767928392068,
+        "p95": 0.08141944304418956,
+        "p99": 0.08350277399390799,
+        "max": 0.08397092054701943
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "self_attn.q_proj.weight": {
+      "blocks": 48,
+      "source_energy": 8120.967432705133,
+      "sse": 265.288674848729,
+      "energy_weighted_relative_mse": 0.03266712704453736,
+      "actual_container_bits": 31196272,
+      "mean_actual_bpw": 2.4792569478352866,
+      "aggregate_gap_at_mean_actual_rate_db": 0.06772358042252465,
+      "charged_tier_slot_bits_including_4bit_map": 31197120,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.06812932662232715,
+      "pointwise_actual_gap_db": {
+        "min": 0.017476579945044653,
+        "p50": 0.07263444132298791,
+        "p95": 0.0805083815838657,
+        "p99": 0.0817844998298347,
+        "max": 0.0817937650328948
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.018119649393790058,
+        "p50": 0.07318564370762669,
+        "p95": 0.08103202384927176,
+        "p99": 0.08197374598189369,
+        "max": 0.08206936622521424
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "self_attn.v_proj.weight": {
+      "blocks": 48,
+      "source_energy": 10568.745037019931,
+      "sse": 346.07179403710666,
+      "energy_weighted_relative_mse": 0.032744833263069095,
+      "actual_container_bits": 31197832,
+      "mean_actual_bpw": 2.4793809254964194,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07878841842856331,
+      "charged_tier_slot_bits_including_4bit_map": 31198656,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4794464111328125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07918268124535238,
+      "pointwise_actual_gap_db": {
+        "min": 0.07353588549491147,
+        "p50": 0.07857572220921646,
+        "p95": 0.08287467577839398,
+        "p99": 0.08364145959148248,
+        "max": 0.08404809066502833
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.07399522081544348,
+        "p50": 0.07906715056681728,
+        "p95": 0.08345343828226469,
+        "p99": 0.0839923917763691,
+        "max": 0.08413995772913399
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    }
+  },
+  "by_layer": {
+    "0": {
+      "blocks": 7,
+      "source_energy": 494.4562933105699,
+      "sse": 16.165851108771065,
+      "energy_weighted_relative_mse": 0.03269419628686419,
+      "actual_container_bits": 4549496,
+      "mean_actual_bpw": 2.479278564453125,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07145096693148735,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07172656812380634,
+      "pointwise_actual_gap_db": {
+        "min": 0.060308573373721204,
+        "p50": 0.07155904831264105,
+        "p95": 0.078762050779142,
+        "p99": 0.079443184158794,
+        "max": 0.07961346750370701
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.060400440437827906,
+        "p50": 0.07165091537674707,
+        "p95": 0.07909277220992542,
+        "p99": 0.07972980939880656,
+        "max": 0.07988906869602684
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "1": {
+      "blocks": 7,
+      "source_energy": 1063.3078554885697,
+      "sse": 34.76492422152648,
+      "energy_weighted_relative_mse": 0.03269506948723957,
+      "actual_container_bits": 4549440,
+      "mean_actual_bpw": 2.479248046875,
+      "aggregate_gap_at_mean_actual_rate_db": 0.0713832231268114,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07184255844734337,
+      "pointwise_actual_gap_db": {
+        "min": 0.039661397748574634,
+        "p50": 0.07818698249753551,
+        "p95": 0.07959004282025914,
+        "p99": 0.07968866024977687,
+        "max": 0.0797133146071563
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.04030446719731944,
+        "p50": 0.07864631781806729,
+        "p95": 0.08004937814079094,
+        "p99": 0.08014799557030863,
+        "max": 0.08017264992768805
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "2": {
+      "blocks": 7,
+      "source_energy": 1052.704646742642,
+      "sse": 34.454365959037666,
+      "energy_weighted_relative_mse": 0.03272937577092394,
+      "actual_container_bits": 4549440,
+      "mean_actual_bpw": 2.479248046875,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07593779932703075,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07639713464756241,
+      "pointwise_actual_gap_db": {
+        "min": 0.06474782092643713,
+        "p50": 0.07706166901344894,
+        "p95": 0.07997229292261956,
+        "p99": 0.08018144566620862,
+        "max": 0.08023373385210589
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.06539089037518259,
+        "p50": 0.07752100433398003,
+        "p95": 0.08035813459186654,
+        "p99": 0.08047909495391331,
+        "max": 0.080509335044425
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "3": {
+      "blocks": 7,
+      "source_energy": 1080.788844799421,
+      "sse": 35.272997951697924,
+      "energy_weighted_relative_mse": 0.03263634531520733,
+      "actual_container_bits": 4549480,
+      "mean_actual_bpw": 2.4792698451450894,
+      "aggregate_gap_at_mean_actual_rate_db": 0.06370701086787697,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.06403510752539857,
+      "pointwise_actual_gap_db": {
+        "min": 0.009693616308246333,
+        "p50": 0.07508827442752378,
+        "p95": 0.07762333811222422,
+        "p99": 0.0777255033880215,
+        "max": 0.07775104470697082
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.010152951628778124,
+        "p50": 0.07536387561984292,
+        "p95": 0.07802755319429258,
+        "p99": 0.07817381466086076,
+        "max": 0.0782103800275028
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "4": {
+      "blocks": 7,
+      "source_energy": 1205.469291007668,
+      "sse": 39.439861152679164,
+      "energy_weighted_relative_mse": 0.03271743332400517,
+      "actual_container_bits": 4549440,
+      "mean_actual_bpw": 2.479248046875,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07435283623210251,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07481217155263507,
+      "pointwise_actual_gap_db": {
+        "min": 0.06419586066150092,
+        "p50": 0.07693914628013314,
+        "p95": 0.08001364135077198,
+        "p99": 0.08071917585281341,
+        "max": 0.08089555947832378
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.06502266423845832,
+        "p50": 0.07721474747245298,
+        "p95": 0.0805280969097678,
+        "p99": 0.0811895352210382,
+        "max": 0.0813548947988558
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "5": {
+      "blocks": 7,
+      "source_energy": 1200.7777181500753,
+      "sse": 39.29826380981256,
+      "energy_weighted_relative_mse": 0.03272734263453496,
+      "actual_container_bits": 4549440,
+      "mean_actual_bpw": 2.479248046875,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07566800886503162,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07612734418556366,
+      "pointwise_actual_gap_db": {
+        "min": 0.06919162312834085,
+        "p50": 0.07602003925159165,
+        "p95": 0.07959330970989431,
+        "p99": 0.0799034348660749,
+        "max": 0.07998096615512004
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.06983469257708654,
+        "p50": 0.07629564044391147,
+        "p95": 0.08018125892017536,
+        "p99": 0.08053548026712713,
+        "max": 0.08062403560386508
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "6": {
+      "blocks": 7,
+      "source_energy": 1222.8568313079318,
+      "sse": 40.04234752774407,
+      "energy_weighted_relative_mse": 0.032744918703946684,
+      "actual_container_bits": 4549472,
+      "mean_actual_bpw": 2.4792654854910716,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07810473234488119,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07845907673500574,
+      "pointwise_actual_gap_db": {
+        "min": 0.07006385001458644,
+        "p50": 0.07900438314184802,
+        "p95": 0.0820158904772585,
+        "p99": 0.08250871650108924,
+        "max": 0.08263192300704691
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.07070691946333169,
+        "p50": 0.07942716509539378,
+        "p95": 0.08234661190804181,
+        "p99": 0.08279534174110181,
+        "max": 0.08290752419936681
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "7": {
+      "blocks": 7,
+      "source_energy": 1160.4474145342338,
+      "sse": 37.98174058321015,
+      "energy_weighted_relative_mse": 0.03273025568199038,
+      "actual_container_bits": 4549488,
+      "mean_actual_bpw": 2.479274204799107,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07621204180948833,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07651389073440908,
+      "pointwise_actual_gap_db": {
+        "min": 0.07209401077044471,
+        "p50": 0.07576129311302968,
+        "p95": 0.08028515384824907,
+        "p99": 0.08069022097930972,
+        "max": 0.08079148776207488
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.07236961196276416,
+        "p50": 0.07640436256177537,
+        "p95": 0.08037702091235421,
+        "p99": 0.08078208804341477,
+        "max": 0.0808833548261799
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "8": {
+      "blocks": 7,
+      "source_energy": 1165.0587018028157,
+      "sse": 38.03730656215156,
+      "energy_weighted_relative_mse": 0.032648403469535486,
+      "actual_container_bits": 4549456,
+      "mean_actual_bpw": 2.4792567661830356,
+      "aggregate_gap_at_mean_actual_rate_db": 0.06523255965056611,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.06563939950589548,
+      "pointwise_actual_gap_db": {
+        "min": 0.00760157272994483,
+        "p50": 0.07625913555203712,
+        "p95": 0.0808588150497464,
+        "p99": 0.0814349415998545,
+        "max": 0.08157897323738152
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.007693439794050324,
+        "p50": 0.07671847087256867,
+        "p95": 0.08137327060874258,
+        "p99": 0.0819053009680793,
+        "max": 0.08203830855791347
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "9": {
+      "blocks": 7,
+      "source_energy": 1214.9107792679583,
+      "sse": 39.8028652005105,
+      "energy_weighted_relative_mse": 0.0327619656354466,
+      "actual_container_bits": 4549448,
+      "mean_actual_bpw": 2.479252406529018,
+      "aggregate_gap_at_mean_actual_rate_db": 0.0802863282016873,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.08071941578961825,
+      "pointwise_actual_gap_db": {
+        "min": 0.07731315591553446,
+        "p50": 0.08037819650617165,
+        "p95": 0.0843778405491588,
+        "p99": 0.08440118502706608,
+        "max": 0.08440702114654289
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.07813995949249224,
+        "p50": 0.0810212659549167,
+        "p95": 0.0845594140398358,
+        "p99": 0.08458016575269989,
+        "max": 0.08458535368091591
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "10": {
+      "blocks": 7,
+      "source_energy": 1149.4731282494608,
+      "sse": 37.63183154999565,
+      "energy_weighted_relative_mse": 0.03273833082753781,
+      "actual_container_bits": 4549992,
+      "mean_actual_bpw": 2.479548863002232,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07893699977654334,
+      "charged_tier_slot_bits_including_4bit_map": 4550092,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4796033586774553,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07926509643406437,
+      "pointwise_actual_gap_db": {
+        "min": 0.07520830985481207,
+        "p50": 0.07850031582233326,
+        "p95": 0.0827229706680424,
+        "p99": 0.08366638950119007,
+        "max": 0.08390224420947698
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.0756676451753435,
+        "p50": 0.07914338527107892,
+        "p95": 0.08298019844754019,
+        "p99": 0.08379132870837434,
+        "max": 0.08399411127358289
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "11": {
+      "blocks": 7,
+      "source_energy": 1173.67394454117,
+      "sse": 38.42635366969665,
+      "energy_weighted_relative_mse": 0.032740228960879636,
+      "actual_container_bits": 4549456,
+      "mean_actual_bpw": 2.4792567661830356,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07743019368005764,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.0778370335353873,
+      "pointwise_actual_gap_db": {
+        "min": 0.07326069113621396,
+        "p50": 0.07790548299022826,
+        "p95": 0.08219343959357721,
+        "p99": 0.08327902870852182,
+        "max": 0.08355042598725797
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.07372002645674548,
+        "p50": 0.07799735005433417,
+        "p95": 0.08239554713461125,
+        "p99": 0.08339294386801369,
+        "max": 0.0836422930513643
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "12": {
+      "blocks": 7,
+      "source_energy": 1162.1503417139684,
+      "sse": 38.04648929889226,
+      "energy_weighted_relative_mse": 0.03273800981960763,
+      "actual_container_bits": 4549480,
+      "mean_actual_bpw": 2.4792698451450894,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07721456096693198,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07754265762445467,
+      "pointwise_actual_gap_db": {
+        "min": 0.07507202342661203,
+        "p50": 0.07827798803991691,
+        "p95": 0.07885737977001561,
+        "p99": 0.07896964822935096,
+        "max": 0.07899771534418479
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.07537257551366844,
+        "p50": 0.07861531834469011,
+        "p95": 0.07924113247343616,
+        "p99": 0.07941386702646017,
+        "max": 0.07945705066471617
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "13": {
+      "blocks": 7,
+      "source_energy": 1138.4122748805705,
+      "sse": 37.262670638782154,
+      "energy_weighted_relative_mse": 0.03273214059703576,
+      "actual_container_bits": 4549952,
+      "mean_actual_bpw": 2.479527064732143,
+      "aggregate_gap_at_mean_actual_rate_db": 0.0779845105869162,
+      "charged_tier_slot_bits_including_4bit_map": 4550092,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4796033586774553,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07844384590744821,
+      "pointwise_actual_gap_db": {
+        "min": 0.07615616892918407,
+        "p50": 0.07816437422795605,
+        "p95": 0.080779904968638,
+        "p99": 0.08160414369399283,
+        "max": 0.08181020337533154
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.07643177012150423,
+        "p50": 0.07862370954848769,
+        "p95": 0.08128423301959113,
+        "p99": 0.08207247756060869,
+        "max": 0.08226953869586308
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "14": {
+      "blocks": 7,
+      "source_energy": 1058.002511717077,
+      "sse": 34.6065830312571,
+      "energy_weighted_relative_mse": 0.03270935810454043,
+      "actual_container_bits": 4549968,
+      "mean_actual_bpw": 2.4795357840401784,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07501314157139706,
+      "charged_tier_slot_bits_including_4bit_map": 4550092,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4796033586774553,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07541998142672579,
+      "pointwise_actual_gap_db": {
+        "min": 0.0606643033258503,
+        "p50": 0.07672179217776731,
+        "p95": 0.0828136065331447,
+        "p99": 0.08310905584112675,
+        "max": 0.08318291816812226
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.06130737277459615,
+        "p50": 0.07718112749829886,
+        "p95": 0.08334643550496255,
+        "p99": 0.08373007719448711,
+        "max": 0.08382598761686824
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "15": {
+      "blocks": 7,
+      "source_energy": 1106.361370364056,
+      "sse": 36.21456399425197,
+      "energy_weighted_relative_mse": 0.03273303367627099,
+      "actual_container_bits": 4550008,
+      "mean_actual_bpw": 2.479557582310268,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07828673806311015,
+      "charged_tier_slot_bits_including_4bit_map": 4550092,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4796033586774553,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07856233925542896,
+      "pointwise_actual_gap_db": {
+        "min": 0.07103533029595799,
+        "p50": 0.07853875987645019,
+        "p95": 0.08258082216503784,
+        "p99": 0.08306729012356058,
+        "max": 0.08318890711319127
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.07131093148827763,
+        "p50": 0.07863062694055568,
+        "p95": 0.08298503724710601,
+        "p99": 0.08351560139639994,
+        "max": 0.08364824243372342
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "16": {
+      "blocks": 7,
+      "source_energy": 1139.9525364803428,
+      "sse": 37.313395627535556,
+      "energy_weighted_relative_mse": 0.032732411599120104,
+      "actual_container_bits": 4549488,
+      "mean_actual_bpw": 2.479274204799107,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07649809887135466,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07679994779627526,
+      "pointwise_actual_gap_db": {
+        "min": 0.07147483041083384,
+        "p50": 0.07494490022716506,
+        "p95": 0.08318457253076585,
+        "p99": 0.08431146268323479,
+        "max": 0.08459318522135204
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.07156669747494047,
+        "p50": 0.07503676729127112,
+        "p95": 0.08353366737436964,
+        "p99": 0.08474874990838058,
+        "max": 0.08505252054188331
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "17": {
+      "blocks": 7,
+      "source_energy": 1161.1650958523696,
+      "sse": 38.024740101821294,
+      "energy_weighted_relative_mse": 0.032747057449146535,
+      "actual_container_bits": 4549488,
+      "mean_actual_bpw": 2.479274204799107,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07844087942464392,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07874272834956382,
+      "pointwise_actual_gap_db": {
+        "min": 0.07339507194508565,
+        "p50": 0.07844800248556334,
+        "p95": 0.08194006600293799,
+        "p99": 0.08224084594688001,
+        "max": 0.08231604093286551
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.07385440726561732,
+        "p50": 0.0787236036778826,
+        "p95": 0.08203193306704423,
+        "p99": 0.08233271301098634,
+        "max": 0.08240790799697187
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "18": {
+      "blocks": 7,
+      "source_energy": 1057.9360804596363,
+      "sse": 34.601189142456754,
+      "energy_weighted_relative_mse": 0.032706313530231186,
+      "actual_container_bits": 4549464,
+      "mean_actual_bpw": 2.4792611258370534,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07295527599127734,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07333586811400572,
+      "pointwise_actual_gap_db": {
+        "min": 0.04676312622000413,
+        "p50": 0.07678842349810784,
+        "p95": 0.08093345061173639,
+        "p99": 0.08117250755712355,
+        "max": 0.08123227179347034
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.04758992979696185,
+        "p50": 0.07761522707506575,
+        "p95": 0.0810253176758421,
+        "p99": 0.08126437462122926,
+        "max": 0.08132413885757606
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "19": {
+      "blocks": 7,
+      "source_energy": 1197.4979730167101,
+      "sse": 39.21974970454503,
+      "energy_weighted_relative_mse": 0.03275141218464321,
+      "actual_container_bits": 4549496,
+      "mean_actual_bpw": 2.479278564453125,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07904461777945739,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07932021897177713,
+      "pointwise_actual_gap_db": {
+        "min": 0.0757402771364177,
+        "p50": 0.07783339621224819,
+        "p95": 0.08230543861935076,
+        "p99": 0.08248762837402145,
+        "max": 0.08253317581268912
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.0758321442005239,
+        "p50": 0.07829273153277994,
+        "p95": 0.08265453346295494,
+        "p99": 0.08292491559916797,
+        "max": 0.08299251113322122
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "20": {
+      "blocks": 7,
+      "source_energy": 1120.7002079245588,
+      "sse": 36.678292705022955,
+      "energy_weighted_relative_mse": 0.0327280145445391,
+      "actual_container_bits": 4549472,
+      "mean_actual_bpw": 2.4792654854910716,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07586216188078247,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07621650627090605,
+      "pointwise_actual_gap_db": {
+        "min": 0.07003326354565467,
+        "p50": 0.07609242670048837,
+        "p95": 0.08114557959288124,
+        "p99": 0.08195609380520907,
+        "max": 0.08215872235829103
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.07067633299440011,
+        "p50": 0.07629767641865351,
+        "p95": 0.08162328832623456,
+        "p99": 0.08256609111087601,
+        "max": 0.08280179180703637
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "21": {
+      "blocks": 7,
+      "source_energy": 1170.1299107044435,
+      "sse": 38.31315663711631,
+      "energy_weighted_relative_mse": 0.03274265215052144,
+      "actual_container_bits": 4549480,
+      "mean_actual_bpw": 2.4792698451450894,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07783035764392214,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07815845430144365,
+      "pointwise_actual_gap_db": {
+        "min": 0.07014152636955287,
+        "p50": 0.07798780045778064,
+        "p95": 0.08066282817594364,
+        "p99": 0.0808248572716963,
+        "max": 0.08086536454563448
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.0704171275618724,
+        "p50": 0.07844713577831264,
+        "p95": 0.08092005595544174,
+        "p99": 0.08094979647888112,
+        "max": 0.08095723160974097
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "22": {
+      "blocks": 7,
+      "source_energy": 1133.9546687535467,
+      "sse": 37.12213957910992,
+      "energy_weighted_relative_mse": 0.03273688146627141,
+      "actual_container_bits": 4549496,
+      "mean_actual_bpw": 2.479278564453125,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07711736924121881,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07739297043353832,
+      "pointwise_actual_gap_db": {
+        "min": 0.07234214051038133,
+        "p50": 0.07608040573086795,
+        "p95": 0.08118592402003515,
+        "p99": 0.08167219683032287,
+        "max": 0.0817937650328948
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.0726177417027006,
+        "p50": 0.07672347517961398,
+        "p95": 0.08146152521235461,
+        "p99": 0.08194779802264232,
+        "max": 0.08206936622521424
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "23": {
+      "blocks": 7,
+      "source_energy": 1247.9262186159856,
+      "sse": 40.85744221109909,
+      "energy_weighted_relative_mse": 0.03274027069998745,
+      "actual_container_bits": 4549456,
+      "mean_actual_bpw": 2.4792567661830356,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07743573030983283,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07784257016516156,
+      "pointwise_actual_gap_db": {
+        "min": 0.07118403341341804,
+        "p50": 0.0782580538335429,
+        "p95": 0.0824504335767063,
+        "p99": 0.08249110979650547,
+        "max": 0.08250127885145525
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.07182710286216398,
+        "p50": 0.07871738915407486,
+        "p95": 0.08286034861039474,
+        "p99": 0.08295196096290905,
+        "max": 0.08297486405103763
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "24": {
+      "blocks": 7,
+      "source_energy": 1132.4904838442592,
+      "sse": 37.04289004268553,
+      "energy_weighted_relative_mse": 0.03270922852874028,
+      "actual_container_bits": 4549968,
+      "mean_actual_bpw": 2.4795357840401784,
+      "aggregate_gap_at_mean_actual_rate_db": 0.0749959372697174,
+      "charged_tier_slot_bits_including_4bit_map": 4550092,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4796033586774553,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07540277712504687,
+      "pointwise_actual_gap_db": {
+        "min": 0.06670946101747546,
+        "p50": 0.07523153294347272,
+        "p95": 0.07844347681695427,
+        "p99": 0.07858262602372541,
+        "max": 0.0786174133254182
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.06698506220979461,
+        "p50": 0.07587460239221816,
+        "p95": 0.07877419824773799,
+        "p99": 0.0788692512637384,
+        "max": 0.07889301451773849
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "25": {
+      "blocks": 7,
+      "source_energy": 1199.0789568756413,
+      "sse": 39.25571157867266,
+      "energy_weighted_relative_mse": 0.0327382207431599,
+      "actual_container_bits": 4549448,
+      "mean_actual_bpw": 2.479252406529018,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07713755055222102,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07757063814015164,
+      "pointwise_actual_gap_db": {
+        "min": 0.06882266624859193,
+        "p50": 0.07846995100157622,
+        "p95": 0.07981627893928488,
+        "p99": 0.07996902236101007,
+        "max": 0.08000720821644138
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.0694657356973373,
+        "p50": 0.07892928632210841,
+        "p95": 0.07996326624185483,
+        "p99": 0.08007191347280897,
+        "max": 0.08009907528054751
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "26": {
+      "blocks": 7,
+      "source_energy": 1194.4725250964764,
+      "sse": 39.05254039831717,
+      "energy_weighted_relative_mse": 0.032694381476177474,
+      "actual_container_bits": 4549944,
+      "mean_actual_bpw": 2.479522705078125,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07294543957370464,
+      "charged_tier_slot_bits_including_4bit_map": 4550092,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4796033586774553,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.0734310226268379,
+      "pointwise_actual_gap_db": {
+        "min": 0.03270438681756503,
+        "p50": 0.0741607941211658,
+        "p95": 0.08322631651767146,
+        "p99": 0.08328383290933755,
+        "max": 0.08329821200725408
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.033163722138096895,
+        "p50": 0.07438751849008486,
+        "p95": 0.08399799985616582,
+        "p99": 0.08409961243860302,
+        "max": 0.08412501558421231
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "27": {
+      "blocks": 7,
+      "source_energy": 1259.1520547511957,
+      "sse": 41.22956291556429,
+      "energy_weighted_relative_mse": 0.032743911078881666,
+      "actual_container_bits": 4549528,
+      "mean_actual_bpw": 2.4792960030691966,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07815482352755711,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07832543378946757,
+      "pointwise_actual_gap_db": {
+        "min": 0.07169262569146363,
+        "p50": 0.07887922834719552,
+        "p95": 0.0810500233155115,
+        "p99": 0.08106452173303558,
+        "max": 0.0810681463374166
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.07178449275556983,
+        "p50": 0.07915482953951523,
+        "p95": 0.0811418903796176,
+        "p99": 0.08115638879714174,
+        "max": 0.08116001340152278
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "28": {
+      "blocks": 7,
+      "source_energy": 1099.7404565246004,
+      "sse": 35.986601559533156,
+      "energy_weighted_relative_mse": 0.03272281322927594,
+      "actual_container_bits": 4549432,
+      "mean_actual_bpw": 2.479243687220982,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07504066379737487,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07552624685050817,
+      "pointwise_actual_gap_db": {
+        "min": 0.0640028500457302,
+        "p50": 0.07744822532511267,
+        "p95": 0.08126655680849354,
+        "p99": 0.08199357023284928,
+        "max": 0.08217532358893823
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.06427845123804993,
+        "p50": 0.07790756064564439,
+        "p95": 0.08178101236748958,
+        "p99": 0.08246392960107414,
+        "max": 0.08263465890947029
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "29": {
+      "blocks": 7,
+      "source_energy": 1234.021208730324,
+      "sse": 40.38370571220653,
+      "energy_weighted_relative_mse": 0.032725293071548624,
+      "actual_container_bits": 4549480,
+      "mean_actual_bpw": 2.4792698451450894,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07552726034648188,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.0758553570040032,
+      "pointwise_actual_gap_db": {
+        "min": 0.06915196140431437,
+        "p50": 0.07559660808171223,
+        "p95": 0.07942929206193196,
+        "p99": 0.08020862794194003,
+        "max": 0.08040346191194206
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.06942756259663449,
+        "p50": 0.07568847514581822,
+        "p95": 0.07988862738246334,
+        "p99": 0.08066796326247126,
+        "max": 0.08086279723247324
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "30": {
+      "blocks": 7,
+      "source_energy": 1227.1588708856714,
+      "sse": 40.13996050552671,
+      "energy_weighted_relative_mse": 0.03270966902317765,
+      "actual_container_bits": 4549416,
+      "mean_actual_bpw": 2.4792349679129466,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07324332966557648,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07378140818391268,
+      "pointwise_actual_gap_db": {
+        "min": 0.03646533074494138,
+        "p50": 0.07894885937268072,
+        "p95": 0.08202726409073116,
+        "p99": 0.08243719227209101,
+        "max": 0.08253967431743098
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.03710840019368694,
+        "p50": 0.07959192882142613,
+        "p95": 0.08254171964972738,
+        "p99": 0.08290755164031599,
+        "max": 0.08299900963796314
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "31": {
+      "blocks": 7,
+      "source_energy": 1208.3765735180762,
+      "sse": 39.456148888380845,
+      "energy_weighted_relative_mse": 0.03265219613907934,
+      "actual_container_bits": 4549472,
+      "mean_actual_bpw": 2.4792654854910716,
+      "aggregate_gap_at_mean_actual_rate_db": 0.06578953301223904,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.06614387740236272,
+      "pointwise_actual_gap_db": {
+        "min": 0.005460830863488142,
+        "p50": 0.07933614407636505,
+        "p95": 0.08014521833919103,
+        "p99": 0.08040120724350397,
+        "max": 0.0804652044695822
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.005736432055807746,
+        "p50": 0.07942801114047146,
+        "p95": 0.08065967389818689,
+        "p99": 0.08087156661172848,
+        "max": 0.08092453979011388
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "32": {
+      "blocks": 7,
+      "source_energy": 1250.7601358963711,
+      "sse": 40.86280489070935,
+      "energy_weighted_relative_mse": 0.03267037677166179,
+      "actual_container_bits": 4549960,
+      "mean_actual_bpw": 2.4795314243861606,
+      "aggregate_gap_at_mean_actual_rate_db": 0.06980810875973167,
+      "charged_tier_slot_bits_including_4bit_map": 4550092,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4796033586774553,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07024119634766172,
+      "pointwise_actual_gap_db": {
+        "min": 0.019612939383322904,
+        "p50": 0.07740771752941444,
+        "p95": 0.08375290492566885,
+        "p99": 0.08487659094895893,
+        "max": 0.08515751245478145
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.02007227470385537,
+        "p50": 0.07768331872173408,
+        "p95": 0.08428573389748645,
+        "p99": 0.0854976123023188,
+        "max": 0.08580058190352688
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "33": {
+      "blocks": 7,
+      "source_energy": 1216.3877048103277,
+      "sse": 39.8256721274044,
+      "energy_weighted_relative_mse": 0.032740936109358694,
+      "actual_container_bits": 4549504,
+      "mean_actual_bpw": 2.479282924107143,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07768148130294644,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.0779308347626633,
+      "pointwise_actual_gap_db": {
+        "min": 0.06939926391004855,
+        "p50": 0.07699278994751196,
+        "p95": 0.08125546532598521,
+        "p99": 0.08125643453416463,
+        "max": 0.08125667683620949
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.06967486510236852,
+        "p50": 0.07718057614405192,
+        "p95": 0.0815310665183048,
+        "p99": 0.08153203572648411,
+        "max": 0.08153227802852894
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "34": {
+      "blocks": 7,
+      "source_energy": 1263.348119433764,
+      "sse": 41.14338360793839,
+      "energy_weighted_relative_mse": 0.03256694095241062,
+      "actual_container_bits": 4549952,
+      "mean_actual_bpw": 2.479527064732143,
+      "aggregate_gap_at_mean_actual_rate_db": 0.056010098256336203,
+      "charged_tier_slot_bits_including_4bit_map": 4550092,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4796033586774553,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.05646943357686793,
+      "pointwise_actual_gap_db": {
+        "min": -0.047863567616581455,
+        "p50": 0.07906969352094317,
+        "p95": 0.08014008993853815,
+        "p99": 0.08019707972671501,
+        "max": 0.08021132717375923
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": -0.047587966424261906,
+        "p50": 0.07916156058504904,
+        "p95": 0.08078315938728377,
+        "p99": 0.08084014917546058,
+        "max": 0.08085439662250478
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "35": {
+      "blocks": 7,
+      "source_energy": 1118.177059048078,
+      "sse": 36.56462032709597,
+      "energy_weighted_relative_mse": 0.03270020613571165,
+      "actual_container_bits": 4549488,
+      "mean_actual_bpw": 2.479274204799107,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07222296617483047,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07252481509975059,
+      "pointwise_actual_gap_db": {
+        "min": 0.04667962504504189,
+        "p50": 0.07638414588319166,
+        "p95": 0.08015947942961169,
+        "p99": 0.08064026315993171,
+        "max": 0.08076045909251171
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.046771492109147696,
+        "p50": 0.07665974707551121,
+        "p95": 0.08036158697064541,
+        "p99": 0.08075417831942322,
+        "max": 0.08085232615661767
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "36": {
+      "blocks": 7,
+      "source_energy": 1199.2714134229748,
+      "sse": 39.22732588987378,
+      "energy_weighted_relative_mse": 0.03270929787103878,
+      "actual_container_bits": 4549968,
+      "mean_actual_bpw": 2.4795357840401784,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07500514413488478,
+      "charged_tier_slot_bits_including_4bit_map": 4550092,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4796033586774553,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07541198399021387,
+      "pointwise_actual_gap_db": {
+        "min": 0.06138406429255755,
+        "p50": 0.077296775638726,
+        "p95": 0.0814384103775643,
+        "p99": 0.081661011795117,
+        "max": 0.08171666214950518
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.06165966548487725,
+        "p50": 0.07757237683104576,
+        "p95": 0.08215497347759444,
+        "p99": 0.08246576727668929,
+        "max": 0.082543465726463
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "37": {
+      "blocks": 7,
+      "source_energy": 1130.173839051369,
+      "sse": 36.933020269982755,
+      "energy_weighted_relative_mse": 0.03267906139199181,
+      "actual_container_bits": 4549456,
+      "mean_actual_bpw": 2.4792567661830356,
+      "aggregate_gap_at_mean_actual_rate_db": 0.06930881381260519,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.06971565366793434,
+      "pointwise_actual_gap_db": {
+        "min": 0.0234491666560457,
+        "p50": 0.07611040963683822,
+        "p95": 0.07835881875735513,
+        "p99": 0.0784989886258828,
+        "max": 0.07853403109301471
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.024092236104791744,
+        "p50": 0.07620227670094412,
+        "p95": 0.07881815407788649,
+        "p99": 0.0789583239464143,
+        "max": 0.07899336641354626
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "38": {
+      "blocks": 7,
+      "source_energy": 1071.9360088329863,
+      "sse": 35.053654399238056,
+      "energy_weighted_relative_mse": 0.03270125652127394,
+      "actual_container_bits": 4549472,
+      "mean_actual_bpw": 2.4792654854910716,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07230997115352486,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07266431554364906,
+      "pointwise_actual_gap_db": {
+        "min": 0.060214706434943206,
+        "p50": 0.07314261872024688,
+        "p95": 0.08229696858731955,
+        "p99": 0.08369786624948657,
+        "max": 0.08404809066502833
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.06067404175547508,
+        "p50": 0.07360195404077818,
+        "p95": 0.082554196366817,
+        "p99": 0.08382280545667059,
+        "max": 0.08413995772913399
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "39": {
+      "blocks": 7,
+      "source_energy": 1274.5309481586391,
+      "sse": 41.726148981061044,
+      "energy_weighted_relative_mse": 0.03273843529758482,
+      "actual_container_bits": 4549400,
+      "mean_actual_bpw": 2.4792262486049106,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07700852614854653,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07759910013208765,
+      "pointwise_actual_gap_db": {
+        "min": 0.06295365994774048,
+        "p50": 0.07911486841733212,
+        "p95": 0.08158536154426353,
+        "p99": 0.08163229789353164,
+        "max": 0.08164403198084867
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.06341299526827268,
+        "p50": 0.07975793786607721,
+        "p95": 0.08206307027761744,
+        "p99": 0.08224229519919897,
+        "max": 0.08228710142959435
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "40": {
+      "blocks": 7,
+      "source_energy": 1301.7814766062884,
+      "sse": 42.55969384460885,
+      "energy_weighted_relative_mse": 0.03269342405728564,
+      "actual_container_bits": 4549992,
+      "mean_actual_bpw": 2.479548863002232,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07297574575941901,
+      "charged_tier_slot_bits_including_4bit_map": 4550092,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4796033586774553,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07330384241694107,
+      "pointwise_actual_gap_db": {
+        "min": 0.059097005237354075,
+        "p50": 0.07742834278768292,
+        "p95": 0.08127183019560237,
+        "p99": 0.08194512555817979,
+        "max": 0.08211344939882415
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.05918887230145976,
+        "p50": 0.07807141223642777,
+        "p95": 0.08149231114945707,
+        "p99": 0.0822097027028055,
+        "max": 0.08238905059114261
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "41": {
+      "blocks": 7,
+      "source_energy": 1232.7424515596006,
+      "sse": 40.33628464582729,
+      "energy_weighted_relative_mse": 0.03272077196238027,
+      "actual_container_bits": 4549456,
+      "mean_actual_bpw": 2.4792567661830356,
+      "aggregate_gap_at_mean_actual_rate_db": 0.0748484832838412,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07525532313917006,
+      "pointwise_actual_gap_db": {
+        "min": 0.05309530618303469,
+        "p50": 0.07737016508365399,
+        "p95": 0.0805047147745318,
+        "p99": 0.08069041325285985,
+        "max": 0.08073683787244186
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.053554641503566126,
+        "p50": 0.07777586734142655,
+        "p95": 0.08070682231556567,
+        "p99": 0.08080432841235141,
+        "max": 0.08082870493654784
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "42": {
+      "blocks": 7,
+      "source_energy": 1260.1035762846038,
+      "sse": 41.06523186016132,
+      "energy_weighted_relative_mse": 0.03258877494915262,
+      "actual_container_bits": 4549464,
+      "mean_actual_bpw": 2.4792611258370534,
+      "aggregate_gap_at_mean_actual_rate_db": 0.057319670465935516,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.05770026258866394,
+      "pointwise_actual_gap_db": {
+        "min": 0.002052033041984877,
+        "p50": 0.07575118883872982,
+        "p95": 0.07900021378576907,
+        "p99": 0.0797180844979498,
+        "max": 0.07989755217599498
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.0023276342343037685,
+        "p50": 0.07657799241568782,
+        "p95": 0.07938605545501622,
+        "p99": 0.08001573378565477,
+        "max": 0.08017315336831442
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "43": {
+      "blocks": 7,
+      "source_energy": 1371.410489013753,
+      "sse": 44.887565116415075,
+      "energy_weighted_relative_mse": 0.03273094779134719,
+      "actual_container_bits": 4549392,
+      "mean_actual_bpw": 2.479221888950893,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07598890334412556,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07660572506026862,
+      "pointwise_actual_gap_db": {
+        "min": 0.06133195095236596,
+        "p50": 0.07864751295580302,
+        "p95": 0.08090331080737848,
+        "p99": 0.08153534491708292,
+        "max": 0.08169335344450904
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.06197502040111105,
+        "p50": 0.07929058240454762,
+        "p95": 0.08136264612790993,
+        "p99": 0.08199468023761439,
+        "max": 0.0821526887650405
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "44": {
+      "blocks": 7,
+      "source_energy": 1048.9270899273774,
+      "sse": 34.32915653195042,
+      "energy_weighted_relative_mse": 0.03272787676246135,
+      "actual_container_bits": 4549416,
+      "mean_actual_bpw": 2.4792349679129466,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07566014429637391,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07619822281471027,
+      "pointwise_actual_gap_db": {
+        "min": 0.06719274221526014,
+        "p50": 0.07647593799546212,
+        "p95": 0.07958642954561987,
+        "p99": 0.07999716700613325,
+        "max": 0.0800998513712616
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.06801954579221826,
+        "p50": 0.07693527331599365,
+        "p95": 0.08010088510461601,
+        "p99": 0.08046752637435832,
+        "max": 0.08055918669179389
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "45": {
+      "blocks": 7,
+      "source_energy": 1281.5074890810126,
+      "sse": 41.94048681639256,
+      "energy_weighted_relative_mse": 0.03272746134825063,
+      "actual_container_bits": 4549448,
+      "mean_actual_bpw": 2.479252406529018,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07571000997507962,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07614309756301016,
+      "pointwise_actual_gap_db": {
+        "min": 0.07118997948055224,
+        "p50": 0.07654121469169972,
+        "p95": 0.07881312822617882,
+        "p99": 0.07884718587808241,
+        "max": 0.0788557002910583
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.07128184654465805,
+        "p50": 0.07700055001223152,
+        "p95": 0.07916058055507433,
+        "p99": 0.07917061909394152,
+        "max": 0.07917312872865831
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "46": {
+      "blocks": 7,
+      "source_energy": 1328.2617883002338,
+      "sse": 43.483691915997525,
+      "energy_weighted_relative_mse": 0.03273729041896422,
+      "actual_container_bits": 4549504,
+      "mean_actual_bpw": 2.479282924107143,
+      "aggregate_gap_at_mean_actual_rate_db": 0.07719786917518014,
+      "charged_tier_slot_bits_including_4bit_map": 4549580,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4793243408203125,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.07744722263489826,
+      "pointwise_actual_gap_db": {
+        "min": 0.07059157831724572,
+        "p50": 0.07595744213898323,
+        "p95": 0.08287973372050701,
+        "p99": 0.08367918953043249,
+        "max": 0.08387905348291386
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.07086717950956518,
+        "p50": 0.07604930920308904,
+        "p95": 0.08302672102307686,
+        "p99": 0.08378208064223092,
+        "max": 0.08397092054701943
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    },
+    "47": {
+      "blocks": 7,
+      "source_energy": 1191.004212340256,
+      "sse": 38.853671975510444,
+      "energy_weighted_relative_mse": 0.03262261507804844,
+      "actual_container_bits": 4549912,
+      "mean_actual_bpw": 2.4795052664620534,
+      "aggregate_gap_at_mean_actual_rate_db": 0.06329691024441793,
+      "charged_tier_slot_bits_including_4bit_map": 4550092,
+      "mean_charged_tier_slot_bpw_including_4bit_map": 2.4796033586774553,
+      "aggregate_gap_at_charged_tier_slot_rate_db": 0.0638874842279609,
+      "pointwise_actual_gap_db": {
+        "min": 0.017476579945044653,
+        "p50": 0.07602053970817857,
+        "p95": 0.08115557921398191,
+        "p99": 0.08167133756803409,
+        "max": 0.08180027715654714
+      },
+      "pointwise_charged_tier_slot_gap_db": {
+        "min": 0.018119649393790058,
+        "p50": 0.07629614090049823,
+        "p95": 0.08198238279093994,
+        "p99": 0.08249814114499221,
+        "max": 0.08262708073350528
+      },
+      "charged_tier_slot_failures_ge_0p10db": 0
+    }
+  },
+  "routers": {
+    "codec": "literal Q4 router exception",
+    "router_count": 48,
+    "layers": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ],
+    "values": 12582912,
+    "source_energy": 13293.430905292904,
+    "sse": 441.59381763269454,
+    "relative_mse": 0.03321895007983754,
+    "container_bytes": 6488688,
+    "container_sha256": "31de0cc8f7a7a97b12c72440f680a22bdd0494f8fe474254257e7f9ea1c9dab6",
+    "all_inverse_decodes_exact": true,
+    "independent_literal_decode": {
+      "bytes_consumed": 6488688,
+      "exact_file_length": true,
+      "source_energy": 13293.430905292904,
+      "sse": 441.59381763269454,
+      "relative_mse": 0.03321895007983754,
+      "aggregate_energy_match": true,
+      "aggregate_sse_match": true
+    }
+  },
+  "reservoir": {
+    "format": "PLTE Qwen3 checkpoint rate-reservoir plan v1",
+    "plan_sha256": "c3ed0cc41d722d81d623febedd6d28e2cd767be918cc906dfecad087e907c50d",
+    "tier_counts": {
+      "0": 385,
+      "1": 15
+    },
+    "maximum_tier": 1,
+    "panel_tier_map_order": "results sorted by id; low nibble first",
+    "panel_sum_tiers": 15,
+    "checkpoint_rate_accounting": {
+      "base_ledger_bits": 75724918048,
+      "checkpoint_parameters": 30532122624,
+      "nonrouter_blocks": 116422,
+      "tier_map_bits": 465688,
+      "bits_per_tier_increment": 512,
+      "strict_sum_tiers_limit_below_2p5": 1181489,
+      "rate_with_no_overflow_tiers_bpw": 2.4801873315049345,
+      "rate_if_sample_tier_sum_were_checkpoint_total_bpw": 2.4801875830432927,
+      "rate_if_every_nonrouter_block_were_tier1_bpw": 2.4821396380882033,
+      "rate_if_every_nonrouter_block_were_tier10_bpw": 2.499710397337621,
+      "below_2p5_for_every_block_at_tier10": true
+    }
+  },
+  "rank1": {
+    "format": "PLTE Qwen3 rank-one exact-BF16 census v1",
+    "codec": "lossless raw BF16 exception",
+    "tensor_count": 193,
+    "values": 210944,
+    "source_energy_fp64": 189467.62764129843,
+    "sse": 0.0,
+    "relative_mse": 0.0,
+    "all_literal_decodes_exact": true
+  },
+  "claim_boundary": "Measured on the frozen 400-block panel with a post-hoc deterministic rate-reservoir amendment, plus complete router and rank-one exception censuses; not an untouched confirmatory holdout, whole-checkpoint distortion measurement, or worst-case guarantee"
+}

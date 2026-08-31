@@ -8,9 +8,10 @@ From the repository root:
 
 ```bash
 python tools/verify_repository.py
+python tools/verify_stratified_evaluation.py
 ```
 
-This uses only the Python standard library. It verifies implementation hashes, all 49 report/container pairs, literal audit flags, the six serialized masks, eight clean-decoder reports, the router artifact, and ledger invariants.
+Both commands use only the Python standard library. The first verifies the original 47-block publication. The second rebuilds the weight-blind 400-block selection from the published safetensors headers, validates the post-hoc reservoir plan, and checks every source-free result, clean-decode receipt, container-bundle segment, tier-map nibble, padded slot, rank-one record, router record, original Tier-0 failure log, metric, and claim boundary.
 
 ## Exact experimental environment
 
@@ -158,6 +159,105 @@ Expected literal router container SHA-256:
 31de0cc8f7a7a97b12c72440f680a22bdd0494f8fe474254257e7f9ea1c9dab6
 ```
 
+## Reproduce the 400-block stratified evaluation
+
+This evaluation is deliberately split into phases because the original fixed-cap endpoint is expected to fail before the post-hoc reservoir is applied. Use the pinned Qwen revision and polar checkout above. The commands below assume the RunPod interpreter used for the publication; substitute an equivalent CuPy environment if necessary.
+
+### 1. Verify the frozen selection before fetching weights
+
+```bash
+python tools/verify_stratified_evaluation.py --manifest-only
+```
+
+The manifest contains 400 new PLTE blocks: one block for each of seven rank-two roles in every layer, plus 32 embedding and 32 LM-head blocks. It also inventories all 48 router blocks and all 193 rank-one tensors without using their values for selection.
+
+### 2. Fetch sources and run the original Tier-0 pass
+
+```bash
+/root/int2-venv/bin/python tools/run_stratified_evaluation.py \
+  --python /root/int2-venv/bin/python \
+  --polar-repo /root/PolarLatticeQuantization \
+  --fetch-workers 16 --encode-workers 8 \
+  --phases fetch,encode
+```
+
+The encode phase is expected to exit non-zero after completing the breadth pass. The immutable expected outcome is:
+
+```text
+attempted blocks:             400
+Tier-0 successes:             385
+recognized base overflows:     15
+other failures:                 0
+largest base container:    81,278 bytes
+largest Tier-0 overflow:        36 bytes
+```
+
+Do not delete, redraw, or replace those 15 blocks. Their exact first-pass logs are part of the publication and prove that the original `81,242`-byte universal-cap endpoint failed.
+
+### 3. Rebuild and apply the deterministic reservoir plan
+
+To reproduce planning without overwriting the committed plan, write it under `tmp/`:
+
+```bash
+python tools/build_reservoir_plan.py \
+  --manifest evaluation/qwen3_stratified_v1/manifest.json \
+  --workspace tmp/qwen3_stratified_v1 \
+  --output tmp/qwen3_stratified_v1/reproduced_reservoir_plan.json
+```
+
+The plan deterministically assigns `T_k = 81,242 + 64k` bytes from the observed base length. All 15 failures require Tier 1; quality metrics do not select a tier. First-pass log hashes include traceback paths, so byte-identical plan reproduction additionally requires the original checkout path. The semantic tier assignments and cap arithmetic are path independent.
+
+Apply only the frozen retries:
+
+```bash
+/root/int2-venv/bin/python tools/run_reservoir_repairs.py \
+  --python /root/int2-venv/bin/python \
+  --polar-repo /root/PolarLatticeQuantization \
+  --manifest evaluation/qwen3_stratified_v1/manifest.json \
+  --plan evaluation/qwen3_stratified_v1/reservoir_plan.json \
+  --workspace tmp/qwen3_stratified_v1 \
+  --workers 8
+```
+
+### 4. Independently decode all blocks and finalize
+
+```bash
+/root/int2-venv/bin/python tools/run_stratified_evaluation.py \
+  --python /root/int2-venv/bin/python \
+  --polar-repo /root/PolarLatticeQuantization \
+  --decode-workers 8 \
+  --phases decode
+
+/root/int2-venv/bin/python tools/run_stratified_evaluation.py \
+  --python /root/int2-venv/bin/python \
+  --polar-repo /root/PolarLatticeQuantization \
+  --phases finalize \
+  --reservoir-plan evaluation/qwen3_stratified_v1/reservoir_plan.json
+```
+
+Finalization requires 400 hash-bound clean-decoder receipts. It emits both the variable-length container bundle and a mixed-tier slot image. It then reads them back, extracts each literal prefix from its header and four-bit map entry, verifies the independently decoded container hash, checks all padding, and requires exact bundle and slot end-of-file.
+
+Expected amended-panel results:
+
+```text
+all-in charged-gap failures >= 0.10 dB: 0
+maximum all-in charged gap:              0.08667984346279214 dB
+energy-weighted relative MSE:            0.03271539785114697
+aggregate all-in charged gap:            0.07498293435240821 dB
+mean all-in charged rate:                2.4793975830078123 bpw
+```
+
+The four-bit tier map is included in every charged rate: `R_k = (8*T_k + 4) / 262144`. The original fixed-cap endpoint remains failed despite the amended panel passing.
+
+### 5. Verify the source-free publication
+
+```bash
+python tools/verify_repository.py
+python tools/verify_stratified_evaluation.py
+```
+
+The second command needs no Qwen weight bytes, NumPy, SciPy, CuPy, or GPU. Expected top-level hashes are listed in [`ARTIFACTS.md`](ARTIFACTS.md).
+
 ## Portability warning
 
 The encoded evidence pins the exact encoder implementation. Its SHA-256 is `4d76ba53c88710778085917108b7940517ed14565815fc8437ea4919d7df4bf8`. Do not edit that file and still claim byte-level provenance for the published streams.
@@ -166,4 +266,4 @@ Probability regeneration currently uses floating-point numerical behavior. A pro
 
 ## This is not full-checkpoint reproduction
 
-The commands above reproduce the published selected-block evidence. They do not encode the remaining 116,375 non-router blocks, implement overflow handling, build a concatenated checkpoint, or measure model accuracy.
+The commands above reproduce both selected-block evidence sets. Together they cover 447 of 116,422 non-router full blocks (`0.383948%`). They do not encode the remaining 115,975 blocks, measure the checkpoint-wide tier sum, emit a deployable compressed checkpoint, or measure model accuracy. The reservoir evaluation was designed after the original cap failures and is therefore strict PTQ engineering evidence, not an untouched confirmatory test.

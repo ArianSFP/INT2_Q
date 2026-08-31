@@ -108,9 +108,15 @@ def load_headers(directory: Path) -> tuple[dict[str, TensorHeader], str]:
         raise AssertionError(f"expected 16 header files, found {len(files)}")
     for path in files:
         raw = path.read_bytes()
+        # These JSON inventories predate the repository-wide EOL policy and an
+        # existing Windows checkout may still contain CRLF working-tree bytes.
+        # Hash their authored LF representation so the frozen, weight-blind
+        # selection is reproducible across platforms without weakening the
+        # subsequent parsed-inventory equality check.
+        authored = raw.replace(b"\r\n", b"\n")
         digest.update(path.name.encode("utf-8"))
         digest.update(b"\0")
-        digest.update(bytes.fromhex(sha256_bytes(raw)))
+        digest.update(bytes.fromhex(sha256_bytes(authored)))
         wrapper = json.loads(raw)
         header_length = int(wrapper["header_length"])
         shard = path.name.removesuffix(".header.json")

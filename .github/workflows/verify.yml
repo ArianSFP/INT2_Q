@@ -17,5 +17,7 @@ jobs:
           python-version: "3.12"
       - name: Verify hashes, manifests, and audit flags
         run: python tools/verify_repository.py
+      - name: Verify stratified reservoir evaluation
+        run: python tools/verify_stratified_evaluation.py
       - name: Compile Python sources
         run: python -m py_compile plte/*.py tools/*.py

@@ -1,8 +1,10 @@
 # Evidence and claim boundary
 
-## Three different claim types
+## Evidence categories
 
-PLTE deliberately separates measured block evidence, a checkpoint distortion projection, and a conditional rate budget.
+PLTE deliberately separates measured block evidence, a checkpoint distortion
+projection, and a conditional rate budget. The historical 47-block evidence
+and the later 400-block stratified panel are also kept distinct.
 
 ### 1. Measured on frozen Qwen matrices
 
@@ -55,6 +57,48 @@ Their mean energy and SSE are extrapolated across 116,422 non-router blocks, the
 
 Only the router term is checkpoint-complete. The mixed number is not a full-checkpoint measurement, and its margin to 0.10 dB is small.
 
+## 400-block stratified evaluation
+
+The later stratified evaluation is separate from the 47-block historical set.
+Its metadata-only manifest froze 400 previously untested blocks before their
+weight payloads were fetched. Coverage is one block in each of the 48 layers ×
+7 PLTE roles, plus 32 embedding and 32 LM-head blocks. The associated exception
+evidence is a census of all 48 routers and all 193 rank-one tensors. This is
+complete role/layer coverage in the panel, not a census of non-router checkpoint
+blocks.
+
+The original and amended outcomes must be reported together:
+
+| Endpoint | Outcome |
+|---|---|
+| Original universal 81,242-byte Tier-0 cap | **Failed:** 400 attempted, 385 Tier-0 successes, 15/400 recognized cap failures, zero other failures; maximum base container 81,278 bytes, or 36 bytes over cap. |
+| Post-hoc deterministic reservoir | 385 Tier-0 + 15 Tier-1; 400/400 clean independent decodes; all 15 original failures remain recorded as failures of the original endpoint. |
+
+The amended panel's all-in results, charging each assigned slot and its four-bit
+map entry, are:
+
+| Metric | Value |
+|---|---:|
+| Energy-weighted relative MSE | 0.03271539785114697 |
+| Mean charged rate | 2.4793975830078123 bpw |
+| Aggregate charged Gaussian gap | 0.07498293435240821 dB |
+| Pointwise charged gap p95 | 0.08279060024787634 dB |
+| Pointwise charged gap p99 | 0.08458994756368801 dB |
+| Pointwise charged gap maximum | 0.08667984346279214 dB |
+| Pointwise gaps at or above 0.10 dB | 0 |
+| Clean independent decodes | 400 / 400 |
+
+This remains strict PTQ: selection and encoding use frozen checkpoint weights,
+without retraining, QAT, calibration activations, task loss, distillation, or
+untransmitted learned decoder state. The reservoir policy was nevertheless
+designed after the original cap failures were observed. Its result is therefore
+post-hoc, exploratory engineering evidence rather than an untouched
+confirmatory test. It is not a whole-checkpoint measurement or a worst-case
+guarantee. The frozen records are
+[`original_tier0_outcome.json`](../evaluation/qwen3_stratified_v1/original_tier0_outcome.json),
+[`reservoir_plan.json`](../evaluation/qwen3_stratified_v1/reservoir_plan.json),
+and [`summary.json`](../evaluation/qwen3_stratified_v1/summary.json).
+
 ## Router rate-quality alternatives
 
 Using the same non-router projection and replacing only the router format:
@@ -69,13 +113,26 @@ All-Q3 is Pareto-efficient. All-Q4 is retained because the objective prioritizes
 
 ## What remains unproven
 
-- 116,375 non-router blocks remain unencoded.
-- The 47 blocks are a selected research evidence set, not a statistically unbiased held-out sample; strict PTQ does not remove method-selection or sample-selection bias.
-- A slot overflow route is not implemented.
-- A whole-checkpoint packer and decoder have not emitted or consumed the stated global format.
+- 115,975 non-router blocks remain unencoded after counting the 47 historical and 400 new unique blocks.
+- The 47 historical blocks are a selected research evidence set, not a statistically unbiased held-out sample. The 400-block selection was weight blind, but the reservoir amendment was designed after its cap failures; strict PTQ does not remove method-selection or post-hoc evaluation bias.
+- A tiered overflow route is implemented and exactly packed for the 400-block panel, but its full-checkpoint tier distribution and rate have not been measured.
+- A whole-checkpoint packer and decoder have not emitted or consumed the stated global format; the 400-block packed image is not a checkpoint file.
 - Floating-point probability regeneration must be pinned exactly or replaced by normative fixed-point/LUT arithmetic for portable bit-exact decoding.
 - Perplexity and downstream task accuracy have not been evaluated.
 - No like-for-like benchmark against published INT2 methods has been completed.
 - No exhaustive patent or literature novelty search has been performed.
 
 Accordingly, the release is a preliminary strict-PTQ research candidate, not a definitive SOTA result.
+
+## Verify the stratified artifacts
+
+```bash
+python tools/verify_stratified_evaluation.py
+```
+
+This exact, standard-library verifier rebuilds the frozen selection and
+reservoir plan; verifies the 400-container bundle, four-bit tier map, padded
+slot image, 400 encoder reports, and 400 clean-decoder receipts; recomputes the
+source-free summary; and checks the complete 193-rank-one and 48-router
+censuses. Raw BF16 source payloads are intentionally not included, so this is
+artifact-integrity verification rather than fresh distortion measurement.

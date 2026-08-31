@@ -5,6 +5,12 @@ weight-blind selection of 400 previously untested PLTE blocks. Its purpose is
 to expose tensor-role, layer, expert, and flat-position transfer failures. It
 does not turn a sample into a whole-checkpoint result.
 
+All 400 blocks have now been evaluated. The original universal Tier-0 endpoint
+failed on 15 cap overflows. A post-hoc deterministic reservoir assigns those 15
+blocks to Tier 1 and the other 385 to Tier 0; under that amended definition,
+all 400 pass clean independent decoding and the charged 0.10 dB quality bound.
+The two outcomes are reported separately below.
+
 ## Checkpoint inventory
 
 The 16 published safetensors headers describe 18,867 tensors and 15 normalized
@@ -117,10 +123,15 @@ R_i = 8 * literal_container_bytes_i / 262144
 gap_i = 10 log10(D_i / 2^(-2 R_i))
 ```
 
-The primary coverage endpoint uses the fixed PLTE slot rate
+The original coverage endpoint uses the fixed PLTE slot rate
 `R_slot = 2.47930908203125 bpw`, not any smaller realized file length. Its
 Gaussian reference is `0.0321593450611333`. A block fails the quality endpoint
 when its fixed-slot gap is greater than or equal to 0.10 dB.
+
+The amended endpoint charges each block at its assigned tier boundary plus its
+four-bit map entry. Its aggregate gap uses the panel's energy-weighted relative
+MSE and mean all-in charged rate. A block fails the amended quality endpoint
+when its all-in charged pointwise gap is greater than or equal to 0.10 dB.
 
 Aggregate distortion is energy weighted:
 
@@ -138,7 +149,8 @@ A hard integrity failure is any of:
 
 - source, checkpoint, encoder, decoder, profile, or container hash mismatch;
 - non-finite or zero source energy;
-- base stream or final container exceeding 81,242 bytes;
+- for the original endpoint, a base stream or final container exceeding 81,242 bytes;
+- for the amended endpoint, an incorrect assigned tier or a final container exceeding its assigned `Tk` boundary;
 - arithmetic, causal-frequency, frozen-bit, reconstruction-index, tail-record,
   padding, or header round-trip mismatch;
 - an independent decoder that does not consume the exact file or reproduce the
@@ -197,11 +209,76 @@ failures. The same 400 frozen blocks therefore become a post-hoc engineering
 evaluation of the amended codec, not an untouched confirmatory holdout. A new
 disjoint selection is required for a confirmatory reservoir claim.
 
+### Frozen outcome
+
+The immutable original Tier-0 outcome is:
+
+| Quantity | Value |
+|---|---:|
+| Attempted blocks | 400 |
+| Tier-0 successes | 385 |
+| Recognized cap failures | 15 / 400 |
+| Other failures | 0 |
+| Maximum base container | 81,278 bytes |
+| Maximum cap overflow | 36 bytes |
+
+The 15 original cap failures were distributed as follows; no selected attention
+Q, K, or O block overflowed:
+
+| Role | Tier-0 cap failures |
+|---|---:|
+| Embedding | 3 |
+| LM head | 1 |
+| Attention V | 3 |
+| Expert gate | 3 |
+| Expert up | 2 |
+| Expert down | 3 |
+
+The original universal fixed-cap endpoint therefore failed. Reservoir retries
+do not reclassify those 15 rows as Tier-0 successes. The frozen amended tier
+distribution is 385 Tier 0 + 15 Tier 1, with no higher tier used.
+
+The amended 400-block result, including the four-bit map charge, is:
+
+| Metric | Value |
+|---|---:|
+| Energy-weighted relative MSE | 0.03271539785114697 |
+| Mean all-in charged rate | 2.4793975830078123 bpw |
+| Aggregate charged Gaussian gap | 0.07498293435240821 dB |
+| Pointwise charged gap p95 | 0.08279060024787634 dB |
+| Pointwise charged gap p99 | 0.08458994756368801 dB |
+| Pointwise charged gap maximum | 0.08667984346279214 dB |
+| Pointwise gaps at or above 0.10 dB | 0 |
+| Clean independent decodes | 400 / 400 |
+
+Coverage comprises 336 layer/role cells (`48 × 7`), 32 embedding blocks, and
+32 LM-head blocks, alongside the complete 48-router Q4 and 193-rank-one exact
+BF16 exception censuses. Exact outcomes are published in
+[`original_tier0_outcome.json`](../evaluation/qwen3_stratified_v1/original_tier0_outcome.json),
+[`reservoir_plan.json`](../evaluation/qwen3_stratified_v1/reservoir_plan.json),
+and [`summary.json`](../evaluation/qwen3_stratified_v1/summary.json).
+
+The source-free artifact set is checked with:
+
+```bash
+python tools/verify_stratified_evaluation.py
+```
+
+That verifier rebuilds the manifest and reservoir plan and checks all 400
+container segments, encoder reports, clean-decoder receipts, the tier map,
+padded slot image, metric summaries, and router and rank-one censuses.
+
 ## Claim boundary
 
-If all 400 rows pass, the valid statement is that all 400 preregistered new
-blocks passed, with complete layer-by-role coverage in this panel. It is not a
-statement that every Qwen block passes. Routers remain measured Q4 exceptions,
-rank-one tensors remain exact BF16 exceptions, checkpoint rate remains a
-conditional inventory calculation, and any full-model distortion remains a
-sample-based projection until every source block is encoded.
+The valid measured statement is that all 400 frozen new blocks pass the amended
+all-in charged reservoir endpoint, with complete layer-by-role coverage in this
+panel and 400/400 clean independent decodes. The original preregistered
+universal Tier-0 endpoint did not pass: it retains 15/400 cap failures. Because
+the reservoir was designed after those failures, its result is post-hoc and
+non-confirmatory even though the codec remains strict PTQ.
+
+This is not a statement that every Qwen block passes. Routers remain measured
+Q4 exceptions, rank-one tensors remain exact BF16 exceptions, checkpoint rate
+remains a conditional inventory calculation, and any full-model distortion
+remains sample based until every source block is encoded. The result is neither
+a whole-checkpoint measurement nor a definitive SOTA or worst-case claim.

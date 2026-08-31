@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/root/int2/INT2_Q_stratified_run/plte/agent_root_polar_lattice_gate.py", line 911, in <module>
+    main()
+  File "/root/int2/INT2_Q_stratified_run/plte/agent_root_polar_lattice_gate.py", line 855, in main
+    rows = [run_trial(args, trial, capacities, flags) for trial in range(args.trials)]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/int2/INT2_Q_stratified_run/plte/agent_root_polar_lattice_gate.py", line 703, in run_trial
+    raise RuntimeError(
+RuntimeError: base polar container 81261 exceeds enforced 81242-byte slot

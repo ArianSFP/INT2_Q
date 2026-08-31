@@ -5,32 +5,63 @@ This repository publishes **PLTE**, a strict post-training weight codec develope
 PLTE combines a six-level polar-lattice source code, causal arithmetic coding, fixed-slot sparse exact-BF16 tail escapes, and a literal Q4 exception for MoE routers. It uses frozen weights only: no retraining, QAT, activation calibration, distillation, task loss, or untransmitted learned decoder state.
 
 > [!IMPORTANT]
-> This is a **preliminary mixed-precision research candidate**, not a homogeneous INT2 codec and not a whole-checkpoint SOTA claim. Routers use Q4 and rank-one tensors remain BF16. The global distortion number is a projection from six non-router blocks plus exact router aggregates; the global rate is a conditional fixed-slot budget, not a realized checkpoint file.
+> This is a **preliminary mixed-precision research candidate**, not a homogeneous INT2 codec and not a whole-checkpoint SOTA claim. Routers use Q4 and rank-one tensors remain BF16. The historical global distortion number is a projection from six non-router blocks plus exact router aggregates; the 400-block result below is a measured panel result, not a whole-checkpoint measurement. The checkpoint rate remains a conditional inventory calculation, not a realized checkpoint file.
 
 ## Result status
 
 | Status | What is established |
 |---|---|
-| **Measured** | 47 unique selected frozen Qwen blocks were literally encoded and decoded. Every observed block is below 0.10 dB; the maximum is **0.084674951 dB**. |
-| **Independently decoded** | A clean decoder that does not import the encoder exactly reproduces both normative exemplars and all six controlled-projection blocks. |
+| **Historical measured evidence** | 47 unique selected frozen Qwen blocks were literally encoded and decoded. Every observed block is below 0.10 dB; the maximum is **0.084674951 dB**. |
+| **Historical independent decodes** | A clean decoder that does not import the encoder exactly reproduces both normative exemplars and all six controlled-projection blocks. |
+| **Original 400-block endpoint** | **Failed as specified:** 385 Tier-0 successes and 15/400 recognized cap failures, with maximum base length 81,278 bytes (36 bytes over cap) and zero other failures. |
+| **Post-hoc reservoir panel** | The amended 385 Tier-0 + 15 Tier-1 panel has 400/400 clean independent decodes, energy-weighted relative MSE **0.0327153979**, mean all-in charged rate **2.4793975830 bpw**, and aggregate charged gap **0.0749829344 dB**. No block reaches 0.10 dB. |
+| **Panel coverage** | All 48 layers × 7 PLTE roles, 32 embedding blocks, and 32 LM-head blocks, plus complete 48-router and 193-rank-one exception censuses. This is complete stratum coverage in the panel, not complete checkpoint encoding. |
 | **Router-complete** | All 48 router matrices, 12,582,912 weights total, were encoded with the literal all-Q4 format at relative MSE **0.0332189501**. |
-| **Projected** | Six adjacent expert down-projection blocks plus the exact router aggregate give relative MSE **0.0327395512** and Gaussian gap **0.082851019 dB**. |
-| **Conditional rate** | Fixed-inventory arithmetic gives **2.480172079 bpw**, provided every non-router block fits an 81,242-byte slot. |
+| **Historical projection** | Six adjacent expert down-projection blocks plus the exact router aggregate give relative MSE **0.0327395512** and Gaussian gap **0.082851019 dB**. |
+| **Historical conditional rate** | Fixed-inventory arithmetic gives **2.480172079 bpw** under the now-falsified assumption that every non-router block fits an 81,242-byte slot. |
 | **Not established** | Full-checkpoint distortion, full-checkpoint slot feasibility, a realized packed checkpoint, perplexity, downstream accuracy, or superiority over published methods under a common harness. |
 
-## Preregistered broad-coverage extension
+## Preregistered broad-coverage evaluation
 
 A metadata-only selection of **400 new, previously untested blocks** is frozen in
 [`evaluation/qwen3_stratified_v1/manifest.json`](evaluation/qwen3_stratified_v1/manifest.json).
-It covers all 48 layers across each of the seven non-router matrix roles, plus
-32 embedding and 32 LM-head strata. The existing router artifact is a census of
-all 48 routers, and the extension separately audits all 193 rank-one tensors as
-lossless BF16 exceptions. The design, failure rules, metrics, and claim boundary
-are specified in [`docs/STRATIFIED_EVALUATION.md`](docs/STRATIFIED_EVALUATION.md).
+The manifest was committed before the selected weight payloads were fetched. It
+covers all 48 layers across each of the seven non-router matrix roles
+(`48 × 7 = 336` blocks), plus 32 embedding and 32 LM-head blocks. The existing
+router artifact is a census of all 48 routers, and the extension separately
+audits all 193 rank-one tensors as lossless BF16 exceptions.
 
-The manifest was committed before the selected weight payloads were fetched.
-Until result artifacts are published, it is a test protocol rather than new
-performance evidence.
+The preregistered universal Tier-0 endpoint did **not** pass. Of 400 attempted
+blocks, 385 fit the original 81,242-byte cap and 15 produced recognized cap
+failures; the largest base container was 81,278 bytes, or 36 bytes over cap.
+There were zero other failures. This immutable outcome is published in
+[`original_tier0_outcome.json`](evaluation/qwen3_stratified_v1/original_tier0_outcome.json).
+
+After those failures were observed, a deterministic 64-byte tier reservoir was
+designed and frozen. The amended panel assigns 385 blocks to Tier 0 and all 15
+original cap failures to Tier 1. All 400 literal containers then pass clean
+independent decoding. Charged at each assigned slot plus its four-bit map entry,
+the measured panel has:
+
+| 400-block amended-panel metric | Value |
+|---|---:|
+| Energy-weighted relative MSE | 0.03271539785114697 |
+| Mean all-in charged rate | 2.4793975830078123 bpw |
+| Aggregate charged Gaussian gap | 0.07498293435240821 dB |
+| Pointwise charged gap p95 | 0.08279060024787634 dB |
+| Pointwise charged gap p99 | 0.08458994756368801 dB |
+| Pointwise charged gap maximum | 0.08667984346279214 dB |
+| Pointwise gaps at or above 0.10 dB | 0 |
+| Clean independent decodes | 400 / 400 |
+
+The source weights remain frozen and there is no retraining, calibration, or
+task feedback, so both runs are strict PTQ. The reservoir, however, is a
+**post-hoc engineering amendment**, and these same 400 blocks are therefore not
+an untouched confirmatory set for it. The exact results and boundary are in
+[`summary.json`](evaluation/qwen3_stratified_v1/summary.json) and
+[`docs/STRATIFIED_EVALUATION.md`](docs/STRATIFIED_EVALUATION.md). They are not a
+whole-checkpoint distortion measurement, a checkpoint-wide worst-case result,
+or a definitive SOTA claim.
 
 The shaping gap used here is
 
@@ -52,26 +83,35 @@ where `D = SSE / source_energy` and `2^(-2R)` is the unit-variance Gaussian rate
 | Projected relative MSE | 0.032739551181266 |
 | Projected Gaussian gap | 0.082851019174621 dB |
 
-The exact accounting and its assumptions are in [`plte/agent_root_polar_escape_full_model_ledger.json`](plte/agent_root_polar_escape_full_model_ledger.json). The evidence covers 47 of 116,422 non-router blocks (0.0403704%); 116,375 remain unencoded.
+The exact accounting and its assumptions are in [`plte/agent_root_polar_escape_full_model_ledger.json`](plte/agent_root_polar_escape_full_model_ledger.json). This table is the historical six-block projection and is separate from the new measured panel. The historical and stratified sets contain 447 unique PLTE blocks, or 0.38395% of the 116,422 non-router blocks; 115,975 remain unencoded. The amended panel's 2.4793975830078123 bpw is its mean all-in charged rate, not a realized checkpoint rate.
 
 ## Verify the published evidence
 
-The repository includes the exact evidenced implementations, 49 compact polar report/stream pairs, eight clean-decoder reports, the six-mask profile, and the all-router literal artifact. Raw Qwen weight bytes are deliberately excluded.
+The repository includes the exact evidenced implementations, 49 historical compact polar report/stream pairs, eight historical clean-decoder reports, the six-mask profile, the all-router literal artifact, and the source-free 400-block stratified bundle. Raw Qwen weight bytes are deliberately excluded.
 
 ```bash
 python tools/verify_repository.py
+python tools/verify_stratified_evaluation.py
 ```
 
-This standard-library verifier checks every published report/container hash, required literal audit flag, implementation hash, frozen-mask level, standalone-decoder linkage, router artifact, and ledger invariant. It does **not** remeasure MSE without the original BF16 sources.
+The first standard-library verifier checks the historical publication bundle.
+The exact stratified-artifact verifier independently rebuilds the frozen
+selection and reservoir plan; checks the 400-container bundle, tier map, padded
+slot image, encoder reports, and 400 independent-decoder receipts; recomputes
+the published source-free metrics; and validates the 193 rank-one and 48-router
+censuses. Neither verifier remeasures distortion from the deliberately omitted
+raw BF16 sources.
 
 ## Repository map
 
 - [`docs/METHOD.md`](docs/METHOD.md): architecture, format, and mathematical motivation.
 - [`docs/EVIDENCE.md`](docs/EVIDENCE.md): measured versus projected evidence and router trade-offs.
+- [`docs/STRATIFIED_EVALUATION.md`](docs/STRATIFIED_EVALUATION.md): frozen 400-block protocol, original failure, and post-hoc reservoir result.
 - [`docs/REPRODUCING.md`](docs/REPRODUCING.md): exact environment and reproduction commands.
 - [`docs/ARTIFACTS.md`](docs/ARTIFACTS.md): provenance, hashes, omissions, and directory layout.
 - [`plte/`](plte/): exact implementations and compact evidence bundle.
 - [`tools/verify_repository.py`](tools/verify_repository.py): weight-free publication integrity check.
+- [`tools/verify_stratified_evaluation.py`](tools/verify_stratified_evaluation.py): exact source-free verifier for the stratified artifacts.
 
 ## Research basis and novelty boundary
 
