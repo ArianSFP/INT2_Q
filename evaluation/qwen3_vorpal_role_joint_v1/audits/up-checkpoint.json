@@ -1,0 +1,89 @@
+{
+  "checkpoint": "up-role-breakthrough-final",
+  "date_utc": "2026-08-31",
+  "scope": "Qwen expert MLP up-projection role; strict PTQ only",
+  "status": "pass",
+  "primary_candidate": {
+    "architecture": "VORPAL-preserving coordinate pulses plus four-bank procedural SPARC4 matching pursuit",
+    "remote_directory": "/root/vorpal_role_joint_v3_sparc4/candidate_v2",
+    "wrapper": {
+      "path": "/root/vorpal_role_joint_v3_sparc4/candidate_v2/vorpal_joint_sparc4.vjwrap",
+      "bytes": 32767988,
+      "sha256": "86ac8e569c34360cd3d4dbcfade9289b142a21ed0f4c1ebd6c83f0c05defc598",
+      "rate_bpw": 2.4999990844726563,
+      "headroom_bytes_below_2_5_bpw": 11
+    },
+    "physical_members": {
+      "embedded_vorpal_base_bytes": 32583835,
+      "embedded_vorpal_base_sha256": "320320eac95720d79633da57a048a75c10b63259de518f92684a6e84fc7026d2",
+      "wrapper_header_bytes": 224,
+      "extension_bytes": 183929,
+      "extension_sha256": "59101ec91cb10291f41afca13516d454684d5c0a3039a6d980bce66e769bf960"
+    },
+    "up_role": {
+      "blocks": 48,
+      "values": 12582912,
+      "coordinate_pulses": 100,
+      "sparc_stages": 269,
+      "source_energy": 7126.617850162894,
+      "baseline_sse": 233.83067163158927,
+      "corrected_sse": 222.61419508188922,
+      "relative_mse": 0.031237004672111178,
+      "gaussian_reference": 0.031250039662224983,
+      "signed_gap_db": -0.0018119033858965943,
+      "corrected_reconstruction_sha256": "7bb6cce5b58f15ddde9ad5689bca77a33dcd1d11484199b68431024169043445"
+    },
+    "global": {
+      "relative_mse": 0.02935406047291881,
+      "signed_gap_db": -0.27182388286553444
+    }
+  },
+  "independent_evidence": {
+    "up_audit": {
+      "path": "/root/vorpal_role_up_v2/experiments/sparc4_v2_up_audit.json",
+      "sha256": "092d46010ce0224e5e857c59013d26ab4b834cc0d387ec854e528ba72e57fb1f"
+    },
+    "up_auditor": {
+      "path": "/root/vorpal_role_up_v2/scripts/audit_sparc4_up.py",
+      "sha256": "12de4a8d797d7e7a1a330729ac1a1075defedb2376397babdb5fcc1f89901cd4"
+    },
+    "wire_tests": {
+      "path": "/root/vorpal_role_up_v2/experiments/sparc4_v2_wire_tests.json",
+      "sha256": "68503c09444f8213354a4a076759a124db9a8229786e1b455707533713bf93e2",
+      "passed": 15
+    },
+    "wire_test_driver": {
+      "path": "/root/vorpal_role_up_v2/scripts/test_sparc4_v2_bundle.py",
+      "sha256": "0529dad1b8aef97e18ccaebc32f3c9d4d52dbffee50d6248b4e946a33be9050a"
+    },
+    "joint_experiment_receipt_sha256": "5db53c6b73c9c3864bda12213e33cffd3370f9dfe9141a0488db7d0e0123b3a0",
+    "joint_independent_verification_sha256": "f11ab99fc74ef0438ea9e32fe0db6276ff95052548e0f95060f1f750a4d8fe8b",
+    "hardened_builder_sha256": "a5f36bc1d108280e3e50fa5857652681895a421335bd2944b96692e2a65bea1a",
+    "hardened_verifier_sha256": "fe98f117c2aeec1db5a0f66c1eb7bd486ba120fb410ef23981e7bf4b1437d483"
+  },
+  "determinism_checks": {
+    "coordinate_top_100_cutoff_margin": 0.000017874706689978426,
+    "coordinate_positions_sha256": "f178d2136ef076256d1c4a74446d8deeeb0b8d3149c275b7b8b58d4e15f9c348",
+    "coordinate_signs_sha256": "7d19f840d86fb86b2e78a5b36580268bb9a9f520724637547f4a25719dac0f1a",
+    "coordinate_amplitude_binary16": 0.033203125,
+    "full_four_bank_replay_stages": [0, 1, 2, 17, 63, 127, 268],
+    "full_four_bank_replay_groups_per_stage": 96,
+    "procedural_basis_signature_sha256": "cc3341f3ca165d7e4eee04e464209254bd5cc35081c8916942387a66f653c447",
+    "decoded_stage_code_sha256": "baa23cc52808301112d277bfdbaf95ec76ce81f9183170839f9b2ef4ce01a2fd"
+  },
+  "fallback": {
+    "architecture": "direct-stratified base plus three-role Rice pulse stream",
+    "path": "/root/vorpal_role_joint_v2/direct_joint_final_v2/vorpal-role-joint.vrjnt",
+    "bytes": 32765244,
+    "sha256": "7ddad8274bf7cd2f25291f8d3cbf1cc2e51e70350c605df3165ba4c7f35f6350",
+    "rate_bpw": 2.4997897338867188,
+    "up_signed_gap_db": -0.044576818897712346,
+    "up_audit_sha256": "a7a54b1b835c85907b1aef11d8fe967fe7583d035401a482a36f9fca2842adb4",
+    "wire_tests_sha256": "c17cf5010560ed5e6c6f57549b48f76e04c14715124c7f969373c66fc19f9ca3"
+  },
+  "documentation": {
+    "remote_path": "/root/vorpal_role_up_v2/README.md",
+    "sha256": "ff4981b8a421629765b187cfd2efa919a10a7085338bb122ee41025cc1007714"
+  },
+  "claim_limits": "The up result is an aggregate over the 48 up-role blocks at the physical rate of the complete 400-block panel; it is not a per-block negative-gap claim."
+}

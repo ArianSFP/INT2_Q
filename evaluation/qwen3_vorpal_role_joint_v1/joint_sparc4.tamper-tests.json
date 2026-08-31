@@ -1,0 +1,110 @@
+{
+  "format": "VJWRAP42 source-free tamper receipt v1",
+  "status": "passed",
+  "wrapper_sha256": "86ac8e569c34360cd3d4dbcfade9289b142a21ed0f4c1ebd6c83f0c05defc598",
+  "tests_run": 14,
+  "tests_rejected": 14,
+  "all_tamper_tests_failed_closed": true,
+  "tests": [
+    {
+      "name": "wrapper_header_crc_bitflip",
+      "expected": "reject",
+      "result": "rejected",
+      "exception": "ValueError",
+      "message": "wrapper header size"
+    },
+    {
+      "name": "embedded_base_payload_bitflip",
+      "expected": "reject",
+      "result": "rejected",
+      "exception": "ValueError",
+      "message": "wrapper base hash"
+    },
+    {
+      "name": "extension_payload_bitflip",
+      "expected": "reject",
+      "result": "rejected",
+      "exception": "ValueError",
+      "message": "wrapper extension hash"
+    },
+    {
+      "name": "extension_crc_trailer_bitflip",
+      "expected": "reject",
+      "result": "rejected",
+      "exception": "ValueError",
+      "message": "extension CRC"
+    },
+    {
+      "name": "recrc_manifest_provenance_hash_mutation",
+      "expected": "reject",
+      "result": "rejected",
+      "exception": "ValueError",
+      "message": "manifest provenance binding"
+    },
+    {
+      "name": "recrc_evaluation_provenance_hash_mutation",
+      "expected": "reject",
+      "result": "rejected",
+      "exception": "ValueError",
+      "message": "evaluation provenance binding"
+    },
+    {
+      "name": "recrc_reconstruction_provenance_hash_mutation",
+      "expected": "reject",
+      "result": "rejected",
+      "exception": "ValueError",
+      "message": "reconstruction provenance binding"
+    },
+    {
+      "name": "recrc_encoder_provenance_hash_mutation",
+      "expected": "reject",
+      "result": "rejected",
+      "exception": "ValueError",
+      "message": "encoder provenance binding"
+    },
+    {
+      "name": "recrc_zero_coordinate_amplitude",
+      "expected": "reject",
+      "result": "rejected",
+      "exception": "ValueError",
+      "message": "coordinate amplitude invalid"
+    },
+    {
+      "name": "recrc_zero_stage_amplitude",
+      "expected": "reject",
+      "result": "rejected",
+      "exception": "ValueError",
+      "message": "stage amplitude invalid"
+    },
+    {
+      "name": "recrc_noncanonical_rice_bit_length",
+      "expected": "reject",
+      "result": "rejected",
+      "exception": "ValueError",
+      "message": "unused meaningful Rice bits"
+    },
+    {
+      "name": "recrc_overlapping_role_masks",
+      "expected": "reject",
+      "result": "rejected",
+      "exception": "ValueError",
+      "message": "role masks overlap"
+    },
+    {
+      "name": "experiment_receipt_ptq_claim_mutation",
+      "expected": "reject",
+      "result": "rejected",
+      "exception": "ValueError",
+      "message": "experiment receipt status/PTQ assertions"
+    },
+    {
+      "name": "independent_replay_wrapper_binding_mutation",
+      "expected": "reject",
+      "result": "rejected",
+      "exception": "ValueError",
+      "message": "replay wrapper binding"
+    }
+  ],
+  "python": "3.12.3 (main, Aug 14 2025, 17:47:21) [GCC 13.3.0]",
+  "source_free_verifier_sha256": "4168cf4e7e335943602f96125c8fed00ae59ad251704c323dcfa7f71276fac13"
+}

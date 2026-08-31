@@ -3,8 +3,11 @@
 This repository publishes **VORPAL**, a strict post-training weight codec whose
 experimental 400-block Qwen development endpoint reaches a **-0.2861708909 dB**
 signed gap to the declared Gaussian reference at a physically packed
-**2.4859493256 bpw**. It also retains **PLTE**, the earlier fixed-slot baseline
-and its preregistered stratified evidence.
+**2.4859493256 bpw**. Its new role-joint procedural sparse-regression extension
+also puts the expert-MLP **up, down, and gate role aggregates individually below
+0 dB** in one physical **2.4999990845-bpw** wrapper while retaining a
+**-0.2718238829 dB** full-panel gap. The repository also retains **PLTE**, the
+earlier fixed-slot baseline and its preregistered stratified evidence.
 
 VORPAL combines compact local log-variance description, stable cross-tensor
 pooling, reverse-waterfilled polar-lattice profiles, exact physical-byte
@@ -23,6 +26,7 @@ distillation, task loss, or untransmitted learned decoder state.
 
 | Status | What is established |
 |---|---|
+| **VORPAL role-joint endpoint** | A provenance-bound 32,767,988-byte wrapper preserves the original VORPAL base byte-for-byte and adds a 183,929-byte procedural residual stream. Independent Float64 CuPy replay gives up **-0.0018119034 dB**, down **-0.0017979876 dB**, and gate **-0.0013266519 dB** at exactly **2.49999908447265625 bpw**; the corrected full panel remains **-0.2718238829 dB**. |
 | **VORPAL experimental endpoint** | A decoder-self-contained 32,583,835-byte panel bundle independently decodes 400/400 chunks. Float64 CuPy evaluation over exact frozen BF16 values gives relative MSE **0.02983268081273826** at exactly **2.4859493255615234375 bpw**, or **-0.2861708909351923 dB** relative to `2^(-2R)`. |
 | **VORPAL publication verification** | The source-free verifier passes all 413 canonical artifact files: exact bundle reparse, 400 containers, exposed selection DP, receipt bindings, rate/gap formulae, and role/layer coverage, with zero source payloads present. |
 | **Historical measured evidence** | 47 unique selected frozen Qwen blocks were literally encoded and decoded. Every observed block is below 0.10 dB; the maximum is **0.084674951 dB**. |
@@ -72,6 +76,44 @@ positive at the common panel rate.
 Start with the [artifact README](evaluation/qwen3_vorpal_v1/README.md),
 [method contract](docs/VORPAL_METHOD.md), [evidence and limitations](docs/VORPAL_EVIDENCE.md),
 or [reproduction guide](docs/VORPAL_REPRODUCING.md).
+
+## Role-joint up/down/gate result
+
+The role-joint extension encodes residual structure left by VORPAL without
+changing or replacing the original base bundle. For each of the three expert
+MLP roles it first transmits 100 Rice-coded coordinate pulses, then applies
+successive-refinement stages over 96 groups of 131,072 residual values. Each
+stage selects one atom from four deterministic signed Walsh-Hadamard bases per
+group. The decoder regenerates those bases from fixed integer functions; only
+the 20-bit basis/index/sign symbols and one shared FP16 amplitude are stored.
+
+| Independently replayed quantity | Up projection | Down projection | Gate projection |
+|---|---:|---:|---:|
+| Frozen blocks | 48 | 48 | 48 |
+| Source energy | 7,126.617850162894 | 7,344.938468006613 | 6,911.452696096183 |
+| Corrected SSE | 222.61419508188922 | 229.43461240212838 | 215.91720395036748 |
+| Energy-relative MSE | 0.031237004672111178 | 0.031237104762893406 | 0.031240495080335957 |
+| Selected refinement stages | 269 | 100 | 387 |
+| Signed Gaussian-reference gap | **-0.0018119033858966 dB** | **-0.0017979875814763 dB** | **-0.0013266518828134 dB** |
+
+The complete wrapper is 32,767,988 bytes for 104,857,600 panel values, so
+`R = 8B/M = 2.49999908447265625 bpw` and
+`D_G(R) = 0.031250039662224983`. Its 224-byte header binds the base, extension,
+frozen manifest, evaluation, normative reconstruction, and encoder by SHA-256.
+The 183,929-byte extension carries all 300 coordinate pulses and 756 refinement
+stages. No learned or weight-dependent decoder state is omitted from the rate.
+
+This meets the signed `< 0 dB` target for all three **role aggregates**, not for
+every individual expert matrix. It covers one selected expert projection block
+per role in every layer (`48 * 3 = 144` blocks), and both the method and stage
+allocation were developed on this panel. The worst margin is only
+0.0013266519 dB, so the claim is an exact artifact result rather than a broad
+robustness claim. It remains strict PTQ: frozen weights only, with no training,
+weight updates, gradients, activations, calibration data, prompts, or task
+loss.
+
+See the [role-joint method and evidence](docs/VORPAL_ROLE_JOINT.md) and the
+[physical artifact](evaluation/qwen3_vorpal_role_joint_v1/README.md).
 
 ## Preregistered broad-coverage evaluation
 
@@ -145,6 +187,7 @@ The repository includes the exact evidenced implementations, 49 historical compa
 python tools/verify_repository.py
 python tools/verify_stratified_evaluation.py
 python vorpal/publication_verifier/verify_vorpal_publication.py evaluation/qwen3_vorpal_v1 --compact
+python vorpal/role_joint_sparc4/verify_source_free.py
 ```
 
 The first standard-library verifier checks the historical publication bundle.
@@ -167,7 +210,9 @@ not remeasure distortion from the deliberately omitted raw BF16 sources.
 - [`docs/VORPAL_METHOD.md`](docs/VORPAL_METHOD.md): VORPAL algorithm and physical metric contract.
 - [`docs/VORPAL_EVIDENCE.md`](docs/VORPAL_EVIDENCE.md): final measured endpoint, audit trail, and claim boundary.
 - [`docs/VORPAL_REPRODUCING.md`](docs/VORPAL_REPRODUCING.md): audited construction, selection, decode, evaluation, and verification commands.
+- [`docs/VORPAL_ROLE_JOINT.md`](docs/VORPAL_ROLE_JOINT.md): procedural residual architecture, exact up/down/gate result, verification, and claim boundary.
 - [`evaluation/qwen3_vorpal_v1/`](evaluation/qwen3_vorpal_v1/): exact VORPAL bundle, 400 selected containers, manifests, and receipts.
+- [`evaluation/qwen3_vorpal_role_joint_v1/`](evaluation/qwen3_vorpal_role_joint_v1/): exact role-joint wrapper, extracted extension, and independent verification receipts.
 - [`vorpal/`](vorpal/): frozen VORPAL implementations, tests, and source-free verifier.
 - [`plte/`](plte/): exact implementations and compact evidence bundle.
 - [`tools/verify_repository.py`](tools/verify_repository.py): weight-free publication integrity check.

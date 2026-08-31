@@ -9,6 +9,7 @@
 requirements.txt text eol=lf
 evaluation/**/*.json text eol=lf
 evaluation/**/*.bin binary
+evaluation/**/*.vjwrap binary
 evaluation/**/*.sha256 text eol=lf
 evaluation/**/*.wfouter binary
 

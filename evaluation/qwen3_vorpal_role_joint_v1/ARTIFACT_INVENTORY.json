@@ -1,0 +1,215 @@
+{
+  "format": "VORPAL role-joint SPARC4 publication inventory v1",
+  "status": "strict-ptq-physical-wrapper-and-three-role-negative-gap-passed",
+  "generated_utc_date": "2026-08-31",
+  "checkpoint": {
+    "repo": "Qwen/Qwen3-30B-A3B",
+    "revision": "ad44e777bcd18fa416d9da3bd8f70d33ebb85d39"
+  },
+  "claim": {
+    "physical_all_in_rate_strictly_below_bpw": 2.5,
+    "role_aggregate_signed_gaussian_reference_gap_strictly_below_db": 0.0,
+    "roles": [
+      "mlp.experts.{expert}.up_proj.weight",
+      "mlp.experts.{expert}.down_proj.weight",
+      "mlp.experts.{expert}.gate_proj.weight"
+    ],
+    "all_three_roles_pass": true,
+    "global_panel_remains_below_zero_db": true
+  },
+  "strict_ptq": {
+    "value": true,
+    "training_or_retraining": false,
+    "weight_updates": false,
+    "gradients_or_optimizer": false,
+    "activation_calibration": false,
+    "prompts_labels_or_task_loss": false,
+    "weight_dependent_decoder_state_omitted_from_rate": false
+  },
+  "scope": {
+    "panel_blocks": 400,
+    "panel_values": 104857600,
+    "corrected_role_blocks": 144,
+    "blocks_per_role": 48,
+    "values_per_block": 262144,
+    "coverage": "one selected expert up/down/gate projection block in every layer 0 through 47",
+    "aggregate_not_pointwise": true,
+    "post_hoc_development_panel": true,
+    "all_experts_or_full_checkpoint": false
+  },
+  "method": {
+    "base": "VORPAL fixed-route-v2 selected physical bundle, preserved byte-for-byte",
+    "coordinate_pulses_per_role": 100,
+    "coordinate_support": "canonical Rice-coded sorted gaps and one sign per coordinate",
+    "transform": "normalized Walsh-Hadamard",
+    "transform_values": 131072,
+    "groups_per_role": 96,
+    "procedural_signed_bases_per_stage": 4,
+    "stage_symbol_bits_per_group": 20,
+    "stage_code_bytes": 240,
+    "shared_stage_amplitude": "one positive finite IEEE binary16 value per role/stage",
+    "stage_record_bytes": 242,
+    "selected_stage_counts": {
+      "up": 269,
+      "down": 100,
+      "gate": 387,
+      "total": 756
+    }
+  },
+  "physical_accounting": {
+    "base_bytes": 32583835,
+    "wrapper_header_bytes": 224,
+    "extension_bytes": 183929,
+    "physical_all_in_bytes": 32767988,
+    "physical_all_in_bits": 262143904,
+    "physical_all_in_rate_bpw": 2.4999990844726563,
+    "exact_rate_fraction": "65535976/26214400",
+    "distance_to_2p5_equality_bits": 96,
+    "additional_whole_bytes_permitted_strictly_below_2p5": 11,
+    "gaussian_reference": 0.031250039662224983
+  },
+  "independent_exact_source_metrics": {
+    "up": {
+      "source_energy": 7126.617850162894,
+      "corrected_sse": 222.61419508188922,
+      "relative_mse": 0.031237004672111178,
+      "gap_db": -0.0018119033858965943
+    },
+    "down": {
+      "source_energy": 7344.938468006613,
+      "corrected_sse": 229.43461240212838,
+      "relative_mse": 0.031237104762893406,
+      "gap_db": -0.0017979875814763385
+    },
+    "gate": {
+      "source_energy": 6911.452696096183,
+      "corrected_sse": 215.91720395036748,
+      "relative_mse": 0.031240495080335957,
+      "gap_db": -0.0013266518828134463
+    },
+    "worst_role_gap_db": -0.0013266518828134463,
+    "global": {
+      "source_energy": 65382.858775118555,
+      "corrected_sse": 1919.2523903771403,
+      "relative_mse": 0.02935406047291881,
+      "gap_db": -0.27182388286553444
+    },
+    "corrected_three_role_reconstruction_f64_sha256": "4a4d7d72881f608088e20a382ada4d6a029a8fae3ba1b435d94c5bdb3b3e0f06",
+    "cupy": "14.2.0",
+    "gpu": "NVIDIA RTX A6000"
+  },
+  "provenance_dependencies": {
+    "base_bundle": {
+      "canonical_repository_path": "../qwen3_vorpal_v1/selected.wfouter",
+      "bytes": 32583835,
+      "sha256": "320320eac95720d79633da57a048a75c10b63259de518f92684a6e84fc7026d2"
+    },
+    "selected_manifest": {
+      "canonical_repository_path": "../qwen3_vorpal_v1/selected.manifest.json",
+      "sha256": "55eb25cd9ca257666fb58c207945ed73844bcc2581c1bcae1ababb14e30b187a"
+    },
+    "evaluation": {
+      "canonical_repository_path": "../qwen3_vorpal_v1/evaluation.json",
+      "sha256": "81d838e1e51f324bff856eb22a5830c8fb9b70c0c12d319965952056e10c1ee6"
+    },
+    "normative_reconstruction": {
+      "published": false,
+      "bytes": 838860800,
+      "sha256": "84b034fbbd92c83b2e953554793fee2af968bb19086722a47a75280d7d3483b5"
+    },
+    "raw_bf16_source_blocks": {
+      "published": false,
+      "reason": "upstream checkpoint weights; immutable per-block hashes are in the selected manifest"
+    }
+  },
+  "published_artifacts": {
+    "wrapper": {
+      "path": "vorpal_joint_sparc4.vjwrap",
+      "bytes": 32767988,
+      "sha256": "86ac8e569c34360cd3d4dbcfade9289b142a21ed0f4c1ebd6c83f0c05defc598"
+    },
+    "extracted_extension": {
+      "path": "joint_sparc4.extension.bin",
+      "bytes": 183929,
+      "sha256": "59101ec91cb10291f41afca13516d454684d5c0a3039a6d980bce66e769bf960",
+      "charged_again": false
+    },
+    "encoder_receipt": {
+      "path": "joint_sparc4.receipt.json",
+      "bytes": 57956,
+      "sha256": "5db53c6b73c9c3864bda12213e33cffd3370f9dfe9141a0488db7d0e0123b3a0"
+    },
+    "independent_exact_source_replay": {
+      "path": "joint_sparc4.independent-verification.json",
+      "bytes": 3675,
+      "sha256": "f11ab99fc74ef0438ea9e32fe0db6276ff95052548e0f95060f1f750a4d8fe8b"
+    },
+    "source_free_verification": {
+      "path": "joint_sparc4.source-free-verification.json",
+      "bytes": 5165,
+      "sha256": "f4169319d2797f4fad02cac65e5bb3859e108da0ab824805403900af146c3ff7"
+    },
+    "tamper_receipt": {
+      "path": "joint_sparc4.tamper-tests.json",
+      "bytes": 3210,
+      "sha256": "521e1015c5d9f08e3c769abcb480fa8fb69083c488e8475e0392b09ad852bb8c",
+      "tests_rejected": 14,
+      "tests_run": 14
+    },
+    "up_exact_replay": {
+      "path": "audits/up-exact-replay.audit.json",
+      "sha256": "092d46010ce0224e5e857c59013d26ab4b834cc0d387ec854e528ba72e57fb1f"
+    },
+    "gate_exact_replay": {
+      "path": "audits/gate-exact-replay.audit.json",
+      "sha256": "3883e6250b63f1477c88e5655760009487532935078677aa86e4a0138ee4ee3f"
+    }
+  },
+  "frozen_implementations": {
+    "encoder": {
+      "path": "../../vorpal/role_joint_sparc4/build_joint_sparc4.py",
+      "sha256": "a5f36bc1d108280e3e50fa5857652681895a421335bd2944b96692e2a65bea1a"
+    },
+    "independent_exact_source_verifier": {
+      "path": "../../vorpal/role_joint_sparc4/verify_joint_sparc4.py",
+      "sha256": "fe98f117c2aeec1db5a0f66c1eb7bd486ba120fb410ef23981e7bf4b1437d483"
+    },
+    "source_free_verifier": {
+      "path": "../../vorpal/role_joint_sparc4/verify_joint_sparc4_source_free.py",
+      "sha256": "4168cf4e7e335943602f96125c8fed00ae59ad251704c323dcfa7f71276fac13"
+    },
+    "publication_launcher": {
+      "path": "../../vorpal/role_joint_sparc4/verify_source_free.py",
+      "sha256": "5279d60d1bed12372cabfca87b85980cbcc53436fe7eb463b731665c6086ae8d"
+    },
+    "up_role_auditor": {
+      "path": "../../vorpal/role_joint_sparc4/audits/audit_up.py",
+      "sha256": "12de4a8d797d7e7a1a330729ac1a1075defedb2376397babdb5fcc1f89901cd4"
+    },
+    "gate_role_auditor": {
+      "path": "../../vorpal/role_joint_sparc4/audits/audit_gate.py",
+      "sha256": "dd593d241420f8d4df40ce0136670830f24578249e1dd0463d504fd3b4a4869c"
+    }
+  },
+  "verification": {
+    "independent_decoder_imported_encoder": false,
+    "source_free_decode_before_source_scoring": true,
+    "source_hashes_verified": 144,
+    "role_masks_disjoint_and_manifest_bound": true,
+    "all_coordinate_and_stage_amplitudes_finite_positive": true,
+    "rice_payloads_exact_and_minimal": true,
+    "physical_eof_verified": true,
+    "up_replayed_stages": 269,
+    "gate_replayed_stages": 387,
+    "source_free_tamper_tests_rejected": 14
+  },
+  "not_established": [
+    "every individual selected block below 0 dB",
+    "every expert matrix in the checkpoint below 0 dB",
+    "whole-checkpoint distortion or packed checkpoint rate",
+    "disjoint holdout confirmation",
+    "perplexity or downstream task accuracy",
+    "decoder-integrated inference speed",
+    "definitive superiority over published methods under a common harness"
+  ]
+}

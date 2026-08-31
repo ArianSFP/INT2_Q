@@ -1,0 +1,91 @@
+{
+  "format": "hardened SPARC4 wrapper adversarial tests v1",
+  "status": "passed",
+  "cases_passed": 15,
+  "cases": [
+    {
+      "name": "valid wrapper and extension",
+      "status": "passed"
+    },
+    {
+      "name": "trailing wrapper byte",
+      "status": "passed",
+      "detail": "wrapper EOF/length"
+    },
+    {
+      "name": "wrapper header CRC",
+      "status": "passed",
+      "detail": "wrapper CRC"
+    },
+    {
+      "name": "embedded base member",
+      "status": "passed",
+      "detail": "wrapper member hash"
+    },
+    {
+      "name": "extension member",
+      "status": "passed",
+      "detail": "wrapper member hash"
+    },
+    {
+      "name": "re-CRC encoder provenance tamper",
+      "status": "passed",
+      "detail": "external provenance mismatch"
+    },
+    {
+      "name": "inner extension CRC",
+      "status": "passed",
+      "detail": "extension CRC"
+    },
+    {
+      "name": "repaired-CRC extension magic",
+      "status": "passed",
+      "detail": "extension constants"
+    },
+    {
+      "name": "coordinate amplitude NaN",
+      "status": "passed",
+      "detail": "role descriptor"
+    },
+    {
+      "name": "nonzero coordinate Rice padding",
+      "status": "passed",
+      "detail": "nonzero padding bits"
+    },
+    {
+      "name": "nonminimal coordinate bytes",
+      "status": "passed",
+      "detail": "role descriptor"
+    },
+    {
+      "name": "overlapping role masks",
+      "status": "passed",
+      "detail": "overlapping role masks"
+    },
+    {
+      "name": "zero SPARC stage amplitude",
+      "status": "passed",
+      "detail": "stage amplitude"
+    },
+    {
+      "name": "trailing extension byte with repaired hashes",
+      "status": "passed",
+      "detail": "extension trailing bytes"
+    },
+    {
+      "name": "receipt artifact binding",
+      "status": "passed",
+      "detail": "receipt wrapper mismatch"
+    }
+  ],
+  "inputs": {
+    "wrapper_bytes": 32767988,
+    "wrapper_sha256": "86ac8e569c34360cd3d4dbcfade9289b142a21ed0f4c1ebd6c83f0c05defc598",
+    "manifest_sha256": "55eb25cd9ca257666fb58c207945ed73844bcc2581c1bcae1ababb14e30b187a",
+    "evaluation_sha256": "81d838e1e51f324bff856eb22a5830c8fb9b70c0c12d319965952056e10c1ee6",
+    "reconstruction_sha256": "84b034fbbd92c83b2e953554793fee2af968bb19086722a47a75280d7d3483b5",
+    "encoder_sha256": "a5f36bc1d108280e3e50fa5857652681895a421335bd2944b96692e2a65bea1a",
+    "experiment_receipt_sha256": "5db53c6b73c9c3864bda12213e33cffd3370f9dfe9141a0488db7d0e0123b3a0"
+  },
+  "test_script_sha256": "0529dad1b8aef97e18ccaebc32f3c9d4d52dbffee50d6248b4e946a33be9050a"
+}

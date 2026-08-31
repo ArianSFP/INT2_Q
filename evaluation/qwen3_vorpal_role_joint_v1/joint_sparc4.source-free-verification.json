@@ -1,0 +1,109 @@
+{
+  "format": "VJWRAP42/VJSPRC41 standard-library source-free verification v1",
+  "status": "passed",
+  "strict_ptq": true,
+  "python_standard_library_only": true,
+  "raw_bf16_sources_opened": false,
+  "reconstruction_payload_opened": false,
+  "numpy_or_cupy_imported": false,
+  "scope": {
+    "binary_wrapper_and_extension_fully_parsed": true,
+    "published_base_manifest_evaluation_and_encoder_hashes_verified": true,
+    "embedded_reconstruction_digest_chained_through_evaluation_and_receipts": true,
+    "experiment_and_exact_source_replay_receipts_consistency_verified": true,
+    "sse_independently_rescored": false,
+    "limitation": "SSE rescore requires raw BF16 plus reconstruction and is recorded by the separately bound full verifier receipt."
+  },
+  "hashes": {
+    "wrapper_sha256": "86ac8e569c34360cd3d4dbcfade9289b142a21ed0f4c1ebd6c83f0c05defc598",
+    "base_sha256": "320320eac95720d79633da57a048a75c10b63259de518f92684a6e84fc7026d2",
+    "manifest_sha256": "55eb25cd9ca257666fb58c207945ed73844bcc2581c1bcae1ababb14e30b187a",
+    "evaluation_sha256": "81d838e1e51f324bff856eb22a5830c8fb9b70c0c12d319965952056e10c1ee6",
+    "experiment_receipt_sha256": "5db53c6b73c9c3864bda12213e33cffd3370f9dfe9141a0488db7d0e0123b3a0",
+    "independent_verification_sha256": "f11ab99fc74ef0438ea9e32fe0db6276ff95052548e0f95060f1f750a4d8fe8b",
+    "encoder_sha256": "a5f36bc1d108280e3e50fa5857652681895a421335bd2944b96692e2a65bea1a",
+    "full_verifier_sha256": "fe98f117c2aeec1db5a0f66c1eb7bd486ba120fb410ef23981e7bf4b1437d483",
+    "source_free_verifier_sha256": "4168cf4e7e335943602f96125c8fed00ae59ad251704c323dcfa7f71276fac13"
+  },
+  "wrapper": {
+    "header_bytes": 224,
+    "panel_values": 104857600,
+    "base_bytes": 32583835,
+    "extension_bytes": 183929,
+    "base_sha256": "320320eac95720d79633da57a048a75c10b63259de518f92684a6e84fc7026d2",
+    "extension_sha256": "59101ec91cb10291f41afca13516d454684d5c0a3039a6d980bce66e769bf960",
+    "manifest_sha256": "55eb25cd9ca257666fb58c207945ed73844bcc2581c1bcae1ababb14e30b187a",
+    "evaluation_sha256": "81d838e1e51f324bff856eb22a5830c8fb9b70c0c12d319965952056e10c1ee6",
+    "reconstruction_sha256": "84b034fbbd92c83b2e953554793fee2af968bb19086722a47a75280d7d3483b5",
+    "encoder_sha256": "a5f36bc1d108280e3e50fa5857652681895a421335bd2944b96692e2a65bea1a"
+  },
+  "extension": {
+    "crc_verified": true,
+    "rice_payloads_exact_and_minimal": true,
+    "coordinate_and_stage_amplitudes_finite_positive": true,
+    "all_stage_symbols_parsed": true,
+    "role_masks_disjoint_and_match_manifest": true
+  },
+  "receipt_and_replay_validation": {
+    "experiment_receipt_status_ptq_provenance_method_and_metrics_verified": true,
+    "independent_replay_status_provenance_script_and_metrics_verified": true,
+    "independent_replay_corrected_reconstruction_sha256": "4a4d7d72881f608088e20a382ada4d6a029a8fae3ba1b435d94c5bdb3b3e0f06"
+  },
+  "metrics_recomputed_from_replay_sse": {
+    "physical_bytes": 32767988,
+    "rate_bpw": 2.4999990844726563,
+    "headroom_bytes": 11,
+    "gaussian_reference": 0.031250039662224983,
+    "roles": [
+      {
+        "role": "mlp.experts.{expert}.up_proj.weight",
+        "role_id": 0,
+        "block_count": 48,
+        "coordinate_pulses": 100,
+        "sparc_stages": 269,
+        "source_energy": 7126.617850162896,
+        "corrected_sse": 222.61419508188922,
+        "relative_mse": 0.031237004672111168,
+        "gap_db": -0.0018119033858980415,
+        "stage_symbol_digest": "24fa3421eef85c3fb3506beb1d55d5c3a7d987973ca805bfd3adbdde7aabb71c"
+      },
+      {
+        "role": "mlp.experts.{expert}.down_proj.weight",
+        "role_id": 1,
+        "block_count": 48,
+        "coordinate_pulses": 100,
+        "sparc_stages": 100,
+        "source_energy": 7344.938468006613,
+        "corrected_sse": 229.43461240212844,
+        "relative_mse": 0.031237104762893413,
+        "gap_db": -0.0017979875814753737,
+        "stage_symbol_digest": "8fd6d4fbd5bd84d008abe9ac6ddcdf22bdf1d635efdc142888f8cd2dffec3ff3"
+      },
+      {
+        "role": "mlp.experts.{expert}.gate_proj.weight",
+        "role_id": 2,
+        "block_count": 48,
+        "coordinate_pulses": 100,
+        "sparc_stages": 387,
+        "source_energy": 6911.452696096186,
+        "corrected_sse": 215.91720395036748,
+        "relative_mse": 0.031240495080335943,
+        "gap_db": -0.0013266518828153758,
+        "stage_symbol_digest": "4749fa67d9b3b94130f7bd34c7ec7291ebb76145ea280604a904845bf625ce74"
+      }
+    ],
+    "worst_role_gap_db": -0.0013266518828153758,
+    "global_corrected_sse": 1919.2523903771403,
+    "global_relative_mse": 0.02935406047291881,
+    "global_gap_db": -0.27182388286553444,
+    "total_sparc_stages": 756,
+    "fixed_wrapper_and_extension_bytes_before_stages": 1201
+  },
+  "all_three_roles_below_zero_db": true,
+  "global_below_zero_db": true,
+  "tamper_receipt": "/root/vorpal_role_joint_v3_sparc4/candidate_v2/joint_sparc4.tamper-tests.json",
+  "tamper_tests_run": 14,
+  "all_tamper_tests_failed_closed": true,
+  "python": "3.12.3 (main, Aug 14 2025, 17:47:21) [GCC 13.3.0]",
+  "tamper_receipt_sha256": "521e1015c5d9f08e3c769abcb480fa8fb69083c488e8475e0392b09ad852bb8c"
+}
