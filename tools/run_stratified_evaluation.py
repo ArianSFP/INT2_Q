@@ -38,7 +38,6 @@ ROUTER_REPORT = PLTE / "agent_router_adaptive_q4_t0045_all48.json"
 ROUTER_CONTAINER = PLTE / "agent_router_adaptive_q4_t0045_all48.bin"
 BLOCK_VALUES = 1 << 18
 CONTAINER_CAP_BYTES = 81_242
-SLOT_RATE = 8 * CONTAINER_CAP_BYTES / BLOCK_VALUES
 BASE_URL = "https://huggingface.co/{repo}/resolve/{revision}/{shard}?download=true"
 
 ENCODER_BOOL_FIELDS = (
@@ -298,7 +297,9 @@ def encoder_paths(workspace: Path, entry: dict[str, Any]) -> tuple[Path, Path, P
     return report, container, log
 
 
-def exact_parameters(parameters: dict[str, Any]) -> bool:
+def exact_parameters(
+    parameters: dict[str, Any], expected_cap_bytes: int = CONTAINER_CAP_BYTES
+) -> bool:
     expected = {
         "block_length": BLOCK_VALUES,
         "trials": 1,
@@ -308,7 +309,7 @@ def exact_parameters(parameters: dict[str, Any]) -> bool:
         "alphabet_size": 64,
         "decision": "map",
         "seed": 20260831,
-        "container_cap_bytes": CONTAINER_CAP_BYTES,
+        "container_cap_bytes": expected_cap_bytes,
     }
     return all(parameters.get(key) == value for key, value in expected.items())
 
@@ -319,6 +320,7 @@ def validate_encoder_result(
     entry: dict[str, Any],
     source_record: dict[str, Any],
     encoder_sha256: str,
+    expected_cap_bytes: int = CONTAINER_CAP_BYTES,
 ) -> dict[str, Any]:
     if not report_path.is_file() or not container_path.is_file():
         raise AssertionError("encoder output pair is incomplete")
@@ -327,7 +329,7 @@ def validate_encoder_result(
         raise AssertionError("encoder implementation hash mismatch")
     if report.get("strict_ptq") is not True or report.get("source_training_or_retraining") is not False:
         raise AssertionError("strict PTQ declaration mismatch")
-    if not exact_parameters(report.get("parameters", {})):
+    if not exact_parameters(report.get("parameters", {}), expected_cap_bytes):
         raise AssertionError("codec parameters differ from frozen profile")
     if len(report.get("trials", [])) != 1:
         raise AssertionError("expected exactly one trial")
@@ -344,7 +346,7 @@ def validate_encoder_result(
         if trial.get(field) is not True:
             raise AssertionError(f"encoder audit flag is false: {field}")
     container_bytes = container_path.stat().st_size
-    if container_bytes > CONTAINER_CAP_BYTES:
+    if container_bytes > expected_cap_bytes:
         raise AssertionError("literal container exceeds fixed cap")
     if trial.get("literal_container_bytes") != container_bytes:
         raise AssertionError("container length differs from metadata")
@@ -671,8 +673,12 @@ def summarize_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
     actual_bits = sum(int(row["container_bytes"]) * 8 for row in rows)
     actual_rate = actual_bits / (BLOCK_VALUES * len(rows))
     actual_gap = 10.0 * math.log10(distortion / (2.0 ** (-2.0 * actual_rate)))
-    slot_gap = 10.0 * math.log10(distortion / (2.0 ** (-2.0 * SLOT_RATE)))
-    fixed_gaps = [float(row["fixed_slot_gap_db"]) for row in rows]
+    charged_slot_bits = sum(int(row["charged_slot_bytes"]) * 8 + 4 for row in rows)
+    charged_slot_rate = charged_slot_bits / (BLOCK_VALUES * len(rows))
+    charged_slot_gap = 10.0 * math.log10(
+        distortion / (2.0 ** (-2.0 * charged_slot_rate))
+    )
+    charged_gaps = [float(row["charged_tier_slot_gap_db"]) for row in rows]
     actual_gaps = [float(row["actual_gap_db"]) for row in rows]
     return {
         "blocks": len(rows),
@@ -682,8 +688,9 @@ def summarize_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "actual_container_bits": actual_bits,
         "mean_actual_bpw": actual_rate,
         "aggregate_gap_at_mean_actual_rate_db": actual_gap,
-        "fixed_slot_bpw": SLOT_RATE,
-        "aggregate_gap_at_fixed_slot_rate_db": slot_gap,
+        "charged_tier_slot_bits_including_4bit_map": charged_slot_bits,
+        "mean_charged_tier_slot_bpw_including_4bit_map": charged_slot_rate,
+        "aggregate_gap_at_charged_tier_slot_rate_db": charged_slot_gap,
         "pointwise_actual_gap_db": {
             "min": min(actual_gaps),
             "p50": percentile(actual_gaps, 0.50),
@@ -691,14 +698,16 @@ def summarize_rows(rows: list[dict[str, Any]]) -> dict[str, Any]:
             "p99": percentile(actual_gaps, 0.99),
             "max": max(actual_gaps),
         },
-        "pointwise_fixed_slot_gap_db": {
-            "min": min(fixed_gaps),
-            "p50": percentile(fixed_gaps, 0.50),
-            "p95": percentile(fixed_gaps, 0.95),
-            "p99": percentile(fixed_gaps, 0.99),
-            "max": max(fixed_gaps),
+        "pointwise_charged_tier_slot_gap_db": {
+            "min": min(charged_gaps),
+            "p50": percentile(charged_gaps, 0.50),
+            "p95": percentile(charged_gaps, 0.95),
+            "p99": percentile(charged_gaps, 0.99),
+            "max": max(charged_gaps),
         },
-        "fixed_slot_failures_ge_0p10db": sum(gap >= 0.10 for gap in fixed_gaps),
+        "charged_tier_slot_failures_ge_0p10db": sum(
+            gap >= 0.10 for gap in charged_gaps
+        ),
     }
 
 
@@ -708,6 +717,7 @@ def build_final_artifacts(
     manifest_path: Path,
     manifest: dict[str, Any],
     selected: list[dict[str, Any]],
+    reservoir_plan_path: Path | None,
 ) -> dict[str, Any]:
     if len(selected) != 400:
         raise AssertionError("publication requires the complete 400-block panel")
@@ -715,13 +725,54 @@ def build_final_artifacts(
     source_records = {row["id"]: row for row in source_manifest["records"]}
     publish_dir.mkdir(parents=True, exist_ok=True)
 
+    if reservoir_plan_path is None:
+        reservoir_plan = {
+            "format": "implicit uniform Tier-0 plan",
+            "post_hoc_engineering_amendment": False,
+            "allocations": [
+                {
+                    "id": entry["id"],
+                    "tier": 0,
+                    "container_cap_bytes": CONTAINER_CAP_BYTES,
+                }
+                for entry in selected
+            ],
+        }
+        reservoir_plan_sha256 = None
+    else:
+        reservoir_plan = load_json(reservoir_plan_path)
+        if reservoir_plan.get("format") != "PLTE Qwen3 checkpoint rate-reservoir plan v1":
+            raise AssertionError("unexpected reservoir plan format")
+        if reservoir_plan.get("selection_manifest_sha256") != sha256_path(manifest_path):
+            raise AssertionError("reservoir plan targets a different selection")
+        reservoir_plan_sha256 = sha256_path(reservoir_plan_path)
+    allocation_by_id = {
+        str(row["id"]): row for row in reservoir_plan["allocations"]
+    }
+    if set(allocation_by_id) != {str(row["id"]) for row in selected}:
+        raise AssertionError("reservoir allocation does not exactly cover the panel")
+
     results = []
     independent = []
     summary_rows = []
     bundle_temporary = publish_dir / ".containers.partial.bin"
+    slots_temporary = publish_dir / ".tiered_slots.partial.bin"
+    ordered_selected = sorted(selected, key=lambda row: str(row["id"]))
+    tiers = [int(allocation_by_id[str(entry["id"])]["tier"]) for entry in ordered_selected]
+    if any(tier < 0 or tier > 15 for tier in tiers):
+        raise AssertionError("tier index does not fit the four-bit map")
+    tier_map = bytes(
+        tiers[index] | ((tiers[index + 1] if index + 1 < len(tiers) else 0) << 4)
+        for index in range(0, len(tiers), 2)
+    )
+    atomic_write_bytes(publish_dir / "tier_map.bin", tier_map)
     offset = 0
-    with bundle_temporary.open("wb") as bundle:
-        for entry in sorted(selected, key=lambda row: str(row["id"])):
+    slot_offset = 0
+    with bundle_temporary.open("wb") as bundle, slots_temporary.open("wb") as slots:
+        for entry in ordered_selected:
+            allocation = allocation_by_id[str(entry["id"])]
+            tier = int(allocation["tier"])
+            charged_slot_bytes = int(allocation["container_cap_bytes"])
             report_path, container_path, _ = encoder_paths(workspace, entry)
             audit_path, _ = audit_paths(workspace, entry)
             report = load_json(report_path)
@@ -733,20 +784,36 @@ def build_final_artifacts(
                 entry,
                 source_record,
                 manifest["provenance"]["encoder_sha256"],
+                charged_slot_bytes,
             )
             validate_decode_audit(
                 audit_path, entry, source_record, report["trials"][0]
             )
             container = container_path.read_bytes()
             bundle.write(container)
+            padding_bytes = charged_slot_bytes - len(container)
+            if padding_bytes < 0:
+                raise AssertionError("literal container exceeds charged reservoir tier")
+            slots.write(container)
+            slots.write(b"\0" * padding_bytes)
             trial = report["trials"][0]
+            if tier == 0 and "report_sha256" in allocation:
+                if allocation["report_sha256"] != sha256_path(report_path):
+                    raise AssertionError("Tier-0 artifact changed after reservoir planning")
+            if tier > 0 and trial["base_literal_container_bytes"] != allocation.get(
+                "first_pass_base_container_bytes"
+            ):
+                raise AssertionError("reservoir retry changed the deterministic base length")
             rms = float(trial["source"]["block_rms_fp64"])
             source_energy = rms * rms * BLOCK_VALUES
             sse = float(trial["literal_decoded_absolute_mse"]) * BLOCK_VALUES
             actual_rate = len(container) * 8 / BLOCK_VALUES
             relative_mse = sse / source_energy
             actual_gap = 10.0 * math.log10(relative_mse / (2.0 ** (-2.0 * actual_rate)))
-            fixed_gap = 10.0 * math.log10(relative_mse / (2.0 ** (-2.0 * SLOT_RATE)))
+            charged_slot_rate = 8 * charged_slot_bytes / BLOCK_VALUES
+            charged_slot_gap = 10.0 * math.log10(
+                relative_mse / (2.0 ** (-2.0 * charged_slot_rate))
+            )
             results.append(
                 {
                     "id": entry["id"],
@@ -759,6 +826,10 @@ def build_final_artifacts(
                     "container_offset": offset,
                     "container_bytes": len(container),
                     "container_sha256": sha256_bytes(container),
+                    "reservoir_tier": tier,
+                    "charged_slot_bytes": charged_slot_bytes,
+                    "tiered_slot_offset": slot_offset,
+                    "zero_padding_bytes": padding_bytes,
                     "report": report,
                 }
             )
@@ -780,12 +851,17 @@ def build_final_artifacts(
                     "container_bytes": len(container),
                     "actual_bpw": actual_rate,
                     "actual_gap_db": actual_gap,
-                    "fixed_slot_gap_db": fixed_gap,
+                    "reservoir_tier": tier,
+                    "charged_slot_bytes": charged_slot_bytes,
+                    "charged_tier_slot_gap_db": charged_slot_gap,
                 }
             )
             offset += len(container)
+            slot_offset += charged_slot_bytes
     bundle_path = publish_dir / "containers.polar.bin"
     os.replace(bundle_temporary, bundle_path)
+    slots_path = publish_dir / "tiered_slots.bin"
+    os.replace(slots_temporary, slots_path)
 
     rank1 = audit_rank1(workspace, manifest, source_records)
     routers = validate_router_census(manifest)
@@ -797,14 +873,20 @@ def build_final_artifacts(
         by_layer[str(layer)] = summarize_rows(
             [row for row in summary_rows if row["layer"] == layer]
         )
-    failures = [row for row in summary_rows if row["fixed_slot_gap_db"] >= 0.10]
+    failures = [
+        row for row in summary_rows if row["charged_tier_slot_gap_db"] >= 0.10
+    ]
     overall = summarize_rows(summary_rows)
     summary = {
         "format": "PLTE Qwen3 stratified evaluation summary v1",
         "checkpoint": manifest["checkpoint"],
         "strict_ptq": True,
         "selection_manifest_sha256": sha256_path(manifest_path),
-        "new_held_out_from_previous_evidence": True,
+        "selection_was_held_out_from_previous_evidence": True,
+        "post_hoc_engineering_amendment": bool(
+            reservoir_plan.get("post_hoc_engineering_amendment")
+        ),
+        "reservoir_plan_sha256": reservoir_plan_sha256,
         "coverage": {
             "new_plte_blocks": 400,
             "layer_role_cells": 336,
@@ -828,23 +910,41 @@ def build_final_artifacts(
             "all_independent_clean_decodes_passed": True,
             "container_bundle_bytes": bundle_path.stat().st_size,
             "container_bundle_sha256": sha256_path(bundle_path),
+            "tier_map_bytes": len(tier_map),
+            "tier_map_sha256": sha256_bytes(tier_map),
+            "tiered_slots_bytes": slots_path.stat().st_size,
+            "tiered_slots_sha256": sha256_path(slots_path),
+            "all_tier_padding_zero": True,
         },
         "plte_panel": overall,
         "quality_endpoint": {
-            "definition": "every new block has fixed-slot gap < 0.10 dB",
+            "definition": "every new block has charged reservoir-tier slot gap < 0.10 dB",
             "passes": len(failures) == 0,
             "failures": failures,
         },
         "by_role": by_role,
         "by_layer": by_layer,
         "routers": routers,
+        "reservoir": {
+            "format": reservoir_plan.get("format"),
+            "plan_sha256": reservoir_plan_sha256,
+            "tier_counts": {
+                str(tier): tiers.count(tier) for tier in sorted(set(tiers))
+            },
+            "maximum_tier": max(tiers),
+            "panel_tier_map_order": "results sorted by id; low nibble first",
+            "checkpoint_rate_accounting": reservoir_plan.get(
+                "checkpoint_rate_accounting"
+            ),
+        },
         "rank1": {
             key: value for key, value in rank1.items() if key != "tensors"
         },
         "claim_boundary": (
-            "Measured only on 400 preregistered new PLTE blocks plus complete "
-            "router and rank-one exception censuses; not a whole-checkpoint "
-            "distortion or worst-case guarantee"
+            "Measured on the frozen 400-block panel with a post-hoc deterministic "
+            "rate-reservoir amendment, plus complete router and rank-one exception "
+            "censuses; not an untouched confirmatory holdout, whole-checkpoint "
+            "distortion measurement, or worst-case guarantee"
         ),
     }
     source_publish = {
@@ -859,6 +959,12 @@ def build_final_artifacts(
             "container_bundle": bundle_path.name,
             "container_bundle_bytes": bundle_path.stat().st_size,
             "container_bundle_sha256": sha256_path(bundle_path),
+            "tier_map": "tier_map.bin",
+            "tier_map_bytes": len(tier_map),
+            "tier_map_sha256": sha256_bytes(tier_map),
+            "tiered_slots": slots_path.name,
+            "tiered_slots_bytes": slots_path.stat().st_size,
+            "tiered_slots_sha256": sha256_path(slots_path),
             "results": results,
         },
     )
@@ -881,6 +987,11 @@ def main() -> None:
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     parser.add_argument("--workspace", type=Path, default=DEFAULT_WORKSPACE)
     parser.add_argument("--publish-dir", type=Path)
+    parser.add_argument(
+        "--reservoir-plan",
+        type=Path,
+        help="optional frozen mixed-tier plan used by finalization",
+    )
     parser.add_argument("--python", type=Path, default=Path(sys.executable))
     parser.add_argument("--polar-repo", type=Path, default=Path("/root/PolarLatticeQuantization"))
     parser.add_argument("--fetch-workers", type=int, default=16)
@@ -982,7 +1093,12 @@ def main() -> None:
 
     if "finalize" in phases:
         summary = build_final_artifacts(
-            workspace, publish_dir, manifest_path, manifest, selected
+            workspace,
+            publish_dir,
+            manifest_path,
+            manifest,
+            selected,
+            args.reservoir_plan.resolve() if args.reservoir_plan else None,
         )
         progress(json.dumps(summary["plte_panel"], indent=2))
         progress(f"quality endpoint passes: {summary['quality_endpoint']['passes']}")

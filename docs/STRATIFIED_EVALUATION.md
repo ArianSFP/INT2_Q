@@ -144,9 +144,58 @@ A hard integrity failure is any of:
 - an independent decoder that does not consume the exact file or reproduce the
   encoder's literal MSE to absolute tolerance `1e-12`.
 
-Hard failures stop the run. A distortion failure is retained and disclosed;
-it does not silently remove the block. Only a clearly systemic pilot collapse
-may stop the remaining breadth run early.
+Hard failures stop successful finalization. A distortion failure is retained
+and disclosed; it does not silently remove the block. After the first exact
+cap-overflow exception, already scheduled first-pass encodes may continue only
+to measure the cap-length distribution; they do not rescue the failed original
+endpoint. Only a clearly systemic pilot collapse may stop that diagnostic
+breadth pass early.
+
+## Post-hoc rate-reservoir amendment
+
+The broad first pass falsified the universal 81,242-byte-slot assumption: rare
+arithmetic base streams exceeded that cap by a small number of bytes. Those
+events remain failures of the original endpoint and their logs are retained.
+They are not converted into Tier-0 successes.
+
+For engineering evaluation, a separate deterministic checkpoint reservoir is
+frozen before any retry:
+
+```text
+T0 = 81242 bytes
+Tk = T0 + 64 k bytes
+k  = max(0, ceil((base_container_bytes - T0) / 64))
+```
+
+Only the exact base-container-overflow exception may trigger a retry. Its tier
+is computed directly from the base length; quality metrics never choose the
+tier. A successful Tier-0 artifact remains byte-for-byte unchanged. A retry
+must reproduce the first-pass base length, uses the same weight bytes, coset,
+encoder, decoder, and frozen profile, and changes only
+`container_cap_bytes`.
+
+A four-bit tier map in canonical non-router block order supports tiers 0–15.
+The exact conditional checkpoint rate is
+
+```text
+(75,724,918,048 + 4*116,422 + 512*sum(k_i)) / 30,532,122,624 bpw
+```
+
+Including the map, no overflow tiers cost `2.4801873315 bpw`; every non-router
+at Tier 1 costs `2.4821396381 bpw`; and every non-router at Tier 10 costs
+`2.4997103973 bpw`. The strict global condition is
+`sum(k_i) <= 1,181,489`.
+
+The panel packer writes the four-bit map and each literal container followed by
+verified zero padding to its assigned `Tk` boundary. The decoder wrapper uses
+the existing header to infer the literal prefix, checks every padding byte, and
+passes that unchanged prefix to the independent decoder. Per-block quality is
+charged at `8*Tk/262144`, not at Tier 0 or merely the shorter literal length.
+
+This repair is strict PTQ, but it was designed after observing first-pass cap
+failures. The same 400 frozen blocks therefore become a post-hoc engineering
+evaluation of the amended codec, not an untouched confirmatory holdout. A new
+disjoint selection is required for a confirmatory reservoir claim.
 
 ## Claim boundary
 
