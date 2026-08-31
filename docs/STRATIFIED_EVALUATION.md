@@ -90,6 +90,21 @@ It receives the serialized container, public JSON parameters, and the frozen
 profile, but no encoder probability sequence. Every new block is scheduled for
 this clean decode, not merely the encoder's internal round trip.
 
+On the documented RunPod layout, the resumable end-to-end command is:
+
+```bash
+/root/int2-venv/bin/python tools/run_stratified_evaluation.py \
+  --python /root/int2-venv/bin/python \
+  --polar-repo /root/PolarLatticeQuantization \
+  --fetch-workers 16 --encode-workers 8 --decode-workers 8
+```
+
+Raw BF16 ranges and per-job logs remain under the gitignored
+`tmp/qwen3_stratified_v1/` workspace. Finalization emits a source-free hash
+manifest, the full encoder metadata, every clean-decoder audit, a concatenated
+container bundle with an offset table, the rank-one census, and summary JSON
+under `evaluation/qwen3_stratified_v1/`.
+
 ## Metrics and acceptance
 
 For block `i`, using the literal FP32 scale serialized in its container:
