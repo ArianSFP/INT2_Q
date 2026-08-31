@@ -7,6 +7,8 @@ venv/
 # Qwen source weights are fetched locally and must not be committed.
 plte/qwen_weight_cache/**/*.bf16.bin
 plte/qwen_weight_cache/**/*.safetensors
+evaluation/qwen3_vorpal_v1/reconstruction.f32
+evaluation/qwen3_vorpal_v1/reconstruction.f64
 
 # Local logs and scratch outputs.
 *.stdout

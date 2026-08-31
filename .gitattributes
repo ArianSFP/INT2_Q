@@ -9,6 +9,8 @@
 requirements.txt text eol=lf
 evaluation/**/*.json text eol=lf
 evaluation/**/*.bin binary
+evaluation/**/*.sha256 text eol=lf
+evaluation/**/*.wfouter binary
 
 # Preserve the evidence bundle byte-for-byte on every platform. Its JSON and
 # Python implementation hashes are part of the published provenance. This rule

@@ -1,0 +1,18 @@
+{
+  "format": "continuous reverse-waterfilled PLTE side receipt v1",
+  "status": "exact round-trip passed",
+  "side_path": "side.bin",
+  "side_bytes": 47356,
+  "side_bits": 378848,
+  "side_bpw_over_panel": 0.00361297607421875,
+  "side_sha256": "f9732d674b3460703dc970eb30aebb1ff2d560ef9c70c1729f54c422fefd6b1e",
+  "header_bytes": 44,
+  "exp2_lut_bytes": 512,
+  "block_scale_bytes": 1600,
+  "packed_label_bytes": 38400,
+  "profile_bytes": 6800,
+  "stable_membership_reconstructed_from_side_only": true,
+  "exact_eof": true,
+  "profile_binary64_roundtrip": true,
+  "note": "selection/tensor geometry and the pinned polar mask are global decoder assets, not encoded in this panel side stream"
+}

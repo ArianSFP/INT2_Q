@@ -1,25 +1,77 @@
-# INT2_Q: Polar-Lattice Tail-Escape PTQ
+# INT2_Q: VORPAL and Polar-Lattice PTQ
 
-This repository publishes **PLTE**, a strict post-training weight codec developed while searching for sub-0.10 dB finite-length quantization of Qwen3-30B-A3B matrices below 2.5 bits per original checkpoint parameter.
+This repository publishes **VORPAL**, a strict post-training weight codec whose
+experimental 400-block Qwen development endpoint reaches a **-0.2861708909 dB**
+signed gap to the declared Gaussian reference at a physically packed
+**2.4859493256 bpw**. It also retains **PLTE**, the earlier fixed-slot baseline
+and its preregistered stratified evidence.
 
-PLTE combines a six-level polar-lattice source code, causal arithmetic coding, fixed-slot sparse exact-BF16 tail escapes, and a literal Q4 exception for MoE routers. It uses frozen weights only: no retraining, QAT, activation calibration, distillation, task loss, or untransmitted learned decoder state.
+VORPAL combines compact local log-variance description, stable cross-tensor
+pooling, reverse-waterfilled polar-lattice profiles, exact physical-byte
+selection between A64/A128 routes, and sparse BF16 tail repairs. Both methods
+use frozen weights only: no retraining, QAT, activation calibration,
+distillation, task loss, or untransmitted learned decoder state.
 
 > [!IMPORTANT]
-> This is a **preliminary mixed-precision research candidate**, not a homogeneous INT2 codec and not a whole-checkpoint SOTA claim. Routers use Q4 and rank-one tensors remain BF16. The historical global distortion number is a projection from six non-router blocks plus exact router aggregates; the 400-block result below is a measured panel result, not a whole-checkpoint measurement. The checkpoint rate remains a conditional inventory calculation, not a realized checkpoint file.
+> This is a **preliminary mixed-precision research candidate**, not a
+> homogeneous INT2 codec, deployable checkpoint, or definitive SOTA claim. The
+> VORPAL endpoint is measured on the nine declared PLTE matrix roles and was
+> developed on that same panel. Routers and rank-one tensors have separate Q4
+> and exact-BF16 evidence; they are not folded into the VORPAL aggregate.
 
 ## Result status
 
 | Status | What is established |
 |---|---|
+| **VORPAL experimental endpoint** | A decoder-self-contained 32,583,835-byte panel bundle independently decodes 400/400 chunks. Float64 CuPy evaluation over exact frozen BF16 values gives relative MSE **0.02983268081273826** at exactly **2.4859493255615234375 bpw**, or **-0.2861708909351923 dB** relative to `2^(-2R)`. |
+| **VORPAL publication verification** | The source-free verifier passes all 413 canonical artifact files: exact bundle reparse, 400 containers, exposed selection DP, receipt bindings, rate/gap formulae, and role/layer coverage, with zero source payloads present. |
 | **Historical measured evidence** | 47 unique selected frozen Qwen blocks were literally encoded and decoded. Every observed block is below 0.10 dB; the maximum is **0.084674951 dB**. |
 | **Historical independent decodes** | A clean decoder that does not import the encoder exactly reproduces both normative exemplars and all six controlled-projection blocks. |
 | **Original 400-block endpoint** | **Failed as specified:** 385 Tier-0 successes and 15/400 recognized cap failures, with maximum base length 81,278 bytes (36 bytes over cap) and zero other failures. |
 | **Post-hoc reservoir panel** | The amended 385 Tier-0 + 15 Tier-1 panel has 400/400 clean independent decodes, energy-weighted relative MSE **0.0327153979**, mean all-in charged rate **2.4793975830 bpw**, and aggregate charged gap **0.0749829344 dB**. No block reaches 0.10 dB. |
-| **Panel coverage** | All 48 layers × 7 PLTE roles, 32 embedding blocks, and 32 LM-head blocks, plus complete 48-router and 193-rank-one exception censuses. This is complete stratum coverage in the panel, not complete checkpoint encoding. |
+| **Sampled matrix-panel coverage** | One sampled block in every one of the 48 × 7 PLTE layer-role cells, plus 32 embedding and 32 LM-head blocks: 400 blocks total. This is broad stratified sampling, not complete checkpoint encoding. |
+| **Separate exception censuses** | All 48 router matrices and all 193 rank-one tensors are covered by separate artifacts; they are not rows in either 400-block PLTE/VORPAL matrix aggregate. |
 | **Router-complete** | All 48 router matrices, 12,582,912 weights total, were encoded with the literal all-Q4 format at relative MSE **0.0332189501**. |
 | **Historical projection** | Six adjacent expert down-projection blocks plus the exact router aggregate give relative MSE **0.0327395512** and Gaussian gap **0.082851019 dB**. |
 | **Historical conditional rate** | Fixed-inventory arithmetic gives **2.480172079 bpw** under the now-falsified assumption that every non-router block fits an 81,242-byte slot. |
 | **Not established** | Full-checkpoint distortion, full-checkpoint slot feasibility, a realized packed checkpoint, perplexity, downstream accuracy, or superiority over published methods under a common harness. |
+
+## VORPAL negative Gaussian-reference development result
+
+The frozen panel contains 400 blocks of 262,144 values: all 48 layers for each
+of attention Q/K/V/O and expert MLP gate/up/down, plus 32 embedding and 32
+LM-head stripes. Its 51,200 local groups are variance-ranked across original
+tensor boundaries and jointly packed into 400 polar chunks.
+
+| Exact physical/evaluation quantity | Value |
+|---|---:|
+| Source values | 104,857,600 |
+| Bundle bytes | 32,583,835 |
+| All-in rate | 2.4859493255615234375 bpw |
+| Source energy | 65,382.858775118555 |
+| SSE | 1,950.5459564624546 |
+| Energy-relative MSE | 0.02983268081273826 |
+| Gaussian reference `2^(-2R)` | 0.031864665997923494 |
+| Signed reference gap | **-0.2861708909351923 dB** |
+| Required predicate | **PASS:** `R < 2.5`, gap `<= -0.10 dB` |
+
+The bundle charges its header, compressed decoder side information, 400-bit
+route, compressed mask, every container, sparse tail, and byte-padding bit. An
+independent source-free decoder consumed all 400 frames and wrote every
+canonical group once. A separate CuPy 14.2.0 evaluator on an NVIDIA RTX A6000
+verified all frozen BF16 source hashes and measured the values above.
+
+The negative number is relative to the rate-distortion curve of an i.i.d.
+unit-variance Gaussian source. Qwen weights are finite, heterogeneous, and
+non-Gaussian; this is not a Shannon-bound violation. The method and adaptive
+policy were developed on this panel, so the result is post-hoc development
+evidence rather than a disjoint confirmation. It is an aggregate joint-coding
+result, not a pointwise block guarantee: 167/400 diagnostic block gaps are
+positive at the common panel rate.
+
+Start with the [artifact README](evaluation/qwen3_vorpal_v1/README.md),
+[method contract](docs/VORPAL_METHOD.md), [evidence and limitations](docs/VORPAL_EVIDENCE.md),
+or [reproduction guide](docs/VORPAL_REPRODUCING.md).
 
 ## Preregistered broad-coverage evaluation
 
@@ -92,6 +144,7 @@ The repository includes the exact evidenced implementations, 49 historical compa
 ```bash
 python tools/verify_repository.py
 python tools/verify_stratified_evaluation.py
+python vorpal/publication_verifier/verify_vorpal_publication.py evaluation/qwen3_vorpal_v1 --compact
 ```
 
 The first standard-library verifier checks the historical publication bundle.
@@ -99,8 +152,10 @@ The exact stratified-artifact verifier independently rebuilds the frozen
 selection and reservoir plan; checks the 400-container bundle, tier map, padded
 slot image, encoder reports, and 400 independent-decoder receipts; recomputes
 the published source-free metrics; and validates the 193 rank-one and 48-router
-censuses. Neither verifier remeasures distortion from the deliberately omitted
-raw BF16 sources.
+censuses. The VORPAL verifier reparses its physical bundle, recomputes the
+exposed exact selection frontier and all accounting, checks 400 containers and
+coverage, and validates the final receipt chain. These source-free checks do
+not remeasure distortion from the deliberately omitted raw BF16 sources.
 
 ## Repository map
 
@@ -109,6 +164,11 @@ raw BF16 sources.
 - [`docs/STRATIFIED_EVALUATION.md`](docs/STRATIFIED_EVALUATION.md): frozen 400-block protocol, original failure, and post-hoc reservoir result.
 - [`docs/REPRODUCING.md`](docs/REPRODUCING.md): exact environment and reproduction commands.
 - [`docs/ARTIFACTS.md`](docs/ARTIFACTS.md): provenance, hashes, omissions, and directory layout.
+- [`docs/VORPAL_METHOD.md`](docs/VORPAL_METHOD.md): VORPAL algorithm and physical metric contract.
+- [`docs/VORPAL_EVIDENCE.md`](docs/VORPAL_EVIDENCE.md): final measured endpoint, audit trail, and claim boundary.
+- [`docs/VORPAL_REPRODUCING.md`](docs/VORPAL_REPRODUCING.md): audited construction, selection, decode, evaluation, and verification commands.
+- [`evaluation/qwen3_vorpal_v1/`](evaluation/qwen3_vorpal_v1/): exact VORPAL bundle, 400 selected containers, manifests, and receipts.
+- [`vorpal/`](vorpal/): frozen VORPAL implementations, tests, and source-free verifier.
 - [`plte/`](plte/): exact implementations and compact evidence bundle.
 - [`tools/verify_repository.py`](tools/verify_repository.py): weight-free publication integrity check.
 - [`tools/verify_stratified_evaluation.py`](tools/verify_stratified_evaluation.py): exact source-free verifier for the stratified artifacts.
@@ -117,7 +177,15 @@ raw BF16 sources.
 
 Polar lattices achieving the Gaussian rate-distortion bound and integrating entropy coding are established in [Liu, Shi, and Ling](https://arxiv.org/abs/1501.05683). A later [quantization-goodness proof](https://arxiv.org/abs/2405.04051) establishes asymptotic normalized-second-moment goodness. The numerical reliability-order reference is pinned to commit `458187b9b03db1768a4b72d617e591f7862f6fca` of [graceBaoXP/PolarLatticeQuantization](https://github.com/graceBaoXP/PolarLatticeQuantization).
 
-The mathematical primitives are published. The research contribution here is the deployment combination for frozen neural weights: literal multilevel MAP source coding, causal-prior range coding, fixed-slot largest-error exact BF16 escapes, checkpoint accounting, a clean decoder, and a role-specific router format. No exhaustive patent or novelty search has been performed.
+The mathematical primitives are published. The VORPAL research contribution is
+their charged, decoder-complete composition for frozen neural weights: local
+log-variance labels, deterministic cross-tensor pooling, continuous
+reverse-waterfilled profiles, fixed-route A64/A128 allocation, and exact sparse
+repairs under a physical-byte objective. The earlier PLTE contribution includes
+fixed-slot largest-error escapes, checkpoint accounting, a clean decoder, and a
+role-specific router format. No exhaustive patent or novelty search has been
+performed, so this repository does not make an unqualified universal-first
+claim.
 
 ## Checkpoint provenance
 

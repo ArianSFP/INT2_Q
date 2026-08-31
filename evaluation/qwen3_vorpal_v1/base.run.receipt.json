@@ -1,0 +1,3215 @@
+{
+  "format": "continuous reverse-waterfilled PLTE base panel run v1",
+  "status": "complete",
+  "manifest_sha256": "14f54c728017ab61574487828e0e4881e59df1bec77cbbe1789cee7a03f0c727",
+  "encoder_sha256": "4d76ba53c88710778085917108b7940517ed14565815fc8437ea4919d7df4bf8",
+  "chunks": 400,
+  "a64_chunks": 339,
+  "a128_chunks": 61,
+  "actual_container_bytes": 32547152,
+  "actual_container_bpw_before_outer_side": 2.483150634765625,
+  "all_internal_roundtrips_passed": true,
+  "failures": [],
+  "rows": [
+    {
+      "chunk_index": 0,
+      "status": "resumed",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-000.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-000.polar.bin",
+      "container_bytes": 47491,
+      "relative_mse": 0.13606917374588062
+    },
+    {
+      "chunk_index": 1,
+      "status": "resumed",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-001.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-001.polar.bin",
+      "container_bytes": 47612,
+      "relative_mse": 0.13582195893010165
+    },
+    {
+      "chunk_index": 2,
+      "status": "resumed",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-002.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-002.polar.bin",
+      "container_bytes": 47566,
+      "relative_mse": 0.13601410051474946
+    },
+    {
+      "chunk_index": 3,
+      "status": "resumed",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-003.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-003.polar.bin",
+      "container_bytes": 47338,
+      "relative_mse": 0.13587813488057096
+    },
+    {
+      "chunk_index": 4,
+      "status": "resumed",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-004.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-004.polar.bin",
+      "container_bytes": 47600,
+      "relative_mse": 0.1357483453938665
+    },
+    {
+      "chunk_index": 5,
+      "status": "resumed",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-005.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-005.polar.bin",
+      "container_bytes": 47583,
+      "relative_mse": 0.13585206662044208
+    },
+    {
+      "chunk_index": 6,
+      "status": "resumed",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-006.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-006.polar.bin",
+      "container_bytes": 47720,
+      "relative_mse": 0.13502016586862262
+    },
+    {
+      "chunk_index": 7,
+      "status": "resumed",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-007.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-007.polar.bin",
+      "container_bytes": 49004,
+      "relative_mse": 0.12788978693920502
+    },
+    {
+      "chunk_index": 8,
+      "status": "resumed",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-008.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-008.polar.bin",
+      "container_bytes": 50579,
+      "relative_mse": 0.11970490124912782
+    },
+    {
+      "chunk_index": 9,
+      "status": "resumed",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-009.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-009.polar.bin",
+      "container_bytes": 52050,
+      "relative_mse": 0.11249615221267334
+    },
+    {
+      "chunk_index": 10,
+      "status": "resumed",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-010.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-010.polar.bin",
+      "container_bytes": 53467,
+      "relative_mse": 0.10591838523554084
+    },
+    {
+      "chunk_index": 11,
+      "status": "resumed",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-011.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-011.polar.bin",
+      "container_bytes": 54754,
+      "relative_mse": 0.10489978906250748
+    },
+    {
+      "chunk_index": 12,
+      "status": "resumed",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-012.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-012.polar.bin",
+      "container_bytes": 55927,
+      "relative_mse": 0.09548362880338254
+    },
+    {
+      "chunk_index": 13,
+      "status": "resumed",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-013.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-013.polar.bin",
+      "container_bytes": 57025,
+      "relative_mse": 0.09656291153173177
+    },
+    {
+      "chunk_index": 14,
+      "status": "resumed",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-014.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-014.polar.bin",
+      "container_bytes": 57958,
+      "relative_mse": 0.08769943553036251
+    },
+    {
+      "chunk_index": 15,
+      "status": "resumed",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-015.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-015.polar.bin",
+      "container_bytes": 59038,
+      "relative_mse": 0.0836205494391621
+    },
+    {
+      "chunk_index": 16,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-016.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-016.polar.bin",
+      "container_bytes": 59695,
+      "relative_mse": 0.0813208198986279
+    },
+    {
+      "chunk_index": 17,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-017.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-017.polar.bin",
+      "container_bytes": 60535,
+      "relative_mse": 0.07846159217789181
+    },
+    {
+      "chunk_index": 18,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-018.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-018.polar.bin",
+      "container_bytes": 61335,
+      "relative_mse": 0.07595441524573475
+    },
+    {
+      "chunk_index": 19,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-019.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-019.polar.bin",
+      "container_bytes": 61938,
+      "relative_mse": 0.07410159737067669
+    },
+    {
+      "chunk_index": 20,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-020.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-020.polar.bin",
+      "container_bytes": 62647,
+      "relative_mse": 0.07177930331139548
+    },
+    {
+      "chunk_index": 21,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-021.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-021.polar.bin",
+      "container_bytes": 63298,
+      "relative_mse": 0.06993891961544305
+    },
+    {
+      "chunk_index": 22,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-022.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-022.polar.bin",
+      "container_bytes": 63923,
+      "relative_mse": 0.06807982766669497
+    },
+    {
+      "chunk_index": 23,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-023.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-023.polar.bin",
+      "container_bytes": 64475,
+      "relative_mse": 0.06653720680737937
+    },
+    {
+      "chunk_index": 24,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-024.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-024.polar.bin",
+      "container_bytes": 64908,
+      "relative_mse": 0.0654238818774898
+    },
+    {
+      "chunk_index": 25,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-025.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-025.polar.bin",
+      "container_bytes": 65408,
+      "relative_mse": 0.06408892431278507
+    },
+    {
+      "chunk_index": 26,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-026.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-026.polar.bin",
+      "container_bytes": 65963,
+      "relative_mse": 0.06248122816167747
+    },
+    {
+      "chunk_index": 27,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-027.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-027.polar.bin",
+      "container_bytes": 66526,
+      "relative_mse": 0.06109026966182518
+    },
+    {
+      "chunk_index": 28,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-028.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-028.polar.bin",
+      "container_bytes": 66997,
+      "relative_mse": 0.059769061741191926
+    },
+    {
+      "chunk_index": 29,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-029.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-029.polar.bin",
+      "container_bytes": 67346,
+      "relative_mse": 0.058913199188295996
+    },
+    {
+      "chunk_index": 30,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-030.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-030.polar.bin",
+      "container_bytes": 67740,
+      "relative_mse": 0.05795146731454757
+    },
+    {
+      "chunk_index": 31,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-031.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-031.polar.bin",
+      "container_bytes": 67975,
+      "relative_mse": 0.06325517399057487
+    },
+    {
+      "chunk_index": 32,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-032.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-032.polar.bin",
+      "container_bytes": 68403,
+      "relative_mse": 0.05637913114375504
+    },
+    {
+      "chunk_index": 33,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-033.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-033.polar.bin",
+      "container_bytes": 68779,
+      "relative_mse": 0.0553672099790582
+    },
+    {
+      "chunk_index": 34,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-034.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-034.polar.bin",
+      "container_bytes": 69184,
+      "relative_mse": 0.0545134025519392
+    },
+    {
+      "chunk_index": 35,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-035.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-035.polar.bin",
+      "container_bytes": 69501,
+      "relative_mse": 0.05377975421410458
+    },
+    {
+      "chunk_index": 36,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-036.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-036.polar.bin",
+      "container_bytes": 69761,
+      "relative_mse": 0.053360867000573964
+    },
+    {
+      "chunk_index": 37,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-037.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-037.polar.bin",
+      "container_bytes": 70123,
+      "relative_mse": 0.05239758246246778
+    },
+    {
+      "chunk_index": 38,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-038.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-038.polar.bin",
+      "container_bytes": 70358,
+      "relative_mse": 0.051853262155244745
+    },
+    {
+      "chunk_index": 39,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-039.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-039.polar.bin",
+      "container_bytes": 70646,
+      "relative_mse": 0.05122732966897826
+    },
+    {
+      "chunk_index": 40,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-040.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-040.polar.bin",
+      "container_bytes": 70855,
+      "relative_mse": 0.050766665623472804
+    },
+    {
+      "chunk_index": 41,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-041.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-041.polar.bin",
+      "container_bytes": 71247,
+      "relative_mse": 0.05096162181087231
+    },
+    {
+      "chunk_index": 42,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-042.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-042.polar.bin",
+      "container_bytes": 71487,
+      "relative_mse": 0.04943580169855224
+    },
+    {
+      "chunk_index": 43,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-043.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-043.polar.bin",
+      "container_bytes": 71722,
+      "relative_mse": 0.048949769159434
+    },
+    {
+      "chunk_index": 44,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-044.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-044.polar.bin",
+      "container_bytes": 71995,
+      "relative_mse": 0.04839291300282151
+    },
+    {
+      "chunk_index": 45,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-045.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-045.polar.bin",
+      "container_bytes": 72183,
+      "relative_mse": 0.047979111210310975
+    },
+    {
+      "chunk_index": 46,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-046.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-046.polar.bin",
+      "container_bytes": 72351,
+      "relative_mse": 0.047671233511082205
+    },
+    {
+      "chunk_index": 47,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-047.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-047.polar.bin",
+      "container_bytes": 72533,
+      "relative_mse": 0.04736727899119783
+    },
+    {
+      "chunk_index": 48,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-048.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-048.polar.bin",
+      "container_bytes": 72789,
+      "relative_mse": 0.046774713342830815
+    },
+    {
+      "chunk_index": 49,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-049.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-049.polar.bin",
+      "container_bytes": 72849,
+      "relative_mse": 0.046676360404652145
+    },
+    {
+      "chunk_index": 50,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-050.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-050.polar.bin",
+      "container_bytes": 72981,
+      "relative_mse": 0.05168413663431119
+    },
+    {
+      "chunk_index": 51,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-051.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-051.polar.bin",
+      "container_bytes": 73307,
+      "relative_mse": 0.04601696279418446
+    },
+    {
+      "chunk_index": 52,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-052.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-052.polar.bin",
+      "container_bytes": 73282,
+      "relative_mse": 0.04564618499701869
+    },
+    {
+      "chunk_index": 53,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-053.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-053.polar.bin",
+      "container_bytes": 73609,
+      "relative_mse": 0.04526721318612008
+    },
+    {
+      "chunk_index": 54,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-054.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-054.polar.bin",
+      "container_bytes": 73723,
+      "relative_mse": 0.04495046603622565
+    },
+    {
+      "chunk_index": 55,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-055.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-055.polar.bin",
+      "container_bytes": 73875,
+      "relative_mse": 0.04481387897277239
+    },
+    {
+      "chunk_index": 56,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-056.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-056.polar.bin",
+      "container_bytes": 73972,
+      "relative_mse": 0.04463696427902204
+    },
+    {
+      "chunk_index": 57,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-057.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-057.polar.bin",
+      "container_bytes": 74088,
+      "relative_mse": 0.04448641731410038
+    },
+    {
+      "chunk_index": 58,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-058.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-058.polar.bin",
+      "container_bytes": 74296,
+      "relative_mse": 0.04389483236002164
+    },
+    {
+      "chunk_index": 59,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-059.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-059.polar.bin",
+      "container_bytes": 74433,
+      "relative_mse": 0.04362429324395579
+    },
+    {
+      "chunk_index": 60,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-060.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-060.polar.bin",
+      "container_bytes": 74516,
+      "relative_mse": 0.04359836938900096
+    },
+    {
+      "chunk_index": 61,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-061.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-061.polar.bin",
+      "container_bytes": 74708,
+      "relative_mse": 0.04315142407802017
+    },
+    {
+      "chunk_index": 62,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-062.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-062.polar.bin",
+      "container_bytes": 74789,
+      "relative_mse": 0.04300920078916044
+    },
+    {
+      "chunk_index": 63,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-063.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-063.polar.bin",
+      "container_bytes": 74882,
+      "relative_mse": 0.042785982195938106
+    },
+    {
+      "chunk_index": 64,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-064.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-064.polar.bin",
+      "container_bytes": 74929,
+      "relative_mse": 0.04275781250113185
+    },
+    {
+      "chunk_index": 65,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-065.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-065.polar.bin",
+      "container_bytes": 75006,
+      "relative_mse": 0.04262544020674521
+    },
+    {
+      "chunk_index": 66,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-066.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-066.polar.bin",
+      "container_bytes": 75175,
+      "relative_mse": 0.042397450784702057
+    },
+    {
+      "chunk_index": 67,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-067.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-067.polar.bin",
+      "container_bytes": 75315,
+      "relative_mse": 0.042100072358167505
+    },
+    {
+      "chunk_index": 68,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-068.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-068.polar.bin",
+      "container_bytes": 75320,
+      "relative_mse": 0.041895673131670426
+    },
+    {
+      "chunk_index": 69,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-069.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-069.polar.bin",
+      "container_bytes": 75453,
+      "relative_mse": 0.04181592436782829
+    },
+    {
+      "chunk_index": 70,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-070.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-070.polar.bin",
+      "container_bytes": 75428,
+      "relative_mse": 0.04179292635543689
+    },
+    {
+      "chunk_index": 71,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-071.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-071.polar.bin",
+      "container_bytes": 75644,
+      "relative_mse": 0.04149866899716398
+    },
+    {
+      "chunk_index": 72,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-072.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-072.polar.bin",
+      "container_bytes": 75646,
+      "relative_mse": 0.0425984023703326
+    },
+    {
+      "chunk_index": 73,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-073.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-073.polar.bin",
+      "container_bytes": 75544,
+      "relative_mse": 0.04169837639346593
+    },
+    {
+      "chunk_index": 74,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-074.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-074.polar.bin",
+      "container_bytes": 75865,
+      "relative_mse": 0.04166197958947272
+    },
+    {
+      "chunk_index": 75,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-075.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-075.polar.bin",
+      "container_bytes": 75924,
+      "relative_mse": 0.04119367935858417
+    },
+    {
+      "chunk_index": 76,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-076.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-076.polar.bin",
+      "container_bytes": 75989,
+      "relative_mse": 0.04092830170621902
+    },
+    {
+      "chunk_index": 77,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-077.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-077.polar.bin",
+      "container_bytes": 76065,
+      "relative_mse": 0.040727581809899244
+    },
+    {
+      "chunk_index": 78,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-078.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-078.polar.bin",
+      "container_bytes": 76163,
+      "relative_mse": 0.04071090341133161
+    },
+    {
+      "chunk_index": 79,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-079.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-079.polar.bin",
+      "container_bytes": 76278,
+      "relative_mse": 0.04034568868132149
+    },
+    {
+      "chunk_index": 80,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-080.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-080.polar.bin",
+      "container_bytes": 76349,
+      "relative_mse": 0.04033627472329917
+    },
+    {
+      "chunk_index": 81,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-081.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-081.polar.bin",
+      "container_bytes": 76430,
+      "relative_mse": 0.04011402965181352
+    },
+    {
+      "chunk_index": 82,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-082.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-082.polar.bin",
+      "container_bytes": 76468,
+      "relative_mse": 0.04002217134496528
+    },
+    {
+      "chunk_index": 83,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-083.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-083.polar.bin",
+      "container_bytes": 76587,
+      "relative_mse": 0.03984768675273116
+    },
+    {
+      "chunk_index": 84,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-084.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-084.polar.bin",
+      "container_bytes": 76642,
+      "relative_mse": 0.039744430349357845
+    },
+    {
+      "chunk_index": 85,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-085.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-085.polar.bin",
+      "container_bytes": 76766,
+      "relative_mse": 0.03958807518532607
+    },
+    {
+      "chunk_index": 86,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-086.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-086.polar.bin",
+      "container_bytes": 76828,
+      "relative_mse": 0.03944200850342627
+    },
+    {
+      "chunk_index": 87,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-087.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-087.polar.bin",
+      "container_bytes": 76813,
+      "relative_mse": 0.039705435783283526
+    },
+    {
+      "chunk_index": 88,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-088.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-088.polar.bin",
+      "container_bytes": 76972,
+      "relative_mse": 0.03932666211427756
+    },
+    {
+      "chunk_index": 89,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-089.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-089.polar.bin",
+      "container_bytes": 77007,
+      "relative_mse": 0.039145460710962636
+    },
+    {
+      "chunk_index": 90,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-090.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-090.polar.bin",
+      "container_bytes": 77057,
+      "relative_mse": 0.039205590132482475
+    },
+    {
+      "chunk_index": 91,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-091.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-091.polar.bin",
+      "container_bytes": 77069,
+      "relative_mse": 0.039068077072719594
+    },
+    {
+      "chunk_index": 92,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-092.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-092.polar.bin",
+      "container_bytes": 77108,
+      "relative_mse": 0.03897457158393433
+    },
+    {
+      "chunk_index": 93,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-093.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-093.polar.bin",
+      "container_bytes": 77167,
+      "relative_mse": 0.039041314035711074
+    },
+    {
+      "chunk_index": 94,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-094.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-094.polar.bin",
+      "container_bytes": 77326,
+      "relative_mse": 0.03863179261289274
+    },
+    {
+      "chunk_index": 95,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-095.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-095.polar.bin",
+      "container_bytes": 77317,
+      "relative_mse": 0.03899751169757936
+    },
+    {
+      "chunk_index": 96,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-096.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-096.polar.bin",
+      "container_bytes": 77379,
+      "relative_mse": 0.038554345447307806
+    },
+    {
+      "chunk_index": 97,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-097.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-097.polar.bin",
+      "container_bytes": 77458,
+      "relative_mse": 0.03842126154866159
+    },
+    {
+      "chunk_index": 98,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-098.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-098.polar.bin",
+      "container_bytes": 77452,
+      "relative_mse": 0.04078157223162634
+    },
+    {
+      "chunk_index": 99,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-099.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-099.polar.bin",
+      "container_bytes": 77569,
+      "relative_mse": 0.03823544610367949
+    },
+    {
+      "chunk_index": 100,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-100.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-100.polar.bin",
+      "container_bytes": 77602,
+      "relative_mse": 0.03823919303670934
+    },
+    {
+      "chunk_index": 101,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-101.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-101.polar.bin",
+      "container_bytes": 77661,
+      "relative_mse": 0.03808279132289752
+    },
+    {
+      "chunk_index": 102,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-102.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-102.polar.bin",
+      "container_bytes": 77725,
+      "relative_mse": 0.03792993648466727
+    },
+    {
+      "chunk_index": 103,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-103.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-103.polar.bin",
+      "container_bytes": 77719,
+      "relative_mse": 0.038516497475624134
+    },
+    {
+      "chunk_index": 104,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-104.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-104.polar.bin",
+      "container_bytes": 77786,
+      "relative_mse": 0.037875097932639185
+    },
+    {
+      "chunk_index": 105,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-105.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-105.polar.bin",
+      "container_bytes": 77084,
+      "relative_mse": 0.04001394437169713
+    },
+    {
+      "chunk_index": 106,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-106.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-106.polar.bin",
+      "container_bytes": 77863,
+      "relative_mse": 0.03963371469151731
+    },
+    {
+      "chunk_index": 107,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-107.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-107.polar.bin",
+      "container_bytes": 77933,
+      "relative_mse": 0.03769092031261604
+    },
+    {
+      "chunk_index": 108,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-108.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-108.polar.bin",
+      "container_bytes": 78012,
+      "relative_mse": 0.037494579401097204
+    },
+    {
+      "chunk_index": 109,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-109.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-109.polar.bin",
+      "container_bytes": 78020,
+      "relative_mse": 0.0374812091998435
+    },
+    {
+      "chunk_index": 110,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-110.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-110.polar.bin",
+      "container_bytes": 78083,
+      "relative_mse": 0.0374071803400334
+    },
+    {
+      "chunk_index": 111,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-111.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-111.polar.bin",
+      "container_bytes": 78133,
+      "relative_mse": 0.03731775718648153
+    },
+    {
+      "chunk_index": 112,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-112.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-112.polar.bin",
+      "container_bytes": 78207,
+      "relative_mse": 0.037207542507520536
+    },
+    {
+      "chunk_index": 113,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-113.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-113.polar.bin",
+      "container_bytes": 78198,
+      "relative_mse": 0.03739519008032879
+    },
+    {
+      "chunk_index": 114,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-114.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-114.polar.bin",
+      "container_bytes": 78276,
+      "relative_mse": 0.037091873063125703
+    },
+    {
+      "chunk_index": 115,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-115.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-115.polar.bin",
+      "container_bytes": 78348,
+      "relative_mse": 0.03698914708410699
+    },
+    {
+      "chunk_index": 116,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-116.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-116.polar.bin",
+      "container_bytes": 78339,
+      "relative_mse": 0.037081298056955384
+    },
+    {
+      "chunk_index": 117,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-117.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-117.polar.bin",
+      "container_bytes": 78402,
+      "relative_mse": 0.03690735654450446
+    },
+    {
+      "chunk_index": 118,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-118.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-118.polar.bin",
+      "container_bytes": 78491,
+      "relative_mse": 0.03677987465186476
+    },
+    {
+      "chunk_index": 119,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-119.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-119.polar.bin",
+      "container_bytes": 78541,
+      "relative_mse": 0.03667912799886145
+    },
+    {
+      "chunk_index": 120,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-120.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-120.polar.bin",
+      "container_bytes": 78560,
+      "relative_mse": 0.03663848328263921
+    },
+    {
+      "chunk_index": 121,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-121.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-121.polar.bin",
+      "container_bytes": 78645,
+      "relative_mse": 0.03651347078695808
+    },
+    {
+      "chunk_index": 122,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-122.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-122.polar.bin",
+      "container_bytes": 78745,
+      "relative_mse": 0.03637316790403388
+    },
+    {
+      "chunk_index": 123,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-123.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-123.polar.bin",
+      "container_bytes": 78856,
+      "relative_mse": 0.0362169723764737
+    },
+    {
+      "chunk_index": 124,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-124.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-124.polar.bin",
+      "container_bytes": 78836,
+      "relative_mse": 0.03750380892994336
+    },
+    {
+      "chunk_index": 125,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-125.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-125.polar.bin",
+      "container_bytes": 78911,
+      "relative_mse": 0.03615339213948812
+    },
+    {
+      "chunk_index": 126,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-126.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-126.polar.bin",
+      "container_bytes": 78953,
+      "relative_mse": 0.03609094338872248
+    },
+    {
+      "chunk_index": 127,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-127.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-127.polar.bin",
+      "container_bytes": 79070,
+      "relative_mse": 0.03584422906960244
+    },
+    {
+      "chunk_index": 128,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-128.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-128.polar.bin",
+      "container_bytes": 79087,
+      "relative_mse": 0.03586058463103992
+    },
+    {
+      "chunk_index": 129,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-129.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-129.polar.bin",
+      "container_bytes": 79111,
+      "relative_mse": 0.035814782814712516
+    },
+    {
+      "chunk_index": 130,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-130.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-130.polar.bin",
+      "container_bytes": 79132,
+      "relative_mse": 0.03577381107002268
+    },
+    {
+      "chunk_index": 131,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-131.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-131.polar.bin",
+      "container_bytes": 79094,
+      "relative_mse": 0.03636887652868095
+    },
+    {
+      "chunk_index": 132,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-132.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-132.polar.bin",
+      "container_bytes": 79182,
+      "relative_mse": 0.03572821671951199
+    },
+    {
+      "chunk_index": 133,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-133.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-133.polar.bin",
+      "container_bytes": 79267,
+      "relative_mse": 0.03556281774708934
+    },
+    {
+      "chunk_index": 134,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-134.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-134.polar.bin",
+      "container_bytes": 79303,
+      "relative_mse": 0.035534721616239016
+    },
+    {
+      "chunk_index": 135,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-135.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-135.polar.bin",
+      "container_bytes": 79366,
+      "relative_mse": 0.03543783666082405
+    },
+    {
+      "chunk_index": 136,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-136.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-136.polar.bin",
+      "container_bytes": 79418,
+      "relative_mse": 0.03536721957567517
+    },
+    {
+      "chunk_index": 137,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-137.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-137.polar.bin",
+      "container_bytes": 79380,
+      "relative_mse": 0.03537362833564896
+    },
+    {
+      "chunk_index": 138,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-138.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-138.polar.bin",
+      "container_bytes": 79484,
+      "relative_mse": 0.03524936705442782
+    },
+    {
+      "chunk_index": 139,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-139.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-139.polar.bin",
+      "container_bytes": 79485,
+      "relative_mse": 0.03522944050867765
+    },
+    {
+      "chunk_index": 140,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-140.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-140.polar.bin",
+      "container_bytes": 79509,
+      "relative_mse": 0.03536190537510384
+    },
+    {
+      "chunk_index": 141,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-141.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-141.polar.bin",
+      "container_bytes": 79589,
+      "relative_mse": 0.03510657763147095
+    },
+    {
+      "chunk_index": 142,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-142.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-142.polar.bin",
+      "container_bytes": 79641,
+      "relative_mse": 0.03498995208250028
+    },
+    {
+      "chunk_index": 143,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-143.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-143.polar.bin",
+      "container_bytes": 79706,
+      "relative_mse": 0.03493522803116666
+    },
+    {
+      "chunk_index": 144,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-144.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-144.polar.bin",
+      "container_bytes": 79712,
+      "relative_mse": 0.03490877576809644
+    },
+    {
+      "chunk_index": 145,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-145.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-145.polar.bin",
+      "container_bytes": 79782,
+      "relative_mse": 0.03480668455101603
+    },
+    {
+      "chunk_index": 146,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-146.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-146.polar.bin",
+      "container_bytes": 79775,
+      "relative_mse": 0.03483121477071704
+    },
+    {
+      "chunk_index": 147,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-147.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-147.polar.bin",
+      "container_bytes": 79806,
+      "relative_mse": 0.0347913368614185
+    },
+    {
+      "chunk_index": 148,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-148.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-148.polar.bin",
+      "container_bytes": 79814,
+      "relative_mse": 0.03475167996585539
+    },
+    {
+      "chunk_index": 149,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-149.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-149.polar.bin",
+      "container_bytes": 79840,
+      "relative_mse": 0.03473401275205894
+    },
+    {
+      "chunk_index": 150,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-150.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-150.polar.bin",
+      "container_bytes": 79639,
+      "relative_mse": 0.035365104362798126
+    },
+    {
+      "chunk_index": 151,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-151.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-151.polar.bin",
+      "container_bytes": 79952,
+      "relative_mse": 0.03455839793348663
+    },
+    {
+      "chunk_index": 152,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-152.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-152.polar.bin",
+      "container_bytes": 80029,
+      "relative_mse": 0.034490515203255905
+    },
+    {
+      "chunk_index": 153,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-153.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-153.polar.bin",
+      "container_bytes": 80022,
+      "relative_mse": 0.034447599444263254
+    },
+    {
+      "chunk_index": 154,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-154.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-154.polar.bin",
+      "container_bytes": 80032,
+      "relative_mse": 0.03447677626362499
+    },
+    {
+      "chunk_index": 155,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-155.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-155.polar.bin",
+      "container_bytes": 80061,
+      "relative_mse": 0.03594310518468321
+    },
+    {
+      "chunk_index": 156,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-156.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-156.polar.bin",
+      "container_bytes": 80139,
+      "relative_mse": 0.03428255057080879
+    },
+    {
+      "chunk_index": 157,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-157.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-157.polar.bin",
+      "container_bytes": 80218,
+      "relative_mse": 0.034153726148686024
+    },
+    {
+      "chunk_index": 158,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-158.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-158.polar.bin",
+      "container_bytes": 80229,
+      "relative_mse": 0.03414221769401547
+    },
+    {
+      "chunk_index": 159,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-159.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-159.polar.bin",
+      "container_bytes": 80265,
+      "relative_mse": 0.034094017033257436
+    },
+    {
+      "chunk_index": 160,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-160.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-160.polar.bin",
+      "container_bytes": 80333,
+      "relative_mse": 0.03400999853998005
+    },
+    {
+      "chunk_index": 161,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-161.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-161.polar.bin",
+      "container_bytes": 80367,
+      "relative_mse": 0.03395575480803603
+    },
+    {
+      "chunk_index": 162,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-162.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-162.polar.bin",
+      "container_bytes": 80393,
+      "relative_mse": 0.033901310122065736
+    },
+    {
+      "chunk_index": 163,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-163.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-163.polar.bin",
+      "container_bytes": 80399,
+      "relative_mse": 0.03389310618224058
+    },
+    {
+      "chunk_index": 164,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-164.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-164.polar.bin",
+      "container_bytes": 80503,
+      "relative_mse": 0.03377564788276128
+    },
+    {
+      "chunk_index": 165,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-165.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-165.polar.bin",
+      "container_bytes": 80511,
+      "relative_mse": 0.03380840357697854
+    },
+    {
+      "chunk_index": 166,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-166.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-166.polar.bin",
+      "container_bytes": 80532,
+      "relative_mse": 0.03371907803633976
+    },
+    {
+      "chunk_index": 167,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-167.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-167.polar.bin",
+      "container_bytes": 80621,
+      "relative_mse": 0.033600029651476335
+    },
+    {
+      "chunk_index": 168,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-168.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-168.polar.bin",
+      "container_bytes": 80644,
+      "relative_mse": 0.03357697262309971
+    },
+    {
+      "chunk_index": 169,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-169.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-169.polar.bin",
+      "container_bytes": 80736,
+      "relative_mse": 0.033449893057747954
+    },
+    {
+      "chunk_index": 170,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-170.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-170.polar.bin",
+      "container_bytes": 80822,
+      "relative_mse": 0.03331924369212758
+    },
+    {
+      "chunk_index": 171,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-171.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-171.polar.bin",
+      "container_bytes": 80852,
+      "relative_mse": 0.03328505064202867
+    },
+    {
+      "chunk_index": 172,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-172.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-172.polar.bin",
+      "container_bytes": 80860,
+      "relative_mse": 0.033238225186156684
+    },
+    {
+      "chunk_index": 173,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-173.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-173.polar.bin",
+      "container_bytes": 80920,
+      "relative_mse": 0.03320852427406264
+    },
+    {
+      "chunk_index": 174,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-174.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-174.polar.bin",
+      "container_bytes": 80962,
+      "relative_mse": 0.033117597279342666
+    },
+    {
+      "chunk_index": 175,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-175.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-175.polar.bin",
+      "container_bytes": 80993,
+      "relative_mse": 0.03309239208431626
+    },
+    {
+      "chunk_index": 176,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-176.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-176.polar.bin",
+      "container_bytes": 81039,
+      "relative_mse": 0.03310561294501738
+    },
+    {
+      "chunk_index": 177,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-177.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-177.polar.bin",
+      "container_bytes": 81035,
+      "relative_mse": 0.03301043554150633
+    },
+    {
+      "chunk_index": 178,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-178.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-178.polar.bin",
+      "container_bytes": 81070,
+      "relative_mse": 0.03297629785698417
+    },
+    {
+      "chunk_index": 179,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-179.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-179.polar.bin",
+      "container_bytes": 81148,
+      "relative_mse": 0.03285422472419619
+    },
+    {
+      "chunk_index": 180,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-180.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-180.polar.bin",
+      "container_bytes": 81120,
+      "relative_mse": 0.034867514506236104
+    },
+    {
+      "chunk_index": 181,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-181.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-181.polar.bin",
+      "container_bytes": 81173,
+      "relative_mse": 0.03280946634776666
+    },
+    {
+      "chunk_index": 182,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-182.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-182.polar.bin",
+      "container_bytes": 81147,
+      "relative_mse": 0.0359078901765313
+    },
+    {
+      "chunk_index": 183,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-183.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-183.polar.bin",
+      "container_bytes": 81232,
+      "relative_mse": 0.032844255391320715
+    },
+    {
+      "chunk_index": 184,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-184.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-184.polar.bin",
+      "container_bytes": 81352,
+      "relative_mse": 0.03258978470638876
+    },
+    {
+      "chunk_index": 185,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-185.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-185.polar.bin",
+      "container_bytes": 81357,
+      "relative_mse": 0.032565557359582956
+    },
+    {
+      "chunk_index": 186,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-186.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-186.polar.bin",
+      "container_bytes": 81395,
+      "relative_mse": 0.032621213962733785
+    },
+    {
+      "chunk_index": 187,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-187.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-187.polar.bin",
+      "container_bytes": 81449,
+      "relative_mse": 0.032437238445009335
+    },
+    {
+      "chunk_index": 188,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-188.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-188.polar.bin",
+      "container_bytes": 81461,
+      "relative_mse": 0.03241720439778638
+    },
+    {
+      "chunk_index": 189,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-189.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-189.polar.bin",
+      "container_bytes": 81490,
+      "relative_mse": 0.03243883127092244
+    },
+    {
+      "chunk_index": 190,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-190.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-190.polar.bin",
+      "container_bytes": 81533,
+      "relative_mse": 0.03230586409267497
+    },
+    {
+      "chunk_index": 191,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-191.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-191.polar.bin",
+      "container_bytes": 81594,
+      "relative_mse": 0.032258522041372126
+    },
+    {
+      "chunk_index": 192,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-192.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-192.polar.bin",
+      "container_bytes": 81625,
+      "relative_mse": 0.0322056580656572
+    },
+    {
+      "chunk_index": 193,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-193.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-193.polar.bin",
+      "container_bytes": 81649,
+      "relative_mse": 0.03215886334676253
+    },
+    {
+      "chunk_index": 194,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-194.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-194.polar.bin",
+      "container_bytes": 81745,
+      "relative_mse": 0.03202193209444925
+    },
+    {
+      "chunk_index": 195,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-195.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-195.polar.bin",
+      "container_bytes": 81753,
+      "relative_mse": 0.03201961967406741
+    },
+    {
+      "chunk_index": 196,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-196.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-196.polar.bin",
+      "container_bytes": 81781,
+      "relative_mse": 0.031975286094507595
+    },
+    {
+      "chunk_index": 197,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-197.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-197.polar.bin",
+      "container_bytes": 81861,
+      "relative_mse": 0.03186751411938346
+    },
+    {
+      "chunk_index": 198,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-198.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-198.polar.bin",
+      "container_bytes": 81823,
+      "relative_mse": 0.03194277265311312
+    },
+    {
+      "chunk_index": 199,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-199.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-199.polar.bin",
+      "container_bytes": 81858,
+      "relative_mse": 0.031868287030641866
+    },
+    {
+      "chunk_index": 200,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-200.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-200.polar.bin",
+      "container_bytes": 81883,
+      "relative_mse": 0.03186017370031981
+    },
+    {
+      "chunk_index": 201,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-201.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-201.polar.bin",
+      "container_bytes": 81862,
+      "relative_mse": 0.032124905560057156
+    },
+    {
+      "chunk_index": 202,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-202.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-202.polar.bin",
+      "container_bytes": 81958,
+      "relative_mse": 0.031741985878662914
+    },
+    {
+      "chunk_index": 203,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-203.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-203.polar.bin",
+      "container_bytes": 82036,
+      "relative_mse": 0.031665369915125856
+    },
+    {
+      "chunk_index": 204,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-204.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-204.polar.bin",
+      "container_bytes": 82090,
+      "relative_mse": 0.031567072649453534
+    },
+    {
+      "chunk_index": 205,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-205.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-205.polar.bin",
+      "container_bytes": 82129,
+      "relative_mse": 0.03153204303499974
+    },
+    {
+      "chunk_index": 206,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-206.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-206.polar.bin",
+      "container_bytes": 82100,
+      "relative_mse": 0.034839152903439766
+    },
+    {
+      "chunk_index": 207,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-207.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-207.polar.bin",
+      "container_bytes": 82237,
+      "relative_mse": 0.03136216734034409
+    },
+    {
+      "chunk_index": 208,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-208.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-208.polar.bin",
+      "container_bytes": 82289,
+      "relative_mse": 0.03134738371767094
+    },
+    {
+      "chunk_index": 209,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-209.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-209.polar.bin",
+      "container_bytes": 82344,
+      "relative_mse": 0.031232300648694436
+    },
+    {
+      "chunk_index": 210,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-210.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-210.polar.bin",
+      "container_bytes": 82381,
+      "relative_mse": 0.031223734471330346
+    },
+    {
+      "chunk_index": 211,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-211.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-211.polar.bin",
+      "container_bytes": 82431,
+      "relative_mse": 0.03112535756750077
+    },
+    {
+      "chunk_index": 212,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-212.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-212.polar.bin",
+      "container_bytes": 82478,
+      "relative_mse": 0.031075699877681356
+    },
+    {
+      "chunk_index": 213,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-213.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-213.polar.bin",
+      "container_bytes": 82576,
+      "relative_mse": 0.030950129211649514
+    },
+    {
+      "chunk_index": 214,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-214.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-214.polar.bin",
+      "container_bytes": 82612,
+      "relative_mse": 0.030902996695028166
+    },
+    {
+      "chunk_index": 215,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-215.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-215.polar.bin",
+      "container_bytes": 82684,
+      "relative_mse": 0.030791720408159504
+    },
+    {
+      "chunk_index": 216,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-216.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-216.polar.bin",
+      "container_bytes": 82716,
+      "relative_mse": 0.03076270042798851
+    },
+    {
+      "chunk_index": 217,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-217.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-217.polar.bin",
+      "container_bytes": 82821,
+      "relative_mse": 0.03060028522713109
+    },
+    {
+      "chunk_index": 218,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-218.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-218.polar.bin",
+      "container_bytes": 82869,
+      "relative_mse": 0.03055973353605126
+    },
+    {
+      "chunk_index": 219,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-219.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-219.polar.bin",
+      "container_bytes": 82881,
+      "relative_mse": 0.030542995339587847
+    },
+    {
+      "chunk_index": 220,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-220.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-220.polar.bin",
+      "container_bytes": 82919,
+      "relative_mse": 0.030476795828436962
+    },
+    {
+      "chunk_index": 221,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-221.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-221.polar.bin",
+      "container_bytes": 82990,
+      "relative_mse": 0.03036892588534058
+    },
+    {
+      "chunk_index": 222,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-222.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-222.polar.bin",
+      "container_bytes": 83030,
+      "relative_mse": 0.03033655285567064
+    },
+    {
+      "chunk_index": 223,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-223.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-223.polar.bin",
+      "container_bytes": 83050,
+      "relative_mse": 0.030319195986047112
+    },
+    {
+      "chunk_index": 224,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-224.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-224.polar.bin",
+      "container_bytes": 82991,
+      "relative_mse": 0.03333538270714346
+    },
+    {
+      "chunk_index": 225,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-225.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-225.polar.bin",
+      "container_bytes": 83169,
+      "relative_mse": 0.030168481708594045
+    },
+    {
+      "chunk_index": 226,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-226.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-226.polar.bin",
+      "container_bytes": 83185,
+      "relative_mse": 0.030142834418688466
+    },
+    {
+      "chunk_index": 227,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-227.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-227.polar.bin",
+      "container_bytes": 83214,
+      "relative_mse": 0.030123950747017684
+    },
+    {
+      "chunk_index": 228,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-228.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-228.polar.bin",
+      "container_bytes": 83230,
+      "relative_mse": 0.030154256288723813
+    },
+    {
+      "chunk_index": 229,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-229.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-229.polar.bin",
+      "container_bytes": 83251,
+      "relative_mse": 0.03020029170448914
+    },
+    {
+      "chunk_index": 230,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-230.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-230.polar.bin",
+      "container_bytes": 83255,
+      "relative_mse": 0.030150695997419732
+    },
+    {
+      "chunk_index": 231,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-231.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-231.polar.bin",
+      "container_bytes": 83373,
+      "relative_mse": 0.029931070824341068
+    },
+    {
+      "chunk_index": 232,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-232.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-232.polar.bin",
+      "container_bytes": 83438,
+      "relative_mse": 0.02988400946664674
+    },
+    {
+      "chunk_index": 233,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-233.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-233.polar.bin",
+      "container_bytes": 83453,
+      "relative_mse": 0.029799277406435728
+    },
+    {
+      "chunk_index": 234,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-234.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-234.polar.bin",
+      "container_bytes": 83479,
+      "relative_mse": 0.029773087105227344
+    },
+    {
+      "chunk_index": 235,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-235.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-235.polar.bin",
+      "container_bytes": 83536,
+      "relative_mse": 0.029695473375288023
+    },
+    {
+      "chunk_index": 236,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-236.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-236.polar.bin",
+      "container_bytes": 83590,
+      "relative_mse": 0.029624045115152573
+    },
+    {
+      "chunk_index": 237,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-237.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-237.polar.bin",
+      "container_bytes": 83624,
+      "relative_mse": 0.029627811080766727
+    },
+    {
+      "chunk_index": 238,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-238.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-238.polar.bin",
+      "container_bytes": 83705,
+      "relative_mse": 0.029491968184932296
+    },
+    {
+      "chunk_index": 239,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-239.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-239.polar.bin",
+      "container_bytes": 83734,
+      "relative_mse": 0.029476977074372884
+    },
+    {
+      "chunk_index": 240,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-240.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-240.polar.bin",
+      "container_bytes": 83795,
+      "relative_mse": 0.02939144429165428
+    },
+    {
+      "chunk_index": 241,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-241.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-241.polar.bin",
+      "container_bytes": 83853,
+      "relative_mse": 0.029287129647422173
+    },
+    {
+      "chunk_index": 242,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-242.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-242.polar.bin",
+      "container_bytes": 83861,
+      "relative_mse": 0.02929867036054447
+    },
+    {
+      "chunk_index": 243,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-243.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-243.polar.bin",
+      "container_bytes": 83848,
+      "relative_mse": 0.02935737539294105
+    },
+    {
+      "chunk_index": 244,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-244.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-244.polar.bin",
+      "container_bytes": 83963,
+      "relative_mse": 0.02917657438827043
+    },
+    {
+      "chunk_index": 245,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-245.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-245.polar.bin",
+      "container_bytes": 84016,
+      "relative_mse": 0.029102202794232875
+    },
+    {
+      "chunk_index": 246,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-246.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-246.polar.bin",
+      "container_bytes": 84039,
+      "relative_mse": 0.029101425251389857
+    },
+    {
+      "chunk_index": 247,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-247.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-247.polar.bin",
+      "container_bytes": 84051,
+      "relative_mse": 0.029105621667053452
+    },
+    {
+      "chunk_index": 248,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-248.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-248.polar.bin",
+      "container_bytes": 84177,
+      "relative_mse": 0.028918585849601015
+    },
+    {
+      "chunk_index": 249,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-249.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-249.polar.bin",
+      "container_bytes": 84167,
+      "relative_mse": 0.029102695671963223
+    },
+    {
+      "chunk_index": 250,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-250.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-250.polar.bin",
+      "container_bytes": 83868,
+      "relative_mse": 0.034560629568555865
+    },
+    {
+      "chunk_index": 251,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-251.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-251.polar.bin",
+      "container_bytes": 84343,
+      "relative_mse": 0.02870013193843623
+    },
+    {
+      "chunk_index": 252,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-252.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-252.polar.bin",
+      "container_bytes": 84377,
+      "relative_mse": 0.028645310264103507
+    },
+    {
+      "chunk_index": 253,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-253.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-253.polar.bin",
+      "container_bytes": 84465,
+      "relative_mse": 0.028606530992998466
+    },
+    {
+      "chunk_index": 254,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-254.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-254.polar.bin",
+      "container_bytes": 84517,
+      "relative_mse": 0.028503106772170803
+    },
+    {
+      "chunk_index": 255,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-255.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-255.polar.bin",
+      "container_bytes": 84595,
+      "relative_mse": 0.028399399857463446
+    },
+    {
+      "chunk_index": 256,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-256.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-256.polar.bin",
+      "container_bytes": 84625,
+      "relative_mse": 0.028370631952434423
+    },
+    {
+      "chunk_index": 257,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-257.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-257.polar.bin",
+      "container_bytes": 84679,
+      "relative_mse": 0.02832827131817291
+    },
+    {
+      "chunk_index": 258,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-258.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-258.polar.bin",
+      "container_bytes": 84772,
+      "relative_mse": 0.02822478771945505
+    },
+    {
+      "chunk_index": 259,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-259.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-259.polar.bin",
+      "container_bytes": 84849,
+      "relative_mse": 0.028071559033163017
+    },
+    {
+      "chunk_index": 260,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-260.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-260.polar.bin",
+      "container_bytes": 84881,
+      "relative_mse": 0.029836940796991465
+    },
+    {
+      "chunk_index": 261,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-261.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-261.polar.bin",
+      "container_bytes": 84971,
+      "relative_mse": 0.027958474868092248
+    },
+    {
+      "chunk_index": 262,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-262.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-262.polar.bin",
+      "container_bytes": 84999,
+      "relative_mse": 0.027922389834406067
+    },
+    {
+      "chunk_index": 263,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-263.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-263.polar.bin",
+      "container_bytes": 85065,
+      "relative_mse": 0.027902878851135664
+    },
+    {
+      "chunk_index": 264,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-264.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-264.polar.bin",
+      "container_bytes": 85141,
+      "relative_mse": 0.027754881924528046
+    },
+    {
+      "chunk_index": 265,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-265.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-265.polar.bin",
+      "container_bytes": 85185,
+      "relative_mse": 0.027706114438853544
+    },
+    {
+      "chunk_index": 266,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-266.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-266.polar.bin",
+      "container_bytes": 85235,
+      "relative_mse": 0.027643466903876333
+    },
+    {
+      "chunk_index": 267,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-267.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-267.polar.bin",
+      "container_bytes": 85253,
+      "relative_mse": 0.02761674724110168
+    },
+    {
+      "chunk_index": 268,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-268.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-268.polar.bin",
+      "container_bytes": 85240,
+      "relative_mse": 0.031576672315976696
+    },
+    {
+      "chunk_index": 269,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-269.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-269.polar.bin",
+      "container_bytes": 85330,
+      "relative_mse": 0.02767959413110887
+    },
+    {
+      "chunk_index": 270,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-270.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-270.polar.bin",
+      "container_bytes": 85431,
+      "relative_mse": 0.02742054684358268
+    },
+    {
+      "chunk_index": 271,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-271.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-271.polar.bin",
+      "container_bytes": 85522,
+      "relative_mse": 0.027314176636419163
+    },
+    {
+      "chunk_index": 272,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-272.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-272.polar.bin",
+      "container_bytes": 85569,
+      "relative_mse": 0.027240602560033016
+    },
+    {
+      "chunk_index": 273,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-273.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-273.polar.bin",
+      "container_bytes": 85643,
+      "relative_mse": 0.027187299653790853
+    },
+    {
+      "chunk_index": 274,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-274.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-274.polar.bin",
+      "container_bytes": 85677,
+      "relative_mse": 0.027272269791754872
+    },
+    {
+      "chunk_index": 275,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-275.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-275.polar.bin",
+      "container_bytes": 85771,
+      "relative_mse": 0.027046608264016538
+    },
+    {
+      "chunk_index": 276,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-276.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-276.polar.bin",
+      "container_bytes": 85830,
+      "relative_mse": 0.026946461603479188
+    },
+    {
+      "chunk_index": 277,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-277.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-277.polar.bin",
+      "container_bytes": 85836,
+      "relative_mse": 0.02701918716558315
+    },
+    {
+      "chunk_index": 278,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-278.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-278.polar.bin",
+      "container_bytes": 85916,
+      "relative_mse": 0.026883047945370345
+    },
+    {
+      "chunk_index": 279,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-279.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-279.polar.bin",
+      "container_bytes": 86014,
+      "relative_mse": 0.026741149741047444
+    },
+    {
+      "chunk_index": 280,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-280.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-280.polar.bin",
+      "container_bytes": 86049,
+      "relative_mse": 0.026725419644734974
+    },
+    {
+      "chunk_index": 281,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-281.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-281.polar.bin",
+      "container_bytes": 86112,
+      "relative_mse": 0.02663999537320278
+    },
+    {
+      "chunk_index": 282,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-282.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-282.polar.bin",
+      "container_bytes": 86154,
+      "relative_mse": 0.02663548923553009
+    },
+    {
+      "chunk_index": 283,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-283.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-283.polar.bin",
+      "container_bytes": 86152,
+      "relative_mse": 0.02703546638094719
+    },
+    {
+      "chunk_index": 284,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-284.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-284.polar.bin",
+      "container_bytes": 85481,
+      "relative_mse": 0.031249756595742913
+    },
+    {
+      "chunk_index": 285,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-285.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-285.polar.bin",
+      "container_bytes": 86355,
+      "relative_mse": 0.026383299950995916
+    },
+    {
+      "chunk_index": 286,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-286.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-286.polar.bin",
+      "container_bytes": 86375,
+      "relative_mse": 0.028017524201129382
+    },
+    {
+      "chunk_index": 287,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-287.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-287.polar.bin",
+      "container_bytes": 86525,
+      "relative_mse": 0.026172173457296784
+    },
+    {
+      "chunk_index": 288,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-288.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-288.polar.bin",
+      "container_bytes": 86571,
+      "relative_mse": 0.026198901606779054
+    },
+    {
+      "chunk_index": 289,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-289.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-289.polar.bin",
+      "container_bytes": 86605,
+      "relative_mse": 0.026073287471803614
+    },
+    {
+      "chunk_index": 290,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-290.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-290.polar.bin",
+      "container_bytes": 86667,
+      "relative_mse": 0.02599721426952218
+    },
+    {
+      "chunk_index": 291,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-291.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-291.polar.bin",
+      "container_bytes": 86697,
+      "relative_mse": 0.02600157605382073
+    },
+    {
+      "chunk_index": 292,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-292.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-292.polar.bin",
+      "container_bytes": 86766,
+      "relative_mse": 0.026169725917369133
+    },
+    {
+      "chunk_index": 293,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-293.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-293.polar.bin",
+      "container_bytes": 86871,
+      "relative_mse": 0.025775742564278722
+    },
+    {
+      "chunk_index": 294,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-294.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-294.polar.bin",
+      "container_bytes": 86939,
+      "relative_mse": 0.025714747693465913
+    },
+    {
+      "chunk_index": 295,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-295.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-295.polar.bin",
+      "container_bytes": 86980,
+      "relative_mse": 0.02572968154053015
+    },
+    {
+      "chunk_index": 296,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-296.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-296.polar.bin",
+      "container_bytes": 87082,
+      "relative_mse": 0.025542001137719057
+    },
+    {
+      "chunk_index": 297,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-297.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-297.polar.bin",
+      "container_bytes": 87146,
+      "relative_mse": 0.02552972480927926
+    },
+    {
+      "chunk_index": 298,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-298.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-298.polar.bin",
+      "container_bytes": 87198,
+      "relative_mse": 0.02554719687050394
+    },
+    {
+      "chunk_index": 299,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-299.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-299.polar.bin",
+      "container_bytes": 87247,
+      "relative_mse": 0.025658631641552337
+    },
+    {
+      "chunk_index": 300,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-300.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-300.polar.bin",
+      "container_bytes": 87311,
+      "relative_mse": 0.025339579739163922
+    },
+    {
+      "chunk_index": 301,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-301.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-301.polar.bin",
+      "container_bytes": 87367,
+      "relative_mse": 0.025252081694387488
+    },
+    {
+      "chunk_index": 302,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-302.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-302.polar.bin",
+      "container_bytes": 87443,
+      "relative_mse": 0.025177591183922897
+    },
+    {
+      "chunk_index": 303,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-303.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-303.polar.bin",
+      "container_bytes": 87478,
+      "relative_mse": 0.025173559759140016
+    },
+    {
+      "chunk_index": 304,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-304.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-304.polar.bin",
+      "container_bytes": 87533,
+      "relative_mse": 0.025213282346503805
+    },
+    {
+      "chunk_index": 305,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-305.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-305.polar.bin",
+      "container_bytes": 87620,
+      "relative_mse": 0.02505674489864191
+    },
+    {
+      "chunk_index": 306,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-306.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-306.polar.bin",
+      "container_bytes": 87722,
+      "relative_mse": 0.024899084351237322
+    },
+    {
+      "chunk_index": 307,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-307.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-307.polar.bin",
+      "container_bytes": 87750,
+      "relative_mse": 0.02603062144685237
+    },
+    {
+      "chunk_index": 308,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-308.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-308.polar.bin",
+      "container_bytes": 87861,
+      "relative_mse": 0.024732005331671435
+    },
+    {
+      "chunk_index": 309,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-309.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-309.polar.bin",
+      "container_bytes": 87937,
+      "relative_mse": 0.02466133563822452
+    },
+    {
+      "chunk_index": 310,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-310.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-310.polar.bin",
+      "container_bytes": 88017,
+      "relative_mse": 0.024593334355414425
+    },
+    {
+      "chunk_index": 311,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-311.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-311.polar.bin",
+      "container_bytes": 88048,
+      "relative_mse": 0.024549397243214314
+    },
+    {
+      "chunk_index": 312,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-312.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-312.polar.bin",
+      "container_bytes": 88128,
+      "relative_mse": 0.024477092823231676
+    },
+    {
+      "chunk_index": 313,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-313.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-313.polar.bin",
+      "container_bytes": 88179,
+      "relative_mse": 0.026359996213928216
+    },
+    {
+      "chunk_index": 314,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-314.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-314.polar.bin",
+      "container_bytes": 88253,
+      "relative_mse": 0.024377365410426424
+    },
+    {
+      "chunk_index": 315,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-315.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-315.polar.bin",
+      "container_bytes": 87814,
+      "relative_mse": 0.026867944881627748
+    },
+    {
+      "chunk_index": 316,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-316.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-316.polar.bin",
+      "container_bytes": 88424,
+      "relative_mse": 0.024164922267650865
+    },
+    {
+      "chunk_index": 317,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-317.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-317.polar.bin",
+      "container_bytes": 88463,
+      "relative_mse": 0.02411398244812192
+    },
+    {
+      "chunk_index": 318,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-318.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-318.polar.bin",
+      "container_bytes": 88518,
+      "relative_mse": 0.024094649458632003
+    },
+    {
+      "chunk_index": 319,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-319.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-319.polar.bin",
+      "container_bytes": 88582,
+      "relative_mse": 0.024095036350815835
+    },
+    {
+      "chunk_index": 320,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-320.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-320.polar.bin",
+      "container_bytes": 88642,
+      "relative_mse": 0.02402853218453261
+    },
+    {
+      "chunk_index": 321,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-321.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-321.polar.bin",
+      "container_bytes": 88725,
+      "relative_mse": 0.023829716953055722
+    },
+    {
+      "chunk_index": 322,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-322.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-322.polar.bin",
+      "container_bytes": 88739,
+      "relative_mse": 0.023907197243665218
+    },
+    {
+      "chunk_index": 323,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-323.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-323.polar.bin",
+      "container_bytes": 88857,
+      "relative_mse": 0.023735216087416217
+    },
+    {
+      "chunk_index": 324,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-324.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-324.polar.bin",
+      "container_bytes": 88897,
+      "relative_mse": 0.02370782591836739
+    },
+    {
+      "chunk_index": 325,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-325.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-325.polar.bin",
+      "container_bytes": 89013,
+      "relative_mse": 0.02355885517432779
+    },
+    {
+      "chunk_index": 326,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-326.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-326.polar.bin",
+      "container_bytes": 89018,
+      "relative_mse": 0.02425956888001312
+    },
+    {
+      "chunk_index": 327,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-327.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-327.polar.bin",
+      "container_bytes": 89160,
+      "relative_mse": 0.023412314718321132
+    },
+    {
+      "chunk_index": 328,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-328.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-328.polar.bin",
+      "container_bytes": 89171,
+      "relative_mse": 0.023494016409564014
+    },
+    {
+      "chunk_index": 329,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-329.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-329.polar.bin",
+      "container_bytes": 89248,
+      "relative_mse": 0.02339554053993316
+    },
+    {
+      "chunk_index": 330,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-330.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-330.polar.bin",
+      "container_bytes": 89324,
+      "relative_mse": 0.02325646434539045
+    },
+    {
+      "chunk_index": 331,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-331.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-331.polar.bin",
+      "container_bytes": 89370,
+      "relative_mse": 0.0232944815338637
+    },
+    {
+      "chunk_index": 332,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-332.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-332.polar.bin",
+      "container_bytes": 89420,
+      "relative_mse": 0.024622071497047107
+    },
+    {
+      "chunk_index": 333,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-333.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-333.polar.bin",
+      "container_bytes": 89521,
+      "relative_mse": 0.023069296392869306
+    },
+    {
+      "chunk_index": 334,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-334.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-334.polar.bin",
+      "container_bytes": 89626,
+      "relative_mse": 0.02294021530034978
+    },
+    {
+      "chunk_index": 335,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-335.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-335.polar.bin",
+      "container_bytes": 89662,
+      "relative_mse": 0.023179275764710808
+    },
+    {
+      "chunk_index": 336,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-336.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-336.polar.bin",
+      "container_bytes": 89732,
+      "relative_mse": 0.02304673214776107
+    },
+    {
+      "chunk_index": 337,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-337.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-337.polar.bin",
+      "container_bytes": 89929,
+      "relative_mse": 0.02266653638161626
+    },
+    {
+      "chunk_index": 338,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-338.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-338.polar.bin",
+      "container_bytes": 90045,
+      "relative_mse": 0.022625709502472266
+    },
+    {
+      "chunk_index": 339,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-339.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-339.polar.bin",
+      "container_bytes": 90128,
+      "relative_mse": 0.022450754857667763
+    },
+    {
+      "chunk_index": 340,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-340.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-340.polar.bin",
+      "container_bytes": 90203,
+      "relative_mse": 0.02238915773925409
+    },
+    {
+      "chunk_index": 341,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-341.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-341.polar.bin",
+      "container_bytes": 90280,
+      "relative_mse": 0.022306238347559983
+    },
+    {
+      "chunk_index": 342,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-342.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-342.polar.bin",
+      "container_bytes": 90402,
+      "relative_mse": 0.022193378658731572
+    },
+    {
+      "chunk_index": 343,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-343.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-343.polar.bin",
+      "container_bytes": 90506,
+      "relative_mse": 0.022104726384707337
+    },
+    {
+      "chunk_index": 344,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-344.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-344.polar.bin",
+      "container_bytes": 90652,
+      "relative_mse": 0.021959743072041654
+    },
+    {
+      "chunk_index": 345,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-345.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-345.polar.bin",
+      "container_bytes": 90775,
+      "relative_mse": 0.021869405415446047
+    },
+    {
+      "chunk_index": 346,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-346.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-346.polar.bin",
+      "container_bytes": 90816,
+      "relative_mse": 0.021826847392955498
+    },
+    {
+      "chunk_index": 347,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-347.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-347.polar.bin",
+      "container_bytes": 90931,
+      "relative_mse": 0.021721870690873266
+    },
+    {
+      "chunk_index": 348,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-348.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-348.polar.bin",
+      "container_bytes": 91028,
+      "relative_mse": 0.021625523291252002
+    },
+    {
+      "chunk_index": 349,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-349.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-349.polar.bin",
+      "container_bytes": 91126,
+      "relative_mse": 0.021549785092438933
+    },
+    {
+      "chunk_index": 350,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-350.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-350.polar.bin",
+      "container_bytes": 91172,
+      "relative_mse": 0.02150183650750188
+    },
+    {
+      "chunk_index": 351,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-351.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-351.polar.bin",
+      "container_bytes": 91258,
+      "relative_mse": 0.021433416607697823
+    },
+    {
+      "chunk_index": 352,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-352.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-352.polar.bin",
+      "container_bytes": 91294,
+      "relative_mse": 0.02137802871149072
+    },
+    {
+      "chunk_index": 353,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-353.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-353.polar.bin",
+      "container_bytes": 91391,
+      "relative_mse": 0.02125943582005186
+    },
+    {
+      "chunk_index": 354,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-354.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-354.polar.bin",
+      "container_bytes": 91533,
+      "relative_mse": 0.021173407655418888
+    },
+    {
+      "chunk_index": 355,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-355.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-355.polar.bin",
+      "container_bytes": 91661,
+      "relative_mse": 0.02108537591311347
+    },
+    {
+      "chunk_index": 356,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-356.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-356.polar.bin",
+      "container_bytes": 91695,
+      "relative_mse": 0.02102199638277983
+    },
+    {
+      "chunk_index": 357,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-357.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-357.polar.bin",
+      "container_bytes": 91753,
+      "relative_mse": 0.020918907339556397
+    },
+    {
+      "chunk_index": 358,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-358.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-358.polar.bin",
+      "container_bytes": 92019,
+      "relative_mse": 0.02075650409350702
+    },
+    {
+      "chunk_index": 359,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-359.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-359.polar.bin",
+      "container_bytes": 92169,
+      "relative_mse": 0.020599959742271672
+    },
+    {
+      "chunk_index": 360,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-360.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-360.polar.bin",
+      "container_bytes": 92208,
+      "relative_mse": 0.020566997564427338
+    },
+    {
+      "chunk_index": 361,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-361.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-361.polar.bin",
+      "container_bytes": 92339,
+      "relative_mse": 0.020456971642347867
+    },
+    {
+      "chunk_index": 362,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-362.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-362.polar.bin",
+      "container_bytes": 92405,
+      "relative_mse": 0.020394228871645603
+    },
+    {
+      "chunk_index": 363,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-363.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-363.polar.bin",
+      "container_bytes": 92579,
+      "relative_mse": 0.020260037297377
+    },
+    {
+      "chunk_index": 364,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-364.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-364.polar.bin",
+      "container_bytes": 92719,
+      "relative_mse": 0.020142959884234087
+    },
+    {
+      "chunk_index": 365,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-365.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-365.polar.bin",
+      "container_bytes": 92819,
+      "relative_mse": 0.020046677523360586
+    },
+    {
+      "chunk_index": 366,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-366.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-366.polar.bin",
+      "container_bytes": 92923,
+      "relative_mse": 0.019965772821980053
+    },
+    {
+      "chunk_index": 367,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-367.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-367.polar.bin",
+      "container_bytes": 93149,
+      "relative_mse": 0.019771645214768804
+    },
+    {
+      "chunk_index": 368,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-368.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-368.polar.bin",
+      "container_bytes": 93306,
+      "relative_mse": 0.019623675885981
+    },
+    {
+      "chunk_index": 369,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-369.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-369.polar.bin",
+      "container_bytes": 93500,
+      "relative_mse": 0.01947211661557251
+    },
+    {
+      "chunk_index": 370,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-370.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-370.polar.bin",
+      "container_bytes": 93710,
+      "relative_mse": 0.019305136283817005
+    },
+    {
+      "chunk_index": 371,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-371.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-371.polar.bin",
+      "container_bytes": 93854,
+      "relative_mse": 0.019152781578359538
+    },
+    {
+      "chunk_index": 372,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-372.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-372.polar.bin",
+      "container_bytes": 94095,
+      "relative_mse": 0.01899024188024292
+    },
+    {
+      "chunk_index": 373,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-373.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-373.polar.bin",
+      "container_bytes": 94218,
+      "relative_mse": 0.018859326066856533
+    },
+    {
+      "chunk_index": 374,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-374.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-374.polar.bin",
+      "container_bytes": 94383,
+      "relative_mse": 0.018761524377409664
+    },
+    {
+      "chunk_index": 375,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-375.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-375.polar.bin",
+      "container_bytes": 94536,
+      "relative_mse": 0.018648207001292647
+    },
+    {
+      "chunk_index": 376,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-376.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-376.polar.bin",
+      "container_bytes": 94633,
+      "relative_mse": 0.018587507365586196
+    },
+    {
+      "chunk_index": 377,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-377.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-377.polar.bin",
+      "container_bytes": 94718,
+      "relative_mse": 0.018492155141655958
+    },
+    {
+      "chunk_index": 378,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-378.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-378.polar.bin",
+      "container_bytes": 94929,
+      "relative_mse": 0.01836148368840395
+    },
+    {
+      "chunk_index": 379,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-379.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-379.polar.bin",
+      "container_bytes": 95187,
+      "relative_mse": 0.018138878888857658
+    },
+    {
+      "chunk_index": 380,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-380.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-380.polar.bin",
+      "container_bytes": 95459,
+      "relative_mse": 0.017922765471402605
+    },
+    {
+      "chunk_index": 381,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-381.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-381.polar.bin",
+      "container_bytes": 95950,
+      "relative_mse": 0.01759837757534099
+    },
+    {
+      "chunk_index": 382,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-382.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-382.polar.bin",
+      "container_bytes": 96186,
+      "relative_mse": 0.01736157419995883
+    },
+    {
+      "chunk_index": 383,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-383.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-383.polar.bin",
+      "container_bytes": 96580,
+      "relative_mse": 0.01708363370108479
+    },
+    {
+      "chunk_index": 384,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-384.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-384.polar.bin",
+      "container_bytes": 96982,
+      "relative_mse": 0.016819183269111696
+    },
+    {
+      "chunk_index": 385,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-385.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-385.polar.bin",
+      "container_bytes": 97081,
+      "relative_mse": 0.016746613352968953
+    },
+    {
+      "chunk_index": 386,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-386.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-386.polar.bin",
+      "container_bytes": 97202,
+      "relative_mse": 0.01663496267442887
+    },
+    {
+      "chunk_index": 387,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-387.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-387.polar.bin",
+      "container_bytes": 97869,
+      "relative_mse": 0.016191149164816548
+    },
+    {
+      "chunk_index": 388,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-388.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-388.polar.bin",
+      "container_bytes": 98300,
+      "relative_mse": 0.015902706805498913
+    },
+    {
+      "chunk_index": 389,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-389.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-389.polar.bin",
+      "container_bytes": 98808,
+      "relative_mse": 0.015587688751726121
+    },
+    {
+      "chunk_index": 390,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-390.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-390.polar.bin",
+      "container_bytes": 99134,
+      "relative_mse": 0.015338870134468632
+    },
+    {
+      "chunk_index": 391,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-391.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-391.polar.bin",
+      "container_bytes": 99609,
+      "relative_mse": 0.014973069520663542
+    },
+    {
+      "chunk_index": 392,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-392.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-392.polar.bin",
+      "container_bytes": 99831,
+      "relative_mse": 0.014853324147317284
+    },
+    {
+      "chunk_index": 393,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-393.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-393.polar.bin",
+      "container_bytes": 99721,
+      "relative_mse": 0.0148346447484835
+    },
+    {
+      "chunk_index": 394,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-394.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-394.polar.bin",
+      "container_bytes": 99887,
+      "relative_mse": 0.014824794119223194
+    },
+    {
+      "chunk_index": 395,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-395.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-395.polar.bin",
+      "container_bytes": 99799,
+      "relative_mse": 0.014995264623220898
+    },
+    {
+      "chunk_index": 396,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-396.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-396.polar.bin",
+      "container_bytes": 99806,
+      "relative_mse": 0.014829339897032565
+    },
+    {
+      "chunk_index": 397,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-397.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-397.polar.bin",
+      "container_bytes": 99866,
+      "relative_mse": 0.014827410461447957
+    },
+    {
+      "chunk_index": 398,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-398.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-398.polar.bin",
+      "container_bytes": 99604,
+      "relative_mse": 0.014884501490726697
+    },
+    {
+      "chunk_index": 399,
+      "status": "encoded",
+      "report": "/root/negative_gap_root/continuous_v1/full_jobs/wf-399.json",
+      "container": "/root/negative_gap_root/continuous_v1/full_jobs/wf-399.polar.bin",
+      "container_bytes": 99633,
+      "relative_mse": 0.014859283051210061
+    }
+  ]
+}
